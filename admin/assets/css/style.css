@@ -13,5 +13,8 @@
     .link-nav{
       @apply hover:text-orange-400 text-xl hover:border-b-2 hover:border-orange-400 pb-1 
     }
+    .bg-slide{
+       background-color: rgba(0, 0, 0, 0.6);
+    }
   }
-  
+ 
