@@ -2,8 +2,18 @@
 class Api{
     public $id ;
     public $name ;
+    public $tell ;
+    public $email ;
+    public $area ;
+    public $location ;
+    public $price ;
+    public $bedroom ;
+    public $bathroom ;
+    public $recaptionroom ;
+    public $time ;
+    public $details ;
 
-    protected static $columns = array('id','name') ;
+    protected static $columns = array('id','name','tell','email','area','location','price','bedroom','bathroom','recaptionroom','time','details') ;
     protected static $table = "`posts`";
 
     public static function get_all($con){
@@ -75,4 +85,5 @@ class Api{
     }
 
 }
+$api = new Api();
 ?>

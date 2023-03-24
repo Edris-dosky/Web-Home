@@ -1,5 +1,6 @@
 <?php
-$ed = include_once('includes/init.php');
+include_once('includes/init.php');
+$all_data = Api::get_all(0);
 
 ?>
 <!DOCTYPE html>
@@ -12,13 +13,13 @@ $ed = include_once('includes/init.php');
 </head>
 <body class="font-display bg-zinc-100 w-full ">
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto mt-2 ">
-
+    <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col m-4 w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">
                 <a href="" class="absolute z-20 top-20 left-24 bg-blue-600 rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZXJuJTIwaG91c2V8ZW58MHx8MHx8&w=1000&q=80" alt="">
              </div>
-            <span class="absolute top-40 left-2  text-white text-lg font-bold">150,000$</span>
+            <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php $row->price ?>$</span>
             <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md">کرێ</span> 
             <span class="text-right text-md py-4 ">هەولێر گەرەک گولان <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
@@ -32,7 +33,7 @@ $ed = include_once('includes/init.php');
                 <span class="col-span-2 h-full p-1 relative"><img src="assets/img/living-room-svgrepo-com.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3">2</span></span>
             </div>
         </div>
-
+        <?php }?>
     </div>
 </body>
 </html>
