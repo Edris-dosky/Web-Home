@@ -7,13 +7,14 @@ class Api{
     public $area ;
     public $location ;
     public $price ;
+    public $type ;
     public $bedroom ;
     public $bathroom ;
     public $recaptionroom ;
     public $time ;
     public $details ;
 
-    protected static $columns = array('id','name','tell','email','area','location','price','bedroom','bathroom','recaptionroom','time','details') ;
+    protected static $columns = array('id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details') ;
     protected static $table = "`posts`";
 
     public static function get_all($con){
