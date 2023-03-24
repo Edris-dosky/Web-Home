@@ -3,7 +3,6 @@ class Api{
     public $id ;
     public $name ;
 
-
     protected static $columns = array('id','name') ;
     protected static $table = "`posts`";
 

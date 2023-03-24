@@ -23,13 +23,11 @@
                     <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z" clip-rule="evenodd" />
                     <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
                   </svg> 100 m<sup>2</sup> </span>
-                <span class="col-span-2 p-2 h-full relative"> <img src="assets/img/bathroom-svgrepo-com.svg" class="h-4 w-4 inline-block absolute top-3"> <span class="absolute top-2 right-4">2</span> </span>
+                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom-svgrepo-com.svg" class="h-4 w-4 inline-block absolute top-3"> <span class="absolute top-2 right-4">2</span> </span>
                 <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom-hotel-svgrepo-com.svg" class="h-4 w-4 inline-block"> <span class="absolute top-2 right-4">2</span></span>
                 <span class="col-span-2 h-full p-1 relative"><img src="assets/img/living-room-svgrepo-com.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3">2</span></span>
             </div>
         </div>
-      
-
 
     </div>
 </body>
