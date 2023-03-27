@@ -1,18 +1,10 @@
 <?php
-include_once('includes/init.php');
+include_once('includes/nav.php');
 $all_data = Api::get_all(0);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-</head>
-<body >
-    <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto mt-2 ">
+
+    <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto ">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col m-4 w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">

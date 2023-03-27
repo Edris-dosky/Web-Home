@@ -1,3 +1,6 @@
+<?php
+include_once('includes/init.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +11,13 @@
     <title>Web Home</title>
 </head>
 <body class="font-display bg-zinc-100 w-full ">
-<header class="bg-white w-full h-16 fixed ">
+<header class="bg-white w-full h-16 fixed z-10 ">
     <nav class= "container h-full mx-auto flex justify-between items-center px-8 ">
         <div class="group font-black text-3xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[700px] h-full relative">
             <li>
                 <a href="../home.php" class="flex absolute pb-4 hover:text-[#188F8D] hover:border-b-2 hover:border-[#188F8D] top-[18px]"> سەرەتا
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-1">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
                   </a> 
@@ -39,5 +42,3 @@
         </ul>
     </nav>
 </header>
-</body>
-</html>
