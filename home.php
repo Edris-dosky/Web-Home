@@ -1,7 +1,10 @@
 <?php
 include_once('includes/nav.php');
 $all_data = Api::get_all(0);
-
+$all_photo = Api::get_all("photo");
+foreach($all_photo as $photo ){
+    echo $photo->photo ;
+}
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">

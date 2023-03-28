@@ -1,6 +1,6 @@
 <?php
 class Api{
-    public $id ;
+    public $post_id ;
     public $name ;
     public $tell ;
     public $email ;
@@ -12,14 +12,18 @@ class Api{
     public $bathroom ;
     public $recaptionroom ;
     public $time ;
-    public $details ;
+    public $details;
+    public $photo_id ;
+    public $photo;
 
     protected static $columns = array('id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details') ;
-    protected static $table = "`posts`";
+    public static $table = "`posts`";
 
     public static function get_all($con){
         if($con === 0){
             return self::query_proccess("SELECT * FROM ".self::$table." ");
+        }elseif($con ==="photo"){
+            return self::query_proccess("SELECT * FROM `photos` ");
         }else{
             return self::query_proccess("SELECT * FROM ".self::$table." WHERE $con ");
         }
