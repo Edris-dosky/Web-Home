@@ -4,7 +4,7 @@ $all_data = Api::get_all(0);
 
 ?>
 
-    <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto ">
+    <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col m-4 w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">
