@@ -4,7 +4,7 @@ class Photo extends Api{
     public $photo_id ;
     public $photo;
     public $profile;
-    protected static $table = "`posts`";
+    protected static $table = "`photos`";
     protected static $columns = array('post_id','photo_id','photo','profile');
 }
 

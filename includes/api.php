@@ -10,8 +10,8 @@ class Api{
         }
      }
  
-     public static function get_by_id($userid){
-         $single_data = static:: query_proccess("SELECT * FROM ".static::$table." WHERE `id` = '$userid'");
+     public static function get_one($con){
+         $single_data = static:: query_proccess("SELECT * FROM ".static::$table." WHERE $con");
          return !empty($single_data) ? array_shift($single_data) : false ;
      }
  

@@ -7,10 +7,8 @@ function type($param){
     }
 }
 
-function get_photo($id ){
-    $all_photo = Photo::get_all("`post_id` = '$id' AND `profile` = 'y'");
-    foreach($all_photo as $photo ){
+function get_photo($id , $pro){
+    $photo = Photo::get_one("`post_id` = '$id' AND `profile` = '$pro'");
     echo $photo->photo ;
-    }
 }
 ?>

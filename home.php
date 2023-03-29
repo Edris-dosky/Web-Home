@@ -1,7 +1,6 @@
 <?php
 include_once('includes/nav.php');
 $all_data = Post::get_all(0);
- get_photo(1 );
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
@@ -9,7 +8,7 @@ $all_data = Post::get_all(0);
         <div class="flex flex-col m-4 w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">
                 <a href="" class="absolute z-20 top-20 left-24 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
-            <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="assets/upload/12.jpg" alt="">
+            <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="assets/upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
              </div>
             <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php echo $row->price ?>$</span>
             <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php type($row->type );?> </span> 
