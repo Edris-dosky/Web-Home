@@ -13,10 +13,7 @@ class Post extends Api{
     public $recaptionroom ;
     public $time ;
     public $details;
-    public $photo_id ;
-    public $photo;
-    public $profile;
-
+    protected static $table = "`posts`";
     protected static $columns = array('id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details') ;
 }
 
