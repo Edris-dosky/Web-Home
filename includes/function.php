@@ -7,4 +7,10 @@ function type($param){
     }
 }
 
+function profile(){
+    $all_photo = Api::get_all("photo");
+    foreach($all_photo as $photo ){
+    echo $photo->photo ;
+    }
+}
 ?>
