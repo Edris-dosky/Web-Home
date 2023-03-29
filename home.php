@@ -1,10 +1,7 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Api::get_all(0);
-$all_photo = Api::get_all("photo");
-foreach($all_photo as $photo ){
-    echo $photo->photo ;
-}
+$all_data = Post::get_all(0);
+ get_photo(1 );
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
@@ -12,10 +9,10 @@ foreach($all_photo as $photo ){
         <div class="flex flex-col m-4 w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">
                 <a href="" class="absolute z-20 top-20 left-24 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
-            <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZXJuJTIwaG91c2V8ZW58MHx8MHx8&w=1000&q=80" alt="">
+            <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="assets/upload/12.jpg" alt="">
              </div>
             <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php echo $row->price ?>$</span>
-            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php type($row->type);?> </span> 
+            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php type($row->type );?> </span> 
             <span class="text-right text-md py-4 "><?php echo $row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">
