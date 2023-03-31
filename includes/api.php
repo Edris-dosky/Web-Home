@@ -1,7 +1,6 @@
 <?php
 class Api{
 
-
     public static function get_all($con){
         if($con === 0){
             return static::query_proccess("SELECT * FROM ".static::$table." ");
@@ -56,18 +55,18 @@ class Api{
         global $db ;
         $array = array();
         $pro = $this->properties();
-        $id = $db->secure($this->id);
+        $post_id = $db->secure($this->post_id);
         foreach ($pro as $key => $value) {
             $array[] = "`{$key}` = {$value}";
         }
-         $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE `id` = '$id' ");
+         $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE `post_id` = '$post_id' ");
         
     }
     
     public function delete(){
         global $db ;
-        $id = $db->secure($this->id);
-        $execute = $db->query("DELETE FROM ".static::$table." WHERE `id` = $id");
+        $post_id = $db->secure($this->post_id);
+        $execute = $db->query("DELETE FROM ".static::$table." WHERE `post_id` = $post_id");
     }
 
 }
