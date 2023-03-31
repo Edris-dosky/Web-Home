@@ -13,5 +13,8 @@
     .bg-slide{
        background-color: rgba(0, 0, 0, 0.6);
     }
+    .bg-form{
+      background-color: rgba(0, 0, 0, 0.5);
+   }
   }
  
