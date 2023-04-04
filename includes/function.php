@@ -9,6 +9,10 @@ function type($param){
 
 function get_photo($id , $pro){
     $photo = Photo::get_one("`post_id` = '$id' AND `profile` = '$pro'");
-    echo $photo->photo ;
-}
+    if(!$photo){
+        echo "house.jpg";
+    }else{
+        echo $photo->photo ;
+    }
+    }
 ?>
