@@ -4,7 +4,7 @@ include_once('includes/nav.php');
     <section class=" bg-no-repeat bg-fixed bg-center h-full w-full">
         <div class="container mx-auto h-screen p-6 ">
             <header  class=" bg-gradient-to-r from-green-500 to-[#188F8D] w-full h-16 text-white relative rounded-md">
-             <a href="" class="absolute top-4 left-4 ">  
+             <a href="home.php" class="absolute top-4 left-4 ">  
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-orange-500 ">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                 </svg>
@@ -48,6 +48,9 @@ include_once('includes/nav.php');
                 <input type="number" name="name" placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
                 <input type="email" name="name" placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
                 <textarea name="detail" id="" placeholder="...... زانیاری زیاتر" cols="30" rows="10" class="input lg:col-span-6 h-52 p-3"></textarea>
+                <button type="reset" class="lg:col-span-3 input bg-orange-500 text-white text-center font-bold text-2xl sm:col-span-6">رەشکرندنەوە</button>
+                <button type="submit" class="lg:col-span-3 input bg-[#188F8D] text-white text-center font-bold text-2xl sm:col-span-6">ناردن</button>
+                
             </form>
             
         </div>
