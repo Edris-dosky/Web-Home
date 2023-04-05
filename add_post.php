@@ -1,14 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-    <title>Document</title>
-</head>
-<body class="font-display bg-zinc-100 w-full">
+<?php
+include_once('includes/nav.php');
+?>
     <section class=" bg-no-repeat bg-fixed bg-center h-full w-full">
         <div class="container mx-auto h-screen p-6 ">
             <header  class=" bg-gradient-to-r from-green-500 to-[#188F8D] w-full h-16 text-white relative rounded-md">
