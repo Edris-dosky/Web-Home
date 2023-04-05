@@ -28,3 +28,4 @@ $all_data = Post::get_all(0);
     </div>
 </body>
 </html>
+lg:row-start-1 lg:row-end-1  
