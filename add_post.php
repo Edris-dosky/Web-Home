@@ -1,16 +1,5 @@
 <?php
 include_once('includes/nav.php');
-echo $_SERVER['PHP_SELF'];
-echo "<br>";
-echo $_SERVER['SERVER_NAME'];
-echo "<br>";
-echo $_SERVER['HTTP_HOST'];
-echo "<br>";
-echo $_SERVER['HTTP_REFERER'];
-echo "<br>";
-echo $_SERVER['HTTP_USER_AGENT'];
-echo "<br>";
-echo $_SERVER['SCRIPT_NAME'];
 ?>
     <section class=" bg-no-repeat bg-fixed bg-center h-full w-full">
         <div class="container mx-auto h-screen p-6 ">
@@ -23,23 +12,23 @@ echo $_SERVER['SCRIPT_NAME'];
              <span class="text-xl font-bold  text-center w-full absolute top-3">زیادکردنی خانوەکەت</span>
             </header>
             <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
-                <input type="tel" name="name" placeholder="ژمارەی مۆبایل : ## ## ### ##07" class="input lg:col-span-3   ">
+                <input type="tel" name="tell" placeholder="ژمارەی مۆبایل : ## ## ### ##07" class="input lg:col-span-3   ">
                 <input type="text" name="name" placeholder="ناوی سیانی" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
-                <select name="type" id="" class="input lg:col-span-1 sm:col-span-3 ">
+                <select name="price_type" id="" class="input lg:col-span-1 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری پارە</option>
                     <option value="2">دینار</option>
                     <option value="1">دۆلار</option>
                 </select>
-                <input type="text" name="name" placeholder="نرخ" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="text" name="price" placeholder="نرخ" class="input lg:col-span-1 sm:col-span-3 ">
                 
-                <input type="number" name="name" placeholder="روبەری خانوەکە" class="input lg:col-span-2 mr-2 sm:col-span-3 ">
+                <input type="number" name="area" placeholder="روبەری خانوەکە" class="input lg:col-span-2 mr-2 sm:col-span-3 ">
                 <select name="type" id="" class="input lg:col-span-2 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری خانوەکەت</option>
                     <option value="2">کرێ</option>
                     <option value="1">فرۆشتن</option>
                 </select>
-                <input type="" name="name" placeholder="گەرەک/ناحیە" class="input lg:col-span-2 sm:col-span-3 ">
-                <select name="type" id="" class="input lg:col-span-2 sm:col-span-3">
+                <input type="" name="location" placeholder="گەرەک/ناحیە" class="input lg:col-span-2 sm:col-span-3 ">
+                <select name="city" id="" class="input lg:col-span-2 sm:col-span-3">
                     <option value="" disabled selected>شار</option>
                     <option value="هەولێر">هەولێر</option>
                     <option value="سلێمانی">سلێمانی</option>
@@ -52,13 +41,13 @@ echo $_SERVER['SCRIPT_NAME'];
                     <option value="دەربەندیخان">دەربەندیخان</option>
                     <option value="شەقڵاوە">شەقڵاوە</option>
                 </select>
-                <input type="file" name="name"class="input lg:col-span-2 w-full h-full p-3">
-                <input type="number" name="name" placeholder="ژووری دانیشتن" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="name" placeholder="حەمام" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="name" placeholder="ژوری خەوتن" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="name" placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="email" name="name" placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
-                <textarea name="detail" id="" placeholder="...... زانیاری زیاتر" cols="30" rows="10" class="input lg:col-span-6 h-52 p-3"></textarea>
+                <input type="file" name="photo"class="input lg:col-span-2 w-full h-full p-3">
+                <input type="number" name="recaption" placeholder="ژووری دانیشتن" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="bathroom" placeholder="حەمام" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="bedroom" placeholder="ژوری خەوتن" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="rooms" placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="email" name="email" placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
+                <textarea name="details" id="" placeholder="...... زانیاری زیاتر" cols="30" rows="10" class="input lg:col-span-6 h-52 p-3"></textarea>
                 <button type="reset" class="lg:col-span-3 input bg-orange-500 text-white text-center font-bold text-2xl sm:col-span-6">رەشکرندنەوە</button>
                 <button type="submit" class="lg:col-span-3 input bg-[#188F8D] text-white text-center font-bold text-2xl sm:col-span-6">ناردن</button>
                 
