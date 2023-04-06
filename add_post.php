@@ -1,5 +1,16 @@
 <?php
 include_once('includes/nav.php');
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
 ?>
     <section class=" bg-no-repeat bg-fixed bg-center h-full w-full">
         <div class="container mx-auto h-screen p-6 ">
@@ -11,7 +22,7 @@ include_once('includes/nav.php');
               </a>
              <span class="text-xl font-bold  text-center w-full absolute top-3">زیادکردنی خانوەکەت</span>
             </header>
-            <form action="" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3">
+            <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
                 <input type="tel" name="name" placeholder="ژمارەی مۆبایل : ## ## ### ##07" class="input lg:col-span-3   ">
                 <input type="text" name="name" placeholder="ناوی سیانی" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
                 <select name="type" id="" class="input lg:col-span-1 sm:col-span-3 ">
@@ -52,7 +63,7 @@ include_once('includes/nav.php');
                 <button type="submit" class="lg:col-span-3 input bg-[#188F8D] text-white text-center font-bold text-2xl sm:col-span-6">ناردن</button>
                 
             </form>
-            
+           
         </div>
     </section>
 </body>
