@@ -1,6 +1,35 @@
 <?php
+
+use Random\Engine\Secure;
+
 include_once('includes/nav.php');
 ?>
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $db->secure($_REQUEST["name"]);
+$tell = $db->secure($_REQUEST["tell"]);
+$price_type = $db->secure($_REQUEST["price_type"]);
+$price = $db->secure($_REQUEST["price"]);
+$area = $db->secure($_REQUEST["area"]);
+$type = $db->secure($_REQUEST["type"]);
+$location = $db->secure($_REQUEST["location"]);
+$city = $db->secure($_REQUEST["city"]);
+$photo = $db->secure($_REQUEST["photo"]);
+$recaption = $db->secure($_REQUEST["recaption"]);
+$bathroom = $db->secure($_REQUEST["bathroom"]);
+$bedroom = $db->secure($_REQUEST["bedroom"]);
+$rooms = $db->secure($_REQUEST["rooms"]);
+$email = $db->secure($_REQUEST["email"]);
+$user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+}
+
+
+?>
+
+
+
     <section class=" bg-no-repeat bg-fixed bg-center h-full w-full">
         <div class="container mx-auto h-screen p-6 ">
             <header  class=" bg-gradient-to-r from-green-500 to-[#188F8D] w-full h-16 text-white relative rounded-md">
@@ -11,7 +40,7 @@ include_once('includes/nav.php');
               </a>
              <span class="text-xl font-bold  text-center w-full absolute top-3">زیادکردنی خانوەکەت</span>
             </header>
-            <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
+            <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
                 <input type="tel" name="tell" placeholder="ژمارەی مۆبایل : ## ## ### ##07" class="input lg:col-span-3   ">
                 <input type="text" name="name" placeholder="ناوی سیانی" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
                 <select name="price_type" id="" class="input lg:col-span-1 sm:col-span-3 ">
