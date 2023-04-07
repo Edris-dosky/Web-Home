@@ -16,8 +16,9 @@ class Post extends Api{
     public $time ;
     public $details;
     public $user_ip;
+    public $verify ;
     protected static $table = "`posts`";
-    protected static $columns = array('post_id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details','price_type','city','user_ip') ;
+    protected static $columns= array('post_id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details','price_type','city','user_ip','verify');
 }
 $post = new Post();
 

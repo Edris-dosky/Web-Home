@@ -11,7 +11,7 @@ $all_data = Post::get_all(0);
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="assets/upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
              </div>
             <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php echo $row->price ?>$</span>
-            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php type($row->type );?> </span> 
+            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->type;?> </span> 
             <span class="text-right text-md py-4 "><?php echo $row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">

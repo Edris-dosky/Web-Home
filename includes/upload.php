@@ -3,7 +3,7 @@
 use Upload as GlobalUpload;
 
 class Upload extends Api{
-    protected static $table_name = "post"; 
+    protected static $table_name = "photos"; 
     protected static $columns = array('post_id' , 'userid' ,'title' , 'details','price','fileName');
     public $post_id;
     public $userid;
@@ -12,7 +12,7 @@ class Upload extends Api{
     public $price;
     public $fileName;
     public $fileTmpName;
-    public $direction = "../upload/";
+    public $direction = "Web-Home\assets\upload/";
     public $fileError = array();
     public $array_err = array(
         UPLOAD_ERR_OK  =>  "ئەپلۆد کرا",

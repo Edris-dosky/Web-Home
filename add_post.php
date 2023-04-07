@@ -8,11 +8,14 @@ include_once('includes/nav.php');
 
 <?php
 $err = false;
+$post_id = rand().rand() ;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
     {
         $err=true;
+        $photo = array();
     }else{
+        $post->post_id = $post_id;
         $post->name = $db->secure($_POST["name"]);
         $post->tell = $db->secure($_POST["tell"]);
         $post->price_type = $db->secure($_POST["price_type"]);
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->type = $db->secure($_POST["type"]);
         $post->location = $db->secure($_POST["location"]);
         $post->city = $db->secure($_POST["city"]);
-        $post->photo = $db->secure($_POST["photo"]);
+        $photo = $db->secure($_POST["photo"]);
         $post->recaptionroom = $db->secure($_POST["recaption"]);
         $post->bathroom = $db->secure($_POST["bathroom"]);
         $post->bedroom = $db->secure($_POST["bedroom"]);
@@ -29,6 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->email = $db->secure($_POST["email"]);
         $post->details = $db->secure($_POST["details"]);
         $post->user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+        if ($post->create()===true){
+            go('home.php');
+        }else{
+            echo $post->create();
+        }
     }
 
 }
@@ -53,16 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" name="name" required placeholder="ناوی سیانی" value="<?php echo htmlspecialchars($_POST['name'] ?? ""); ?>" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
                 <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['price_type'] ?? ""); ?>" class="input lg:col-span-1 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری پارە</option>
-                    <option value="2">دینار</option>
-                    <option value="1">دۆلار</option>
+                    <option value="IQD">دینار</option>
+                    <option value="$">دۆلار</option>
                 </select>
                 <input type="text" name="price" required placeholder="نرخ" class="input lg:col-span-1 sm:col-span-3 ">
                 
                 <input type="number" name="area" required placeholder="روبەری خانوەکە" class="input lg:col-span-2 mr-2 sm:col-span-3 ">
                 <select name="type" required id="" class="input lg:col-span-2 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری خانوەکەت</option>
-                    <option value="2">کرێ</option>
-                    <option value="1">فرۆشتن</option>
+                    <option value="کرێ">کرێ</option>
+                    <option value="فرۆشتن">فرۆشتن</option>
                 </select>
                 <input type="" name="location" required placeholder="گەرەک/ناحیە" class="input lg:col-span-2 sm:col-span-3 ">
                 <select name="city" required class="input lg:col-span-2 sm:col-span-3">
