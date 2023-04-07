@@ -7,22 +7,25 @@ include_once('includes/nav.php');
 
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$name = $db->secure($_REQUEST["name"]);
-$tell = $db->secure($_REQUEST["tell"]);
-$price_type = $db->secure($_REQUEST["price_type"]);
-$price = $db->secure($_REQUEST["price"]);
-$area = $db->secure($_REQUEST["area"]);
-$type = $db->secure($_REQUEST["type"]);
-$location = $db->secure($_REQUEST["location"]);
-$city = $db->secure($_REQUEST["city"]);
-$photo = $db->secure($_REQUEST["photo"]);
-$recaption = $db->secure($_REQUEST["recaption"]);
-$bathroom = $db->secure($_REQUEST["bathroom"]);
-$bedroom = $db->secure($_REQUEST["bedroom"]);
-$rooms = $db->secure($_REQUEST["rooms"]);
-$email = $db->secure($_REQUEST["email"]);
+
+if ($_SERVER["REQUEST_METHOD"] == "sPOST") {
+$name = $db->secure($_POST["name"]);
+$tell = $db->secure($_POST["tell"]);
+$price_type = $db->secure($_POST["price_type"]);
+$price = $db->secure($_POST["price"]);
+$area = $db->secure($_POST["area"]);
+$type = $db->secure($_POST["type"]);
+$location = $db->secure($_POST["location"]);
+$city = $db->secure($_POST["city"]);
+$photo = $db->secure($_POST["photo"]);
+$recaption = $db->secure($_POST["recaption"]);
+$bathroom = $db->secure($_POST["bathroom"]);
+$bedroom = $db->secure($_POST["bedroom"]);
+$rooms = $db->secure($_POST["rooms"]);
+$email = $db->secure($_POST["email"]);
+$details = $db->secure($_POST["details"]);
 $user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+
 }
 
 
