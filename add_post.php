@@ -7,24 +7,32 @@ include_once('includes/nav.php');
 
 
 <?php
+$err = false;
+$name = $tell = $price_type = $price = $area = $type = $location = $city = "";
+$details = $email = $photo = $recaption = $bathroom = $bedroom = $rooms = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "sPOST") {
-$name = $db->secure($_POST["name"]);
-$tell = $db->secure($_POST["tell"]);
-$price_type = $db->secure($_POST["price_type"]);
-$price = $db->secure($_POST["price"]);
-$area = $db->secure($_POST["area"]);
-$type = $db->secure($_POST["type"]);
-$location = $db->secure($_POST["location"]);
-$city = $db->secure($_POST["city"]);
-$photo = $db->secure($_POST["photo"]);
-$recaption = $db->secure($_POST["recaption"]);
-$bathroom = $db->secure($_POST["bathroom"]);
-$bedroom = $db->secure($_POST["bedroom"]);
-$rooms = $db->secure($_POST["rooms"]);
-$email = $db->secure($_POST["email"]);
-$details = $db->secure($_POST["details"]);
-$user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
+    {
+        $err=true;
+    }else{
+        $post->name = $db->secure($_POST["name"]);
+        $post->tell = $db->secure($_POST["tell"]);
+        $post->price_type = $db->secure($_POST["price_type"]);
+        $post->price = $db->secure($_POST["price"]);
+        $post->area = $db->secure($_POST["area"]);
+        $post->type = $db->secure($_POST["type"]);
+        $post->location = $db->secure($_POST["location"]);
+        $post->city = $db->secure($_POST["city"]);
+        $post->photo = $db->secure($_POST["photo"]);
+        $post->recaptionroom = $db->secure($_POST["recaption"]);
+        $post->bathroom = $db->secure($_POST["bathroom"]);
+        $post->bedroom = $db->secure($_POST["bedroom"]);
+        $post->rooms = $db->secure($_POST["rooms"]);
+        $post->email = $db->secure($_POST["email"]);
+        $post->details = $db->secure($_POST["details"]);
+        $post->user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+    }
 
 }
 
@@ -43,24 +51,24 @@ $user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
               </a>
              <span class="text-xl font-bold  text-center w-full absolute top-3">زیادکردنی خانوەکەت</span>
             </header>
-            <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="w-full h-full text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
-                <input type="tel" name="tell" placeholder="ژمارەی مۆبایل : ## ## ### ##07" class="input lg:col-span-3   ">
-                <input type="text" name="name" placeholder="ناوی سیانی" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
-                <select name="price_type" id="" class="input lg:col-span-1 sm:col-span-3 ">
+            <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="w-full h-auto text-center grid grid-cols-6 auto-rows-min gap-3 pt-3 ">
+                <input type="tel" name="tell" required placeholder="ژمارەی مۆبایل : ## ## ### ##07" value="<?php echo htmlspecialchars($_POST['tell'] ?? ""); ?>" class="input lg:col-span-3   ">
+                <input type="text" name="name" required placeholder="ناوی سیانی" value="<?php echo htmlspecialchars($_POST['name'] ?? ""); ?>" class="input lg:col-start-4 lg:col-end-7  sm:row-start-1 sm:row-end-1 ">
+                <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['price_type'] ?? ""); ?>" class="input lg:col-span-1 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری پارە</option>
                     <option value="2">دینار</option>
                     <option value="1">دۆلار</option>
                 </select>
-                <input type="text" name="price" placeholder="نرخ" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="text" name="price" required placeholder="نرخ" class="input lg:col-span-1 sm:col-span-3 ">
                 
-                <input type="number" name="area" placeholder="روبەری خانوەکە" class="input lg:col-span-2 mr-2 sm:col-span-3 ">
-                <select name="type" id="" class="input lg:col-span-2 sm:col-span-3 ">
+                <input type="number" name="area" required placeholder="روبەری خانوەکە" class="input lg:col-span-2 mr-2 sm:col-span-3 ">
+                <select name="type" required id="" class="input lg:col-span-2 sm:col-span-3 ">
                     <option value="" disabled selected>جۆری خانوەکەت</option>
                     <option value="2">کرێ</option>
                     <option value="1">فرۆشتن</option>
                 </select>
-                <input type="" name="location" placeholder="گەرەک/ناحیە" class="input lg:col-span-2 sm:col-span-3 ">
-                <select name="city" id="" class="input lg:col-span-2 sm:col-span-3">
+                <input type="" name="location" required placeholder="گەرەک/ناحیە" class="input lg:col-span-2 sm:col-span-3 ">
+                <select name="city" required class="input lg:col-span-2 sm:col-span-3">
                     <option value="" disabled selected>شار</option>
                     <option value="هەولێر">هەولێر</option>
                     <option value="سلێمانی">سلێمانی</option>
@@ -74,17 +82,17 @@ $user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
                     <option value="شەقڵاوە">شەقڵاوە</option>
                 </select>
                 <input type="file" name="photo"class="input lg:col-span-2 w-full h-full p-3">
-                <input type="number" name="recaption" placeholder="ژووری دانیشتن" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="bathroom" placeholder="حەمام" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="bedroom" placeholder="ژوری خەوتن" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="number" name="rooms" placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
-                <input type="email" name="email" placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
+                <input type="number" name="recaption" required placeholder="ژووری دانیشتن" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="bathroom" required placeholder="حەمام" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="bedroom" required placeholder="ژوری خەوتن" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="number" name="rooms" required placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
+                <input type="email" name="email" required placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
                 <textarea name="details" id="" placeholder="...... زانیاری زیاتر" cols="30" rows="10" class="input lg:col-span-6 h-52 p-3"></textarea>
                 <button type="reset" class="lg:col-span-3 input bg-orange-500 text-white text-center font-bold text-2xl sm:col-span-6">رەشکرندنەوە</button>
                 <button type="submit" class="lg:col-span-3 input bg-[#188F8D] text-white text-center font-bold text-2xl sm:col-span-6">ناردن</button>
                 
             </form>
-           
+            <?php if($err){ echo '<h1 class="text-center text-red-500 text-2xl m-4"><script>window.alert("تکایە هەموو خانەکان پربکەوە")</script></h1>';}?>
         </div>
     </section>
 </body>
