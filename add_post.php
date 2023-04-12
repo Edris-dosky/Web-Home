@@ -8,14 +8,13 @@ include_once('includes/nav.php');
 
 <?php
 $err = false;
-$post_id = rand().rand() ;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
     {
         $err=true;
         $photo = array();
     }else{
-        $post->post_id = $post_id;
+    
         $post->name = $db->secure($_POST["name"]);
         $post->tell = $db->secure($_POST["tell"]);
         $post->price_type = $db->secure($_POST["price_type"]);
