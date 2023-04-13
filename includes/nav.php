@@ -15,17 +15,20 @@ include_once('includes/init.php');
     <nav class= "container h-full mx-auto flex justify-between items-center px-8 ">
         <div class="group font-black text-3xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[800px] h-full relative">
-             <li>
+        <?php if(!$session->get_logged_in()){?>
+            <li>
                 <a href="home.php" class="flex absolute py-1 px-4 rounded-full top-4 border-[1px] border-solid border-zinc-300 hover:bg-[#188F8D] hover:text-white"> 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
                 </svg>
                   </a> 
             </li>
-            <!--<li><a href="" class="">
+            <?php }else{?>
+            <li><a href="" class="">
                 <img src="/Web-Home/assets/img/user.jpg" class="w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
                   </a> 
-            </li>-->
+            </li>
+            <?php } ?>
             <li> 
                 <a href="home.php" class="flex absolute pb-5 hover:text-[#188F8D] hover:border-b-2 hover:border-[#188F8D] top-[18px]"> سەرەتا
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-1">
