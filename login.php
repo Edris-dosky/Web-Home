@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-    <title>Web Home</title>
-</head>
-<body class="font-display bg-zinc-100 w-full">
+<?php
+include_once('includes/nav.php');
+?>
     <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
         <div class="relative py-3 sm:max-w-xl sm:mx-auto">
             <div
@@ -21,11 +14,11 @@
                     <div class="divide-y divide-gray-200">
                         <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                             <div class="relative">
-                                <input autocomplete="off" id="email" name="email" type="text" class="peer text-right placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 focus:border-[#188F8D]" placeholder="Email address" />
+                                <input autocomplete="off" name="username" type="text" class="peer text-right placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 focus:border-[#188F8D]" placeholder="Email address" />
                                 <label for="email" class="absolute right-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">ناو یان ژمارە مۆبایل</label>
                             </div>
                             <div class="relative">
-                                <input autocomplete="off" id="password" name="password" type="password" class="peer text-right placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 focus:border-[#188F8D]" placeholder="Password" />
+                                <input autocomplete="off"  name="password" type="password" class="peer text-right placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 focus:border-[#188F8D]" placeholder="Password" />
                                 <label for="وشەی نهێنی" class="absolute right-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">وشەی نهێنی</label>
                             </div>
                             <div class="relative text-right">
