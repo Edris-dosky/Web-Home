@@ -23,6 +23,7 @@ class connection{
 
     public function secure($data){
     $data = $this->db->real_escape_string(htmlspecialchars($data));
+    $data = trim($data);
     return $data;
     }
 }

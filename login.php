@@ -1,12 +1,15 @@
 <?php
 
-require_once('includes/nav.php'); in(1); ?>
+require_once('includes/nav.php');  ?>
 <?php
 $error = ['result' => ''];
 if ($_SERVER["REQUEST_METHOD"]== "POST"){
+    
     if(!empty($_POST["tell"])&&!empty($_POST["password"])){
+        
         $check = User::verify($_POST["tell"] , $_POST["password"]);
         if ($check){
+            echo "yeeeeeeees";
             $session->login($check);
             go("home.php");
         }else{
@@ -15,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
     }else{
         $error['result']="تکایە هەردوو خانەکە پربکەوە";
     }
-   
+
 }
 
 ?>
@@ -26,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
             <div
                 class="absolute inset-0 bg-gradient-to-r from-green-300 to-[#188F8D] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
             </div>
-            <form method="POST" class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
                 <div class="max-w-md mx-auto">
                     <div>
                         <h1 class="text-2xl font-semibold mb-6 m-4">فۆرمی چونە ژورەوەی هەژماری خۆت</h1>
@@ -44,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             <div class="relative text-right">
                                 <a href="" class="bg-orange-500 text-white rounded-md px-2 py-1 absolute left-0">دروستکردنی هەژمار</a>
                                 <button type="submit" name="submit" class="bg-[#188F8D] text-white rounded-md px-2 py-1">داخلبوون</button>
-            
+            <?php echo hash('gost' ,"1234"); ?>
                             </div>
                         </div>
                     </div>
