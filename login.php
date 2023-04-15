@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
         $check = User::verify($_POST["tell"] , $_POST["password"]);
         if ($check){
             echo "yeeeeeeees";
-            $session->login($check);
+            $session->loggin($check);
             go("home.php");
         }else{
             $error['result']= "ژمارە مۆبایلەکەت یان وشەی نهێنی هەڵەیە";
@@ -47,8 +47,11 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             <div class="relative text-right">
                                 <a href="" class="bg-orange-500 text-white rounded-md px-2 py-1 absolute left-0">دروستکردنی هەژمار</a>
                                 <button type="submit" name="submit" class="bg-[#188F8D] text-white rounded-md px-2 py-1">داخلبوون</button>
-            <?php echo hash('gost' ,"1234"); ?>
+                                
                             </div>
+                            <?php echo  $error['result']; 
+                            echo $session->get_logged_in();
+                            ?>
                         </div>
                     </div>
                 </div>

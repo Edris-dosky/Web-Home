@@ -1,6 +1,7 @@
 <?php
 include_once('includes/nav.php');
 $all_data = Post::get_all(0);
+
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
@@ -24,7 +25,10 @@ $all_data = Post::get_all(0);
                 <span class="col-span-2 h-full p-1 relative"><img src="assets/img/living-room-svgrepo-com.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3"><?php echo $row->recaptionroom ?></span></span>
             </div>
         </div>
-        <?php }?>
+        <?php }
+        echo  $_SESSION['user_id'] ;
+        
+        ?>
     </div>
 </body>
 </html>
