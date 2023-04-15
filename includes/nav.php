@@ -1,5 +1,7 @@
 <?php
 include_once('includes/init.php');
+$id = $_SESSION['user_id'];
+$obj= User::get_one("`user_id`='$id'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,7 @@ include_once('includes/init.php');
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[800px] h-full relative">
         <?php if($session->get_logged_in()){?>
             <li><a href="" class="">
-                <img src="/Web-Home/assets/img/user.jpg" class="w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
+                <img src="/Web-Home/assets/upload/<?php echo $obj->photo; ?>" class="w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
                   </a> 
             </li>
             <?php }else{?>
