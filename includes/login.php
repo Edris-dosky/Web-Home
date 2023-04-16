@@ -1,8 +1,10 @@
 <?php
 $error = ['result' => ''];
 if ($_SERVER["REQUEST_METHOD"]== "POST"){   
-    if(!empty($_POST["tell"])&&!empty($_POST["password"])){    
-        $check = User::verify($_POST["tell"] , $_POST["password"]);
+    $tell = $db->secure($_POST["tell"]);
+    $pass =  $db->secure($_POST["password"]);
+    if(!empty($tell)&&!empty($pass)){    
+        $check = User::verify($tell ,$pass);
         if ($check){
             $session->loggin($check);
             go("home.php");

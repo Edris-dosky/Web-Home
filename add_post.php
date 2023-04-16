@@ -16,7 +16,7 @@ if(!$session->get_logged_in()){
         $err=true;
         $photo = array();
     }else{
-    
+        $post->user_id = $obj->user_id ;
         $post->name = $db->secure($_POST["name"]);
         $post->tell = $db->secure($_POST["tell"]);
         $post->price_type = $db->secure($_POST["price_type"]);
