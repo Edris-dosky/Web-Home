@@ -1,7 +1,9 @@
 <?php
 include_once('includes/init.php');
+if($session->get_logged_in()){
 $id = $_SESSION['user_id'];
 $obj= User::get_one("`user_id`='$id'");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
