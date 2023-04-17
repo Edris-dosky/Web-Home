@@ -20,7 +20,7 @@ $obj= User::get_one("`user_id`='$id'");
         <div class="group font-black text-3xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[800px] h-full relative">
         <?php if($session->get_logged_in()){?>
-            <li><a href="" class="">
+            <li><a href="profile.php" class="">
                 <img src="/Web-Home/assets/upload/<?php echo $obj->photo; ?>" class=" hover:animate-spin w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
                   </a> 
             </li>
