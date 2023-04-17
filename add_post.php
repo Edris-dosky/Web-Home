@@ -9,7 +9,7 @@ include_once('includes/nav.php');
 <?php
 $err = false;
 if(!$session->get_logged_in()){
-    go("login.php");
+    go("redirect.php");
 }elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
     {

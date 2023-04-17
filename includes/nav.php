@@ -21,7 +21,7 @@ $obj= User::get_one("`user_id`='$id'");
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[800px] h-full relative">
         <?php if($session->get_logged_in()){?>
             <li><a href="" class="">
-                <img src="/Web-Home/assets/upload/<?php echo $obj->photo; ?>" class="w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
+                <img src="/Web-Home/assets/upload/<?php echo $obj->photo; ?>" class=" hover:animate-spin w-12 h-12 mt-2 p-[1px] block object-center rounded-full " >
                   </a> 
             </li>
             <?php }else{?>
