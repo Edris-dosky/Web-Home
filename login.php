@@ -24,7 +24,7 @@ require_once('includes/login.php');
                                 <label for="وشەی نهێنی" class="absolute right-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">وشەی نهێنی</label>
                             </div>
                             <div class="relative text-right">
-                                <a href="" class="bg-orange-500 text-white rounded-md px-2 py-1 absolute left-0">دروستکردنی هەژمار</a>
+                                <a href="singup.php" class="bg-orange-500 text-white rounded-md px-2 py-1 absolute left-0">دروستکردنی هەژمار</a>
                                 <button type="submit" name="submit" class="bg-[#188F8D] text-white rounded-md px-2 py-1">داخلبوون</button>
                                 
                             </div>
