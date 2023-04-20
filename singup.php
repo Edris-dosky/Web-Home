@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                         
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                <input type="email" name="email"  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D] text-right" placeholder="ئیمەیل">
+                                <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? ""); ?>"  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D] text-right" placeholder="ئیمەیل">
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                <input type="password" name="pass1" class="text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
+                                <input type="password" name="pass1" value="<?php echo htmlspecialchars($_POST['pass1'] ?? ""); ?>" class="text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
                             </div>
                             
                         </div>
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                <input type="password" name="pass2" class="text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" وشەی نهێنی دوبارەبکەوە">
+                                <input type="password" name="pass2" value="<?php echo htmlspecialchars($_POST['pass2'] ?? ""); ?>" class="text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" وشەی نهێنی دوبارەبکەوە">
                             </div>
                             
                         </div>
