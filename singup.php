@@ -1,19 +1,31 @@
 <?php require_once('includes/nav.php'); ?>
 <?php
 $error = ['result' => ''];
-if ($_SERVER["REQUEST_METHOD"]== "POST"){   
+if ($_SERVER["REQUEST_METHOD"]== "POST"){  
+    $username = $db->secure($_POST["username"]); 
     $tell = $db->secure($_POST["tell"]);
-    $pass =  $db->secure($_POST["password"]);
-    if(!empty($tell)&&!empty($pass)){    
-        $check = User::verify($tell ,$pass);
-        if ($check){
-            $session->loggin($check);
-            go("home.php");
+    $email = $db->secure($_POST["email"]);
+    $pass1 =  $db->secure($_POST["pass1"]);
+    $pass2 =  $db->secure($_POST["pass2"]);
+    if(!empty($_POST["username"])&&!empty($_POST["tell"])&&!empty($_POST["email"])&&!empty($_POST["pass1"])&&!empty($_POST["pass2"])){  
+        if($pass1 ===$pass2){  
+            $user->username =$db->secure($_POST["username"]);
+            $user->tell = $db->secure($_POST["tell"]);
+            $user->email = $db->secure($_POST["email"]);
+            $user->password = hash('gost' , $db->secure($_POST["pass1"])) ;
+            $add = $user->create();
+            if($add){
+                $session->loggin($add);
+                go("home.php");
+            }else{
+                echo $add ;
+            }
         }else{
-            $error['result']= "ژمارە مۆبایلەکەت یان وشەی نهێنی هەڵەیە";
+            $error['result']="تکایە تکایە دڵنیا بەوە کە وشەی نهێنی وەک یەکن";
         }
+
     }else{
-        $error['result']="تکایە هەردوو خانەکە پربکەوە";
+        $error['result']="تکایە هەموو خانەکان پربکەوە";
     }
 
 }
@@ -37,14 +49,14 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
     
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                <input type="tel" name="tell" class=" text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
+                                <input type="tel" name="tell" value="<?php echo htmlspecialchars($_POST['tell'] ?? ""); ?>" class=" text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
                             </div>
                         </div>
                         <div class="w-1/2 px-3 mb-5">
                             
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                <input type="text" name="username" class=" text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+                                <input type="text" name="username" value="<?php echo htmlspecialchars($_POST['username'] ?? ""); ?>" class=" text-right w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
                             </div>
                         </div>
                     </div>
@@ -53,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                         
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                <input type="email" name="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D] text-right" placeholder="ئیمەیل">
+                                <input type="email" name="email"  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D] text-right" placeholder="ئیمەیل">
                             </div>
                         </div>
                     </div>
@@ -79,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             
                         </div>
                     </div>
-                    <p class=" mb-6 text-center text-orange-500">تکایە خانەکان پر بکەوە</p>
+                    <p class=" mb-6 text-center text-orange-500"> <?php echo $error['result']; ?> </p>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
                             <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-[#188F8D] focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">دروستکردن</button>

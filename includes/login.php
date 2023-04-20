@@ -1,5 +1,6 @@
 <?php
 $error = ['result' => ''];
+$tell = $pass = "";
 if ($_SERVER["REQUEST_METHOD"]== "POST"){   
     $tell = $db->secure($_POST["tell"]);
     $pass =  $db->secure($_POST["password"]);
