@@ -8,7 +8,7 @@ class User extends Api{
     public $tell;
     public $email;
     public $password;
-    public $photo = "user.jpg";
+    public $photo ;
     protected static $table = "`users`";
     protected static $columns =  array('user_id','username','tell','email','password','photo');
 
