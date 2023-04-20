@@ -2,23 +2,19 @@
 <?php
 $error = ['result' => ''];
 if ($_SERVER["REQUEST_METHOD"]== "POST"){  
-    $username = $db->secure($_POST["username"]); 
-    $tell = $db->secure($_POST["tell"]);
-    $email = $db->secure($_POST["email"]);
-    $pass1 =  $db->secure($_POST["pass1"]);
-    $pass2 =  $db->secure($_POST["pass2"]);
     if(!empty($_POST["username"])&&!empty($_POST["tell"])&&!empty($_POST["email"])&&!empty($_POST["pass1"])&&!empty($_POST["pass2"])){  
-        if($pass1 ===$pass2){  
+        if($_POST["pass1"]===$_POST["pass2"]){  
             $user->username =$db->secure($_POST["username"]);
             $user->tell = $db->secure($_POST["tell"]);
             $user->email = $db->secure($_POST["email"]);
-            $user->password = hash('gost' , $db->secure($_POST["pass1"])) ;
-            $add = $user->create();
-            if($add){
-                $session->loggin($add);
-                go("home.php");
+            $user->password = hash('gost' , $db->secure($_POST["pass1"]));
+            $scan = User::verify_singup($user->tell);
+            if($scan === false){
+                $user->create();
+                $session->loggin($user);
+                go("home.php");  
             }else{
-                echo $add ;
+                $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
             }
         }else{
             $error['result']="تکایە تکایە دڵنیا بەوە کە وشەی نهێنی وەک یەکن";

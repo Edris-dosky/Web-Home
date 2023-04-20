@@ -1,8 +1,8 @@
 <?php
 include_once('includes/init.php');
-if($session->get_logged_in()){
-$id = $_SESSION['user_id'];
-$obj= User::get_one("`user_id`='$id'");
+if($session->get_logged_in()){  // create object when user sing in for get all data of who sing in
+$tell = $_SESSION['tell'];
+$obj= User::get_one("`tell`='$tell'");
 }
 ?>
 <!DOCTYPE html>
