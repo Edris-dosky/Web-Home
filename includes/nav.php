@@ -21,11 +21,7 @@ $obj= User::get_one("`tell`='$tell'");
         <ul class="flex flex-row-reverse text-lg font-medium justify-between w-[800px] h-full relative">
         <?php if($session->get_logged_in()){?>
             <li><a href="profile.php" class="">
-            <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0  flex items-center justify-center text-[#188F8D]">
-        <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-        </svg>
-              </div>
+                <img src="/Web-Home/assets/upload/<?php echo empty($obj->photo)?"user.svg":$obj->photo ; ?>" class=" w-10 h-10 mt-3 p-[1px] block object-center rounded-full " >
                   </a> 
             </li>
             <?php }else{?>

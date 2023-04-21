@@ -21,7 +21,7 @@
 			</button>
 		</div>
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex-row-reverse lg:items-center lg:w-auto lg:space-x-6">
-			<li><a class="text-md text-gray-500 ml-2 hover:text-[#188F8D] hover:font-bold" href="#">سەرەتا</a></li>
+			<li><a class="text-md text-gray-500 ml-3 hover:text-[#188F8D] hover:font-bold" href="#">سەرەتا</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -33,32 +33,45 @@
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">Services</a></li>
+			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">دڵخوازەکانم</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">Pricing</a></li>
+			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">موڵکەکانم</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">Contact</a></li>
+			<li><a class="text-md text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">دەربارەی ئێمە</a></li>
 		</ul>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
-		<a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a>
+		<!-- <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">چونەژوەوە</a>
+		<a class="hidden lg:inline-block py-2 px-6 bg-[#188F8D] hover:bg-green-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">دروستکردنی هەژمار</a> -->
+        <a href="" class=" hidden lg:flex mr-3 text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
+            <!-- <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo"> -->
+            <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl  flex items-center justify-center text-[#188F8D]">
+                <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+                </div>
+          </a>
 	</nav>
 	<div class="navbar-menu relative z-50 hidden">
 		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
-			<div class="flex items-center mb-8">
-				<a class="mr-auto text-3xl font-bold leading-none" href="#">
-                    <div class="group font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
-				</a>
+		<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center justify-between mb-8">
+				<a href="" class=" flex mr-3 pl-2 pr-4 py-[3px] text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
+                    <img class="w-10 h-10 rounded-full" src="/Web-Home/assets/upload/edris.jpg" alt="user photo"> <span class="text-center mt-2 mx-4">edirs dosky</span> 
+                    <!-- <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl  flex items-center justify-center text-[#188F8D]">
+                        <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                        </svg>
+                        </div><span class="text-center mt-3 mx-3">edirs dosky</span> -->
+                  </a>
 				<button class="navbar-close">
-					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<svg class="h-6 w-6 text-right text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
 					</svg>
 				</button>
@@ -66,29 +79,29 @@
 			<div>
 				<ul>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Home</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">سەرەتا</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">About Us</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">زیادکردن</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Services</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">دڵخوازەکانم</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Pricing</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">موڵکەکانم</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Contact</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">دەربارەی ئێمە</a>
 					</li>
 				</ul>
 			</div>
 			<div class="mt-auto">
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">Sign in</a>
-					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">Sign Up</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">چونەژوەوە</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">دروستکردنی هەژمار</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">
-					<span>Copyright © 2021</span>
+					<span>Copyright © <?php echo date('Y'); ?></span>
 				</p>
 			</div>
 		</nav>
