@@ -74,8 +74,6 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                             </div>
                             
                         </div>
-                        
-                        
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-6">
