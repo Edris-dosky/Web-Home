@@ -121,10 +121,12 @@ $obj= User::get_one("`tell`='$tell'");
 			<div class="mt-auto">
 			<?php if(!$session->get_logged_in()){?>
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="login.php">چونەژوەوە</a>
+					<a class="block px-4 py-3 mb-3  text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="login.php">چونەژوەوە</a>
 					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="singup.php">دروستکردنی هەژمار</a>
 				</div>
-				<?php } ?> 
+				<?php }else{ ?> 
+					<a href="?logout" class="block px-4 py-3 mb-3  text-xs text-center font-semibold leading-none bg-red-500 hover:bg-red-600 rounded-xl">چونەدەرەوە</a>
+					<?php } ?>
 				<p class="my-4 text-xs text-center text-gray-400">
 					<span>Copyright © <?php echo date('Y'); ?></span>
 				</p>

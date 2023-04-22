@@ -29,5 +29,8 @@ function get_photo($id , $pro){ // this function used to get img profile other i
     function go($url){ 
         header("location:{$url}");
         }
-
+        if(isset($_GET['logout'])){
+            $session->logout();
+            go("home.php");
+        }
 ?>

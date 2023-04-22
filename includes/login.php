@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
         $check = User::verify($tell ,$pass);
         if ($check){
             $session->loggin($check);
-            go("Web-Home\home.php");
+            go("home.php");
         }else{
             $error['result']= "ژمارە مۆبایلەکەت یان وشەی نهێنی هەڵەیە";
         }

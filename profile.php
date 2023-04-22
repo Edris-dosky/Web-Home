@@ -1,9 +1,5 @@
 <?php
 require_once('includes/nav.php');
-if(isset($_GET['logout'])){
-    $session->logout();
-    go("home.php");
-}
 function get_row($col){
   global $obj;
   $result = Post::get_num_row("'$obj->user_id' = `user_id` AND '$col' = `type`");
