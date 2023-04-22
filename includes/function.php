@@ -1,8 +1,5 @@
-<?php
-function go($url){
-    header("location:{$url}");
-    }
-    
+<?php    
+ob_start();
 function get_photo($id , $pro){ // this function used to get img profile other images
     $photo = Photo::get_one("`post_id` = '$id' AND `profile` = '$pro'");
     if(!$photo){
@@ -29,6 +26,8 @@ function get_photo($id , $pro){ // this function used to get img profile other i
         }
     
     }
-
+    function go($url){ 
+        header("location:{$url}");
+        }
 
 ?>

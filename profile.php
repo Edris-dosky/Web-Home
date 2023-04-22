@@ -2,7 +2,7 @@
 require_once('includes/nav.php');
 if(isset($_GET['logout'])){
     $session->logout();
-    header("location:Web-Home\home.php");
+    go("home.php");
 }
 function get_row($col){
   global $obj;
