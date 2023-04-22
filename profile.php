@@ -4,7 +4,7 @@ if(isset($_GET['logout'])){
     $session->logout();
     header("location:Web-Home\home.php");
 }
-function get_data($col){
+function get_row($col){
   global $obj;
   $result = Post::get_num_row("'$obj->user_id' = `user_id` AND '$col' = `type`");
   echo $result;
@@ -17,15 +17,15 @@ function get_data($col){
           <div class="grid grid-cols-1 md:grid-cols-3">
             <div class="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
               <div>
-                <p class="font-bold text-gray-700 text-xl">22</p>
+                <p class="font-bold text-gray-700 text-xl"><?php get_row("فرۆشتن") ?></p>
                 <p class="text-gray-400">خانوو بۆ فرۆشتن</p>
               </div>
               <div>
-                   <p class="font-bold text-gray-700 text-xl">10</p>
+                   <p class="font-bold text-gray-700 text-xl"><?php get_row("کرێ") ?></p>
                 <p class="text-gray-400">خانوو بۆکرێ</p>
               </div>
               <div>
-                <p class="font-bold text-gray-700 text-xl">0</p>
+                <p class="font-bold text-gray-700 text-xl"><?php get_row("ئەرز") ?></p>
              <p class="text-gray-400">ئەرز</p>
            </div>
             </div>
@@ -41,7 +41,7 @@ function get_data($col){
         <a href=""
           class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
         >
-          خانووەکان
+          موڵکەکانی
         </a>
             <a href=""
           class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
@@ -64,9 +64,9 @@ function get_data($col){
             <button class="text-indigo-500 py-2 px-4  font-medium mt-4">
               .... بینینی زیاتر
             </button>
-            <a href="?logout" class="btn btn-danger w-100">LOGOUT</a>
+            
           </div>
-        
+          <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">چونەدەرەوە</a>
         </div>
         </div>
        
