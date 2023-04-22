@@ -2,7 +2,7 @@
 require_once('includes/nav.php');
 if(isset($_GET['logout'])){
     $session->logout();
-    go("Web-Home\home.php");
+    header("location:Web-Home\home.php");
 }
 ?>
 
