@@ -4,6 +4,12 @@ if(isset($_GET['logout'])){
     $session->logout();
     header("location:Web-Home\home.php");
 }
+function get_data($col){
+  global $obj;
+  $result = Post::get_all("'$obj->user_id' = `user_id` AND '$col' = `type`");
+  return mysqli_num_rows($result);
+}
+
 ?>
 <body class="font-display bg-zinc-100 w-full">
     <div class=" container mx-auto p-16">
