@@ -6,8 +6,8 @@ if(isset($_GET['logout'])){
 }
 function get_data($col){
   global $obj;
-  $result = Post::get_all("'$obj->user_id' = `user_id` AND '$col' = `type`");
-  return mysqli_num_rows($result);
+  $result = Post::get_num_row("'$obj->user_id' = `user_id` AND '$col' = `type`");
+  echo $result;
 }
 
 ?>
