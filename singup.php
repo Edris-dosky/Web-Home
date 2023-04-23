@@ -1,4 +1,6 @@
-<?php require_once('includes/nav.php'); ?>
+<?php require_once('includes/nav.php'); 
+in(1 ,"home.php" );
+?>
 <?php
 $error = ['result' => ''];
 if ($_SERVER["REQUEST_METHOD"]== "POST"){  

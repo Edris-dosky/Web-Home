@@ -10,18 +10,18 @@ function get_photo($id , $pro){ // this function used to get img profile other i
     }
 
 
-    function in($i){    // this function used for virefy user to login any page
+    function in($i , $x){    // this function used for virefy user to login any page
         global $session;
     
         if ($i === 0){
             if(!$session->get_logged_in()){
-                go("index.php");
+                go("$x");
             }
         }
     
         if($i === 1){
             if($session->get_logged_in()){
-                go("home.php");
+                go("$x");
             }
         }
     
@@ -29,7 +29,9 @@ function get_photo($id , $pro){ // this function used to get img profile other i
     function go($url){ 
         header("location:{$url}");
         }
-        if(isset($_GET['logout'])){
+
+        
+    if(isset($_GET['logout'])){
             $session->logout();
             go("home.php");
         }

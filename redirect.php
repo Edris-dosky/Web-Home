@@ -1,4 +1,5 @@
-<?php require_once('includes/nav.php'); ?>
+<?php require_once('includes/nav.php'); 
+?>
     <div class=" w-full h-screen bg-gradient-to-r from-green-300 to-[#188F8D] bg-cover relative">
             <div class=" w-[700px] left-1/2 -translate-x-1/2 relative top-14 rounded-xl bg-slide pr-12 py-8 pl-6">
                             

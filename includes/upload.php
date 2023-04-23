@@ -30,7 +30,7 @@ class Upload extends Api{
          $fileExt = explode('.' , $image['name']);
          $fileActualExt = strtolower(end($fileExt));
          global $session;
-        if(empty($image) || !$image ||  !is_array($image) || empty($session->userid) || empty($this->title) || empty($this->details) || empty($this->price)){
+        if(empty($image) || !$image ||  !is_array($image) || empty($session->tell) || empty($this->title) || empty($this->details) || empty($this->price)){
             return  $this->fileError = $this->array_err[UPLOAD_ERR_NO_TMP_DIR];
         }else if($image['error'] != 0){
             return $this->fileError = $this->array_err[UPLOAD_ERR_PARTIAL];

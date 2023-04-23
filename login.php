@@ -1,6 +1,7 @@
 <?php
 require_once('includes/nav.php');
 require_once('includes/login.php'); 
+in(1 ,"home.php" );
 ?>
 
     <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
