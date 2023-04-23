@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="number" name="rooms" required placeholder="ژمارەی ژورەکان" class="input lg:col-span-1 sm:col-span-3 ">
                 <input type="email" name="email" value="<?php  echo $session->get_logged_in() ?$obj->email :""; ?>" required placeholder="ئیمایل ئەگەر هەبێ" class="input lg:col-span-2 ">
                 <textarea name="details" id="" placeholder="...... زانیاری زیاتر" cols="30" rows="10" class="input lg:col-span-6 h-52 p-3"></textarea>
-                <button type="reset" class="lg:col-span-3 input bg-orange-500 text-white text-center font-bold text-2xl sm:col-span-6">رەشکرندنەوە</button>
+                <button type="" class="lg:col-span-3 input bg-orange-500 text-white text-center font-bold text-2xl sm:col-span-6">رەشکرندنەوە</button>
                 
                 <button type="submit" class="lg:col-span-3 input bg-[#188F8D] text-white text-center font-bold text-2xl sm:col-span-6">ناردن</button>
                 <div class="mt-1 flex justify-center px-2 pt-2 pb-6 border-2 border-gray-300 border-dashed rounded-md">
