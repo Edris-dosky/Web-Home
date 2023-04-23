@@ -12,7 +12,7 @@ $all_data = Post::get_all(0);
              </div>
             <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php echo $row->price ?>$</span>
             <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->type;?> </span> 
-            <span class="text-right text-md py-4 "><?php echo $row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
+            <span class="text-right text-md py-4 "><?php echo $row->city ." - ".$row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">
                     <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />

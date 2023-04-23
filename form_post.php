@@ -1,13 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-    <title>Web Home</title>
-</head>
-<body class="font-display bg-blueGray-50 w-full">
+<?php
+
+use Random\Engine\Secure;
+
+include_once('includes/nav.php');
+in(0 ,"redirect.php" );
+?>
+
+
+<?php
+$err = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
+    {
+        $err=true;
+    }else{
+        $post->user_id = $obj->user_id ;
+        $post->name = $db->secure($_POST["name"]);
+        $post->tell = $db->secure($_POST["tell"]);
+        $post->price_type = $db->secure($_POST["price_type"]);
+        $post->price = $db->secure($_POST["price"]);
+        $post->area = $db->secure($_POST["area"]);
+        $post->type = $db->secure($_POST["type"]);
+        $post->location = $db->secure($_POST["location"]);
+        $post->city = $db->secure($_POST["city"]);
+        $post->recaptionroom = $db->secure($_POST["recaption"]);
+        $post->bathroom = $db->secure($_POST["bathroom"]);
+        $post->bedroom = $db->secure($_POST["bedroom"]);
+        $post->rooms = $db->secure($_POST["rooms"]);
+        $post->email = $db->secure($_POST["email"]);
+        $post->details = $db->secure($_POST["details"]);
+        $post->cadastral = $db->secure($_POST["cadastral"]);
+        $post->time = date("Y-m-d");
+        if ($post->create()==true){
+            go('home.php');
+        }else{
+            echo $post->create();
+        }
+    }
+}
+
+?>
+
 <section class=" py-1 bg-blueGray-50">
 <div class="w-full lg:w-8/12 px-4 mx-auto mt-6">
   <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -24,7 +58,7 @@
       </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-      <form>
+      <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST">
         <h6 class="text-right text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
           زانیاریەکانی خاوەن موڵک
         </h6>
@@ -34,7 +68,7 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ناو
               </label>
-              <input type="text" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="lucky.jesse">
+              <input type="text" name="name" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="<?php echo htmlspecialchars($_POST['name'] ?? $obj->username); ?>" >
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -42,7 +76,7 @@
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ژمارە مۆبایل
               </label>
-              <input type="tel" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="jesse@example.com">
+              <input type="tel" name="tell" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  value="<?php echo htmlspecialchars($_POST['tell'] ?? $obj->tell); ?>">
             </div>
           </div>
           <div class="w-full lg:w-12/12 px-4">
@@ -50,7 +84,7 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ئیمایلی خاوەن موڵک
               </label>
-              <input type="email" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Lucky">
+              <input type="email" name="email" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  value="<?php echo htmlspecialchars($_POST['email'] ?? $obj->email); ?>">
             </div>
           </div>
         </div>
@@ -60,7 +94,7 @@
             <h6 class="text-right text-blueGray-400 text-sm mt-4 mb-6 font-bold uppercase">
             :زانیاریەکانی موڵکەکە
             </h6>
-            <div class="flex items-center ml-4 lg:m-4"><input type="checkbox" required name="" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
+            <div class="flex items-center ml-4 lg:m-4"><input type="checkbox"  name="cadastral"  value="تاپۆکراوە" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
          </div>
         <div class="flex flex-row-reverse flex-wrap">
           <div class="w-6/12 lg:w-3/12 px-4">
@@ -68,7 +102,7 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 موڵک
               </label>
-              <select name="type" required id="" class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
+              <select name="type" required id="" value="<?php echo htmlspecialchars($_POST['type'] ?? ""); ?>" class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
                 <option value="" disabled selected>:جۆری موڵکەکەت</option>
                 <option value="کرێ">خانوو بۆ کرێ</option>
                 <option value="فرۆشتن">خانوو بۆ فرۆشتن</option>
@@ -81,7 +115,7 @@
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 روبەر
               </label>
-              <input type="number" placeholder="مەتر" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
+              <input type="number" name="area" placeholder="مەتر" value="<?php echo htmlspecialchars($_POST['area'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
             </div>
           </div>
           <div class="w-6/12 lg:w-3/12 px-4">
@@ -89,7 +123,7 @@
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 نرخ
               </label>
-              <input type="number" placeholder="دۆلار یان دینار"  class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="price" required placeholder="دۆلار یان دینار" value="<?php echo htmlspecialchars($_POST['price'] ?? ""); ?>"  class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-3/12 px-4">
@@ -97,7 +131,7 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 جۆری پارە
               </label>
-              <select name="price_type" required  value="" class="pr-8  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+              <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['price_type'] ?? ""); ?>" class="pr-8  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 <option value="" disabled selected>:دۆلار/دینار</option>
                 <option value="IQD">دینار</option>
                 <option value="$">دۆلار</option>
@@ -110,7 +144,7 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 شار
               </label>
-              <select name="city" required class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
+              <select name="city" required value="<?php echo htmlspecialchars($_POST['city'] ?? ""); ?>" class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
                 <option value="" disabled selected>شار</option>
                 <option value="هەولێر">هەولێر</option>
                 <option value="سلێمانی">سلێمانی</option>
@@ -130,7 +164,7 @@
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 شوێن
               </label>
-              <input type="text" placeholder="گەرەک/ناحیە" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
+              <input type="text" name="location" placeholder="گەرەک/ناحیە" value="<?php echo htmlspecialchars($_POST['location'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
             </div>
           </div>
           <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
@@ -138,13 +172,13 @@
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ژمارەی زورەکان
               </label>
-              <input type="number" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="rooms" value="<?php echo htmlspecialchars($_POST['rooms'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
             <div class="relative w-full mb-3">
                 <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                   ژوری دانیشتن
                 </label>
-                <input type="number" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+                <input type="number" name="recaption" value="<?php echo htmlspecialchars($_POST['recaption'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
               </div>
           </div>
           <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
@@ -152,13 +186,13 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ژوری خەوتن
               </label>
-              <input type="number"  class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Postal Code">
+              <input type="number" name="bedroom" value="<?php echo htmlspecialchars($_POST['bedroom'] ?? ""); ?>" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Postal Code">
             </div>
             <div class="relative w-full mb-3">
                 <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                   حەمام
                 </label>
-                <input type="number" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
+                <input type="number" name="bathroom" value="<?php echo htmlspecialchars($_POST['bathroom'] ?? ""); ?>" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
               </div>
           </div>
         </div>
@@ -174,23 +208,21 @@
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 زیاتر لەسەر موڵکەکە
               </label>
-              <textarea type="text" placeholder="زانیاری زیاتر لەسەو موڵکەکە بنووسە، ئەو زانیاریانەی بە پێویستی دەزانی کریار بیزانێ" class=" text-right border-0 px-3 py-3 placeholder-black-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"> </textarea>
+              <textarea type="text" name="details" value="<?php echo htmlspecialchars($_POST['details'] ?? ""); ?>" placeholder="زانیاری زیاتر لەسەو موڵکەکە بنووسە، ئەو زانیاریانەی بە پێویستی دەزانی کریار بیزانێ" class=" text-right border-0 px-3 py-3 placeholder-black-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"> </textarea>
             </div>
           </div>
         </div>
-        <hr class="mt-6 border-b-1 border-blueGray-300 mb-4">
+
         <div class="flex flex-wrap flex-row-reverse ">
             <div class="w-1/2 lg:w-8/12 px-4">
-            <button type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">ناردن</button>
+            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">ناردن</button>
             </div>
             <div class="w-1/2 lg:w-4/12 px-4">
             <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl ">سرینەوە</button>
             </div>
         </div>
       </form>
-      <div class="w-full text-center mt-5">
-      <span class=" my-4 text-red-500"></span>
-    </div>
+      <?php if($err){ echo '<h1 class="text-center text-red-500 text-2xl m-4"><script>window.alert("تکایە هەموو خانەکان پربکەوە")</script></h1>';}?>
     </div>
   </div>
 </div>
