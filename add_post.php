@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->rooms = $db->secure($_POST["rooms"]);
         $post->email = $db->secure($_POST["email"]);
         $post->details = $db->secure($_POST["details"]);
-        $post->user_ip = $db->secure($_SERVER['HTTP_USER_AGENT']);
+        $post->cadastral = $db->secure();
         if ($post->create()===true){
             go('home.php');
         }else{
@@ -108,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </label>
                     <p class="pl-1 text-black">وێنەیەکی خانوەکە دابنێ</p>
                   </div>
-
                 </div>
               </div>
             </form>

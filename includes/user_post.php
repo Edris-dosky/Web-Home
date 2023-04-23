@@ -16,10 +16,10 @@ class Post extends Api{
     public $recaptionroom ;
     public $time ;
     public $details;
-    public $user_ip;
+    public $cadastral;
     public $verify ;
     protected static $table = "`posts`";
-    protected static $columns= array('user_id','post_id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details','price_type','city','user_ip','verify');
+    protected static $columns= array('user_id','post_id','name','tell','email','area','location','price','type','bedroom','bathroom','recaptionroom','time','details','price_type','city','cadastral','verify');
 }
 $post = new Post();
 
