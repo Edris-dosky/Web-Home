@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($post->create()===true){
             go("home.php");
         }else{
-            echo "etttttttttttttttt";
+            echo "سەرکەوتوو نەبوو";
         }
     }
 }
