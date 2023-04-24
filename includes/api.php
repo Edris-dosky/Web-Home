@@ -54,7 +54,8 @@ class Api{
     public function create(){
         global $db ;
         $pro = $this->properties();
-        $db->query("INSERT INTO ".static::$table." (".implode(",",array_keys($pro)).") VALUES (".implode(",",array_values($pro)).")");
+        $execute = $db->query("INSERT INTO ".static::$table." (". implode(", ",array_keys($pro)).") VALUES (".implode(", " ,array_values($pro)) .")");
+        return $execute ? true : false ;
     }
 
     public function update(){
@@ -65,14 +66,15 @@ class Api{
         foreach ($pro as $key => $value) {
             $array[] = "`{$key}` = {$value}";
         }
-         $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE `post_id` = '$post_id' ");
-        
+        $execute = $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE `post_id` = '$post_id' ");
+        return $execute ? true : false ;
     }
     
     public function delete(){
         global $db ;
         $post_id = $db->secure($this->post_id);
         $execute = $db->query("DELETE FROM ".static::$table." WHERE `post_id` = $post_id");
+        return $execute ? true : false ;
     }
 
 }

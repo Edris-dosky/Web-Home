@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->details = $db->secure($_POST["details"]);
         $post->cadastral = $db->secure($_POST["cadastral"]);
         $post->time = date("Y-m-d");
-        if ($post->create()==true){
-            go('home.php');
+        if ($post->create()===true){
+            go("home.php");
         }else{
-            echo $post->create();
+            echo "etttttttttttttttt";
         }
     }
 }
