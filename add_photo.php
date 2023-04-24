@@ -9,54 +9,61 @@
 </head>
 <body class="font-display bg-zinc-100 w-full">
 <!-- component -->
-<div class="bg-gray-500 h-screen w-screen sm:px-8 md:px-16 sm:py-8">
+<div class=" h-screen w-screen sm:px-8 md:px-16 sm:py-8">
     <main class="container mx-auto max-w-screen-lg h-full">
       <!-- file upload modal -->
-      <article aria-label="File Upload Modal" class="relative h-full flex flex-col bg-white shadow-xl rounded-md" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);" ondragenter="dragEnterHandler(event);">
-        <!-- overlay -->
-        <div id="overlay" class="w-full h-full absolute top-0 left-0 pointer-events-none z-50 flex flex-col items-center justify-center rounded-md">
-          <i>
-            <svg class="fill-current w-12 h-12 mb-3 text-blue-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479-1.092l4 4h-3v4h-2v-4h-3l4-4z" />
+      <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" aria-label="File Upload Modal" class="relative h-full flex flex-col bg-white shadow-xl rounded-md" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);" ondragenter="dragEnterHandler(event);">
+        <div class=" mx-8 mt-4 flex justify-center px-2 pt-2 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+          <div class="space-y-1 text-center">
+            <svg class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-          </i>
-          <p class="text-lg text-blue-700">Drop files to upload</p>
+            <div class="flex text-sm text-gray-600">
+              <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                
+                <button id="button" class=" rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+                  دانانی وێنە
+                </button>
+              </label>
+              <p class="pl-1 text-black">وێنەیەکی دیوی دەرەوەی خانوەکە لێرە دابنێ</p>
+            </div>
+          </div>
         </div>
-
         <!-- scroll area -->
-        <section class="h-full overflow-auto p-8 w-full h-full flex flex-col">
+        <section class=" overflow-auto p-8 w-full h-full flex flex-col">
           <header class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
             <p class="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
-              <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
+              <span>تکایە هەندێ وێنەی تری خانوەکە لێرە دابنێ</span>
             </p>
             <input id="hidden-input" type="file" multiple class="hidden" />
             <button id="button" class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
-              Upload a file
+              دانانی وێنە
             </button>
           </header>
-
-          <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
-            To Upload
+          <div class="text-right">
+          <h1 class=" pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
+            :وێنەکان 
           </h1>
-
+        </div>
           <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
             <li id="empty" class="h-full w-full text-center flex flex-col items-center justify-center items-center">
               <img class="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
-              <span class="text-small text-gray-500">No files selected</span>
+              <span class="text-small text-gray-500">هیچ وێنەیەک دانەنراوە تا ئێستا </span>
             </li>
           </ul>
         </section>
 
         <!-- sticky footer -->
-        <footer class="flex justify-end px-8 pb-8 pt-4">
-          <button id="submit" class="rounded-sm px-3 py-1 bg-blue-700 hover:bg-blue-500 text-white focus:shadow-outline focus:outline-none">
-            Upload now
+        <footer class="flex justify-start gap-4 flex-row-reverse px-8 pb-8 pt-4">
+          <button id="submit" class="rounded-sm px-3 py-1 bg-[#188F8D] hover:bg-[#106564] text-white focus:shadow-outline focus:outline-none">
+            زەخیرەکردنی وێنەکان 
           </button>
-          <button id="cancel" class="ml-3 rounded-sm px-3 py-1 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
-            Cancel
-          </button>
+          
+          <a href="home.php" id="cancel" class="ml-3 rounded-sm px-3 py-1 bg-gray-100 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+            پاشگەزبونەوە
+          </a>
         </footer>
-      </article>
+      </form>
     </main>
   </div>
 
@@ -235,29 +242,3 @@ gallery.append(empty);
 };
 
 </script>
-
-<style>
-.hasImage:hover section {
-background-color: rgba(5, 5, 5, 0.4);
-}
-.hasImage:hover button:hover {
-background: rgba(5, 5, 5, 0.45);
-}
-
-#overlay p,
-i {
-opacity: 0;
-}
-
-#overlay.draggedover {
-background-color: rgba(255, 255, 255, 0.7);
-}
-#overlay.draggedover p,
-#overlay.draggedover i {
-opacity: 1;
-}
-
-.group:hover .group-hover\:text-blue-800 {
-color: #2b6cb0;
-}
-</style>

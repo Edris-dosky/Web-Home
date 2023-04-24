@@ -53,7 +53,7 @@ $obj= User::get_one("`tell`='$tell'");
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="#">دەربارەی ئێمە</a></li>
+			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="add_photo.php">دەربارەی ئێمە</a></li>
 		</ul>
 		<?php if(!$session->get_logged_in()){?>
 		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="login.php">چونەژوەوە</a>
