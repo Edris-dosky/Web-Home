@@ -2531,6 +2531,11 @@ video {
   background-color: rgb(228 228 231 / var(--tw-bg-opacity));
 }
 
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -3218,6 +3223,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 .underline {
