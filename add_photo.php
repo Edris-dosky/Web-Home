@@ -28,10 +28,7 @@ if(file_exists('FILE'))
             </svg>
             <div class="flex text-sm text-gray-600">
               <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                
-                <button  class=" rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
-                  دانانی وێنە
-                </button>
+
               </label>
               <p class="pl-1 text-black">وێنەیەکی دیوی دەرەوەی خانوەکە لێرە دابنێ</p>
             </div>
@@ -237,8 +234,6 @@ if (target.classList.contains("delete")) {
 document.getElementById("submit").onclick = () => {
 alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
 console.log(FILES);
-let xhr = new XMLHttpRequest();
-xhr.open('POST', 'add_photo.php')
 };
 
 // clear entire selection
