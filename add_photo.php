@@ -2,18 +2,7 @@
 <?php
 require_once('includes/nav.php');
 in(0 ,"redirect.php" );
-if(file_exists('FILE'))
-{
-	$filename = 'file.json';
-	$data = file_get_contents($filename); //data read from json file
-	print_r($data);
-	$users = json_decode($data);  //decode a data
 
-	print_r($users); //array format data printing
-	 $message = "<h3 class='text-success'>JSON file data</h3>";
-}else{
-	 $message = "<h3 class='text-danger'>JSON file Not found</h3>";
-}
  ?>
 
 <div class=" h-screen w-screen sm:px-8 md:px-16 sm:py-8">
