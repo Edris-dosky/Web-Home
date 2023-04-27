@@ -3,6 +3,11 @@
 require_once('includes/nav.php');
 in(0 ,"redirect.php" );
 
+$jsonstr = $_POST["jsonstr"];
+$data = json_decode($jsonstr,true); // if you want $data to be an array
+echo $data['firstName']; // Jon
+echo $data['lastName']; // Smith
+echo $data['age']; // 24
  ?>
 
 <div class=" h-screen w-screen sm:px-8 md:px-16 sm:py-8">
@@ -17,7 +22,8 @@ in(0 ,"redirect.php" );
             </svg>
             <div class="flex text-sm text-gray-600">
               <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-
+              <span class="">Upload a file</span>
+                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
               </label>
               <p class="pl-1 text-black">وێنەیەکی دیوی دەرەوەی خانوەکە لێرە دابنێ</p>
             </div>
@@ -221,8 +227,7 @@ if (target.classList.contains("delete")) {
 
 // print all selected files
 document.getElementById("submit").onclick = () => {
-alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
-console.log(FILES);
+
 };
 
 // clear entire selection
@@ -234,5 +239,16 @@ FILES = {};
 empty.classList.remove("hidden");
 gallery.append(empty);
 };
+
+
+var data = {
+    firstName: "Jon",
+    lastName: "Smith",
+    age: 24
+};
+var myJSON = JSON.stringify(data); 
+xhttp.open("POST", "add_photo.php", true); // setting the third parameter to 'true' make the ajax call asynchronous, remove that if you want a synchronous request
+xhttp.setRequestHeader("Content-type", "application/json");
+xhttp.send("jsonstr=myJSON"); 
 
 </script>
