@@ -8,15 +8,16 @@
     <title>Web Home</title>
 </head>
 <body class="font-display bg-zinc-100 w-full">
-    <form class="h-screen font-sans text-gray-900 border-box">
-        <div class="flex flex-col justify-center w-full mx-auto sm:max-w-lg">
+    <form class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
+        <div class="container mx-auto flex flex-wrap justify-center flex-row-reverse">
+        <div class="flex justify-center w-full  sm:max-w-lg">
     
-            <div class="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
+            <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl font-semibold mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
+                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
                     <p class="text-xs text-gray-500">تکایە با وێنەکە دیوی دەرەوەی خانوەکە بێت</p>
                 </div>
-                <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner">
+                <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload" class="hidden">
                     <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
                         <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
@@ -25,22 +26,40 @@
                           </svg>
                     </label>
                 </div>
-                <hr class="mt-6 border-b-1 border-blueGray-500">
+            </div>
+        </div>
+        <div class="flex  justify-center w-full  sm:max-w-lg">
+            <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl font-semibold mb-2">Upload your files</h2>
-                    <p class="text-xs text-gray-500">File should be of format .mp4, .avi, .mov or .mkv</p>
+                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
+                    <p class="text-xs text-gray-500">تکایە با وێنەکە دیوی دەرەوەی خانوەکە بێت</p>
                 </div>
-                <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner">
+                <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload" class="hidden">
                     <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
-                        <p class="z-10 text-xs font-light text-center text-gray-500">Drag & Drop your files here</p>
-                        <svg class="z-10 w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
+                        <svg class="mx-auto h-12 w-12 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
                         </svg>
                     </label>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container mx-auto w-full sm:w-[895px] ">
+        <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:rounded-lg sm:shadow-xl">
+         <h2 class="text-2xl my-4 mb-2"> تایبەتماندیەکانی خانوەکە</h2>
+         <div class="flex flex-wrap ">
+            <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
+                    <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
+                    <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                      </img>
+                      
+                
+            </div>
+         </div>
+        </div>
+    </div>
     </form>
     
 </body>
