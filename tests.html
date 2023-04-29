@@ -49,17 +49,16 @@
     <div class="container mx-auto w-full sm:w-[895px] ">
         <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:rounded-lg sm:shadow-xl">
          <h2 class="text-2xl my-4 mb-2"> تایبەتماندیەکانی خانوەکە</h2>
-         <div class="flex flex-wrap ">
-            <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
-                    <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
+         <div class="flex flex-wrap " onclick="on('input')" id="card">
+            <div  class="relative m-2 w-1/5 h-32 max-w-xs bg-blueGray-200 rounded-lg shadow-inner">
                     <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                       </img>
-                      <div class="flex items-center ml-4 lg:m-4"><input type="checkbox"  name="cadastral"  value="تاپۆکراوە" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
-                
+                      <div class="flex flex-col-reverse items-center ml-4 lg:m-4"><input type="checkbox"  id="input" name="cadastral"  value="تاپۆکراوە" class="w-5 h-5 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
+                eeee
             </div>
 
             <div class="flex flex-wrap ">
-                <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
+                <div  class="relative w-1/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                         <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
                         <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                           </img>
@@ -68,7 +67,7 @@
                 </div>
 
                 <div class="flex flex-wrap ">
-                    <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
+                    <div  class="relative w-1/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                             <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
                             <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                               </img>
@@ -76,11 +75,11 @@
                         
                     </div>
                     <div class="flex flex-wrap ">
-                        <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
+                        <div  class="relative w-1/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                                 <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
                                 <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                                   </img>
-                                  <div class="flex items-center ml-4 lg:m-4"><input type="checkbox"  name="cadastral"  value="تاپۆکراوە" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
+                                  <div class="flex flex-col-reverse  items-center ml-4 lg:m-4"><input type="checkbox"  name="cadastral"  value="تاپۆکراوە" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
                             
                         </div>
          </div>
@@ -89,3 +88,10 @@
     </form>
     
 </body>
+<script>
+    
+    function on( $input){
+        document.getElementById("$input").checked = true
+        
+    }
+</script>
