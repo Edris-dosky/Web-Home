@@ -15,7 +15,7 @@
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
                     <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
-                    <p class="text-xs text-gray-500">تکایە با وێنەکە دیوی دەرەوەی خانوەکە بێت</p>
+                    <p class="text-xs text-gray-600">تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload" class="hidden">
@@ -31,13 +31,13 @@
         <div class="flex  justify-center w-full  sm:max-w-lg">
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
-                    <p class="text-xs text-gray-500">تکایە با وێنەکە دیوی دەرەوەی خانوەکە بێت</p>
+                    <h2 class="text-2xl mb-2">چەند وێنەیەکی تری موڵکەکە</h2>
+                    <p class="text-xs text-gray-600">تکایە تا بکرێ با وێنەکان بە باری پانی گیرابن</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload" class="hidden">
                     <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
-                        <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
+                        <p class="z-10 text-xs font-light text-center text-black">وێنەکان لێرە دابنێ</p>
                         <svg class="mx-auto h-12 w-12 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
                         </svg>
@@ -47,18 +47,54 @@
         </div>
     </div>
     <div class="container mx-auto w-full sm:w-[895px] ">
-        <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:rounded-lg sm:shadow-xl">
-         <h2 class="text-2xl my-4 mb-2"> تایبەتماندیەکانی خانوەکە</h2>
+        <div class=" w-full h-auto mt-8 pt-2 bg-white sm:rounded-lg sm:shadow-xl">
+        <h2 class="text-2xl text-right m-4 mb-8">: تایبەتماندیەکانی خانوەکە</h2>
+         <div class="flex flex-row-reverse flex-wrap items-center justify-center">
 
-         <div class="flex flex-wrap  " onclick="on('input')" id="card"> 
+            <div class="flex cursor-pointer " onclick="on('input2','mark2')" > 
+                <div  class="relative m-2 w-32 h-32 max-w-xs bg-blueGray-200 rounded-lg shadow-inner">
+                    <div class="flex justify-between items-center ml-4 m-4">
+                        <img src="assets/img/mark.svg" id="mark2" style="visibility: hidden; " width="30px" alt="">
+                        <input type="checkbox"  id="input2" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                        <label  class="block ml-2 text-sm text-black">تاپۆکراو</label>
+                    </div>
+                        <img src="/Web-Home/assets/img/cadastral.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                </div>
+             </div>
+         <div class="flex cursor-pointer " onclick="on('input1','mark1')" > 
             <div  class="relative m-2 w-32 h-32 max-w-xs bg-blueGray-200 rounded-lg shadow-inner">
-                <div class="flex justify-between items-center ml-4 lg:m-4">
-                    <input type="checkbox"  id="input" name="cadastral"  value="تاپۆکراوە" class="w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                <div class="flex justify-between items-center ml-4 m-4">
+                    <img src="assets/img/mark.svg" id="mark1" style="visibility: hidden; " width="30px" alt="">
+                    <input type="checkbox"  id="input1" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm text-black">باڵەکۆن</label>
                 </div>
                     <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
+        
+         <div class="flex cursor-pointer " onclick="on('input3','mark3')" > 
+            <div  class="relative m-2 w-32 h-32 max-w-xs bg-blueGray-200 rounded-lg shadow-inner">
+                <div class="flex justify-between items-center ml-4 m-4">
+                    <img src="assets/img/mark.svg" id="mark3" style="visibility: hidden; " width="30px" alt="">
+                    <input type="checkbox"  id="input3" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <label  class="block ml-2 text-sm text-black">سەوزای</label>
+                </div>
+                    <img src="/Web-Home/assets/img/trees_1.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+            </div>
+         </div>
+
+         <div class="flex cursor-pointer " onclick="on('input4','mark4')" > 
+            <div  class="relative m-2 w-32 h-32 max-w-xs bg-blueGray-200 rounded-lg shadow-inner">
+                <div class="flex justify-between items-center ml-4 m-4">
+                    <img src="assets/img/mark.svg" id="mark4" style="visibility: hidden; " width="30px" alt="">
+                    <input type="checkbox"  id="input4" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <label  class="block ml-2 text-sm text-black">راخراو</label>
+                </div>
+                    <img src="/Web-Home/assets/img/living-room-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+            </div>
+         </div>
+
+        </div>
         </div>
     </div>
     </form>
@@ -67,11 +103,14 @@
 </html>
 <script>
     
-    function on($input){
-        var x = document.getElementById($input);
-        
-        x.checked = true;
-    
-        
+    function on($input ,$mark1){
+        var input = document.getElementById($input);
+        if (input.checked == false){
+        document.getElementById($mark1).style.visibility="visible";
+        input.checked = true;
+        }else{
+        document.getElementById($mark1).style.visibility="hidden";
+        input.checked = false;
+        }
     }
 </script>
