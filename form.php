@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->cadastral = $db->secure($_POST["cadastral"]);
         $post->time = date("Y-m-d");
         if ($post->create()===true){
-            go("home.php");
+            go("form2.php");
+
         }else{
             echo "سەرکەوتوو نەبوو";
         }
