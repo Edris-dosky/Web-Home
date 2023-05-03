@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-    <title>Web Home</title>
-</head>
-<body class="font-display bg-zinc-50 w-full" id="body">
+<?php
+include_once('includes/nav.php');
+in(0 ,"redirect.php" );
+?>
     <form class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
         <div class="container mx-auto flex flex-wrap justify-center flex-row-reverse">
         <div class="flex justify-center w-full  sm:max-w-lg">
