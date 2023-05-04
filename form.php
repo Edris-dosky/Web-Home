@@ -95,7 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h6 class="text-right text-blueGray-400 text-sm mt-4 mb-6 font-bold uppercase">
             :زانیاریەکانی موڵکەکە
             </h6>
-            <div class="flex items-center ml-4 lg:m-4"><input type="checkbox"  name="cadastral"  value="تاپۆکراوە" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"><label  class="block ml-2 text-sm text-gray-900">ئایە موڵکەکە تاپۆکراوە ؟</label></div>
          </div>
         <div class="flex flex-row-reverse flex-wrap">
           <div class="w-6/12 lg:w-3/12 px-4">

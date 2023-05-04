@@ -2,7 +2,15 @@
 include_once('includes/nav.php');
 in(0 ,"redirect.php" );
 ?>
-    <form class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
+
+<?php 
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+echo $_POST['park'];
+}
+?>
+    <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
         <div class="container mx-auto flex flex-wrap justify-center flex-row-reverse">
         <div class="flex justify-center w-full  sm:max-w-lg">
     
@@ -57,7 +65,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input1','mark1')" > 
             <div id="mark1"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input1" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input1" name="balacony"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">باڵەکۆن</label>
                 </div>
                     <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -67,7 +75,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input3','mark3')" > 
             <div id="mark3"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input3" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input3" name="tree"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">سەوزای</label>
                 </div>
                     <img src="/Web-Home/assets/img/trees_1.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -77,7 +85,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input4','mark4')" > 
             <div id="mark4"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input4" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input4" name="ready"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">راخراو</label>
                 </div>
                     <img src="/Web-Home/assets/img/living-room-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -87,7 +95,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input5','mark5')" > 
             <div id="mark5"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input5" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input5" name="electricity"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کارەبای بەردەوام</label>
                 </div>
                     <img src="/Web-Home/assets/img/electricity-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -97,7 +105,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input6','mark6')" > 
             <div id="mark6"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input6" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input6" name="clothesroom"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">ژوری جلگۆرین</label>
                 </div>
                     <img src="/Web-Home/assets/img/wardrobe-mirror-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -107,7 +115,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input7','mark7')" > 
             <div id="mark7"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input7" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input7" name="swimming"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">مەلەوانگە</label>
                 </div>
                     <img src="/Web-Home/assets/img/swimming-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -117,7 +125,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input8','mark8')" > 
             <div id="mark8"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input8" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input8" name="camera"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کامێرای چاودێری</label>
                 </div>
                     <img src="/Web-Home/assets/img/security-protection-camera-cctv-video-crime-cyber-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -127,7 +135,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input9','mark9')" > 
             <div id="mark9"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input9" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input9" name="security"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کارمەندی سیکورتی</label>
                 </div>
                     <img src="/Web-Home/assets/img//security-guard-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -137,7 +145,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input11','mark11')" > 
             <div id="mark11"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input11" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input11" name="garage"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">گەراجی ئۆتۆمبێل</label>
                 </div>
                     <img src="/Web-Home/assets/img//parked-car-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -147,7 +155,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input22','mark22')" > 
             <div id="mark22"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input22" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input22" name="park"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">پارک</label>
                 </div>
                     <img src="/Web-Home/assets/img//park-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -157,7 +165,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input33','mark33')" > 
             <div id="mark33"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input33" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input33" name="gym"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">هۆڵی لەشجوانی</label>
                 </div>
                     <img src="/Web-Home/assets/img/dumbell-gym-healthy-life-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -167,7 +175,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input44','mark44')" > 
             <div id="mark44"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input44" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input44" name="market"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">مارکێتی نزیک</label>
                 </div>
                     <img src="/Web-Home/assets/img//coffee-shop-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -176,7 +184,7 @@ in(0 ,"redirect.php" );
          <div class="flex cursor-pointer " onclick="on('input45','mark45')" > 
             <div id="mark45"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input45" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <input type="checkbox"  id="input45" name="angles"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">روکن</label>
                 </div>
                     <img src="/Web-Home/assets/img/road-highway-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
