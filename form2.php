@@ -6,7 +6,7 @@ in(0 ,"redirect.php" );
 <?php 
 $DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','Swimming','camera','security',
 'garage','park','gym','market','angles'); // this array used get property name and input name becouse both have a same name
-
+$img_pro = $imgs = array();
 
 $PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -15,10 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $PostData->$name = 1 ;
         }
     }
-    $PostData->update();
+    
+        // print_r($_FILES['profileimg']);
+        $files = array_filter($_FILES['imgs']['name']);
+        print_r($files);
+        $total = count($_FILES['imgs']['name']);
+        echo $total;
 }
 ?>
-    <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
+    <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
         <div class="container mx-auto flex flex-wrap justify-center flex-row-reverse">
         <div class="flex justify-center w-full  sm:max-w-lg">
     
@@ -28,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p class="text-xs text-gray-600">تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
-                    <input type="file" id="file-upload" class="hidden">
-                    <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
+                    <input type="file" id="file-upload2" name="profileimg" multiple class="hidden">
+                    <label for="file-upload2" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
                         <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
                         <svg class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -45,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p class="text-xs text-gray-600">تکایە تا بکرێ با وێنەکان بە باری پانی گیرابن</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
-                    <input type="file" id="file-upload" class="hidden">
-                    <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
+                    <input type="file" id="file-upload1" name="imgs[]" multiple class="hidden">
+                    <label for="file-upload1" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
                         <p class="z-10 text-xs font-light text-center text-black">وێنەکان لێرە دابنێ</p>
                         <svg class="mx-auto h-12 w-12 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
