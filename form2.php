@@ -4,11 +4,18 @@ in(0 ,"redirect.php" );
 ?>
 
 <?php 
+$DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','Swimming','camera','security',
+'garage','park','gym','market','angles'); // this array used get property name and input name becouse both have a same name
+
+
 $PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if($_POST['cadastral']==1){
-    $PostData->cadastral = $_POST['cadastral'];
+    foreach($DataName as $name ){
+        if(!empty($_POST["$name"])){
+            $PostData->$name = 1 ;
+        }
     }
+    $PostData->update();
 }
 ?>
     <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
