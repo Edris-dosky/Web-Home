@@ -7,11 +7,16 @@ in(0 ,"redirect.php" );
 $DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','Swimming','camera','security',
 'garage','park','gym','market','angles'); // this array used get property name and input name becouse both have a same name
 $img_pro = $imgs = array();
-$err1 = "";
-$err2 = "";
+$err1 = $err2 = "";
 $PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
+if($PostData->type == "فرۆشتن" ||$PostData->type == "کرێ" ){
+    $type = true;
+}else{
+    $type = false;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    foreach($DataName as $name ){
+    foreach($DataName as $name ){ 
         if(!empty($_POST["$name"])){
             $PostData->$name = 1 ;
         }
@@ -62,8 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  موڵکەکە</h2>
-                    <p class="text-xs text-gray-600">تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت</p>
+                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  <?php echo $type?"خانوەکە":"ئەرزەکە" ;?></h2>
+                    <p class="text-xs text-gray-600"><?php if($type){echo "تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت";}else{echo "تکایە وێنەی سەر نەخشەی ئەرزەکە دابنێ";} ?> </p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload2" name="proimg" class="hidden">
@@ -80,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="flex  justify-center w-full  sm:max-w-lg">
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl mb-2">چەند وێنەیەکی تری موڵکەکە</h2>
+                    <h2 class="text-2xl mb-2">چەند وێنەیەکی تری <?php echo $type?"خانوەکە":"ئەرزەکە" ;?></h2>
                     <p class="text-xs text-gray-600">تکایە تا بکرێ با وێنەکان بە باری پانی گیرابن</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
@@ -98,9 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     <div class="container mx-auto w-full sm:w-[895px] ">
         <div class=" w-full h-auto mt-8 pt-2 pb-5 bg-white sm:rounded-lg sm:shadow-xl">
-        <h2 class="text-2xl text-right m-4 mb-8">: تایبەتماندیەکانی خانوەکە</h2>
+        <h2 class="text-2xl text-right m-4 mb-8">: تایبەتماندیەکانی <?php echo $type?"خانوەکە":"ئەرزەکە" ;?></h2>
          <div class="flex flex-row-reverse flex-wrap items-center justify-center">
-
+        <?php if($type){ ?>
             <div class="flex cursor-pointer " onclick="on('input2','mark2')" > 
                 <div id="mark2"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                     <div class="flex justify-center items-center m-4">
@@ -110,6 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <img src="/Web-Home/assets/img/cadastral.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
                 </div>
              </div>
+
          <div class="flex cursor-pointer " onclick="on('input1','mark1')" > 
             <div id="mark1"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
