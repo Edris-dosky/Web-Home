@@ -3,16 +3,14 @@
 use Upload as GlobalUpload;
 
 class Upload extends Api{
-    protected static $table_name = "photos"; 
-    protected static $columns = array('post_id' , 'userid' ,'title' , 'details','price','fileName');
+    protected static $table = "photos"; 
+    protected static $columns = array('photo_id' , 'post_id' ,'fileName' , 'profile');
+    public $photo_id;
     public $post_id;
-    public $userid;
-    public $title;
-    public $details;
-    public $price;
+    public $profile;
     public $fileName;
     public $fileTmpName;
-    public $direction = "Web-Home\assets\upload/";
+    public $direction = "./upload/";
     public $fileError = array();
     public $array_err = array(
         UPLOAD_ERR_OK  =>  "ئەپلۆد کرا",
@@ -26,26 +24,26 @@ class Upload extends Api{
     );
 
     public function set_image($image){
-         $fileAlow = array('png' , 'jpg' , 'jpeg');
+         $fileAlow = array('png' , 'jpg' , 'jpeg' ,'svg');
          $fileExt = explode('.' , $image['name']);
          $fileActualExt = strtolower(end($fileExt));
          global $session;
-        if(empty($image) || !$image ||  !is_array($image) || empty($session->tell) || empty($this->title) || empty($this->details) || empty($this->price)){
+        if(empty($image) || !$image ||  !is_array($image) || empty($session->tell)){
             return  $this->fileError = $this->array_err[UPLOAD_ERR_NO_TMP_DIR];
         }else if($image['error'] != 0){
             return $this->fileError = $this->array_err[UPLOAD_ERR_PARTIAL];
         }else if(!in_array($fileActualExt,$fileAlow)){
             return $this->fileError = $this->array_err[UPLOAD_ERR_EXTENSION];
         }else{
-            $this->fileName = rand().rand().rand().$image['name'];
+            $this->fileName = rand().rand().rand().($image['name']);
             $this->fileTmpName = $image['tmp_name'];
             return true;
         }
     }
     public function save(){
 
-        if($this->post_id){
-            $this->update();   
+        if($this->photo_id){
+            $this->update(); 
         }else{
         
             if(!empty($this->fileError)){

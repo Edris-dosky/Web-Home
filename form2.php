@@ -15,12 +15,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $PostData->$name = 1 ;
         }
     }
-    
-        // print_r($_FILES['profileimg']);
-        $files = array_filter($_FILES['imgs']['name']);
-        print_r($files);
-        $total = count($_FILES['imgs']['name']);
-        echo $total;
+
+    $upload->post_id = $PostData->post_id ;
+    if(!empty($_FILES['imgs'])){
+        $upload->profile = 'n';
+        function reArrayFiles(&$file_post ,$file_count,$isMulti ){
+            $file_keys    = array_keys($file_post);
+            $file_ary    = [];    
+            for($i=0; $i<$file_count; $i++)
+                foreach($file_keys as $key)
+                    if($isMulti)
+                        $file_ary[$i][$key] = $file_post[$key][$i];
+                    else
+                        $file_ary[$i][$key]    = $file_post[$key];
+        
+            return $file_ary;
+        }
+
+        $isMulti    = is_array($_FILES['imgs']['name']);
+        $file_count    = $isMulti?count($_FILES['imgs']['name']):1;
+        $file_ary = reArrayFiles($_FILES['imgs'],$file_count,$isMulti);
+        for($i=0; $i<$file_count; $i++){
+            $upload->set_image($file_ary["$i"]);
+
+            if($upload->save() === true){
+            echo "yeeeeeeeeeeees";
+                }else{
+                    echo "wwwwwwwwwwww".$upload->save();
+                }
+        }
+    }
 }
 ?>
     <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
@@ -33,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p class="text-xs text-gray-600">تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
-                    <input type="file" id="file-upload2" name="profileimg" multiple class="hidden">
+                    <input type="file" id="file-upload2" name="proimg" class="hidden">
                     <label for="file-upload2" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
                         <p class="z-10 text-xs font-light text-center text-black">وێنەکە لێرە دابنێ</p>
                         <svg class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
