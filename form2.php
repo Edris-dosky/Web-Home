@@ -7,7 +7,8 @@ in(0 ,"redirect.php" );
 $DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','Swimming','camera','security',
 'garage','park','gym','market','angles'); // this array used get property name and input name becouse both have a same name
 $img_pro = $imgs = array();
-
+$err1 = "";
+$err2 = "";
 $PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     foreach($DataName as $name ){
@@ -17,7 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $upload->post_id = $PostData->post_id ;
-    if(!empty($_FILES['imgs'])){
+
+    if($_FILES['proimg']){
+        $upload->profile = 'y';
+        $upload->set_image($_FILES['proimg']);
+        if($upload->save() === true){
+        }else{
+            $err1 =  $upload->save();
+        }
+    }
+    if($_FILES['imgs']){
         $upload->profile = 'n';
         function reArrayFiles(&$file_post ,$file_count,$isMulti ){
             $file_keys    = array_keys($file_post);
@@ -39,9 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $upload->set_image($file_ary["$i"]);
 
             if($upload->save() === true){
-            echo "yeeeeeeeeeeees";
                 }else{
-                    echo "wwwwwwwwwwww".$upload->save();
+                    $err2 =  $upload->save();
                 }
         }
     }
@@ -63,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <svg class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
+                          <p class="z-10 text-s mb-2 text-center text-red-500"><?php echo $err1 ?></p>
                     </label>
                 </div>
             </div>
@@ -80,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <svg class="mx-auto h-12 w-12 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
                         </svg>
+                        <p class="z-10 text-s mb-2 text-center text-red-500"><?php echo $err2 ?></p>
                     </label>
                 </div>
             </div>
