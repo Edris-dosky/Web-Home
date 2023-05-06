@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->type = $db->secure($_POST["type"]);
         $post->location = $db->secure($_POST["location"]);
         $post->city = $db->secure($_POST["city"]);
+        $post->price_type = $db->secure($_POST["price_type"]);
         $post->recaptionroom = $db->secure($_POST["recaption"]);
         $post->bathroom = $db->secure($_POST["bathroom"]);
         $post->bedroom = $db->secure($_POST["bedroom"]);
@@ -133,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 جۆری پارە
               </label>
-              <select name="pre_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+              <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 <option value="" disabled selected>:دۆلار/دینار</option>
                 <option value="$">دۆلار</option>
                 <option value="دینار">دینار</option>
