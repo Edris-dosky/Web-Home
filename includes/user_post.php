@@ -32,10 +32,11 @@ class Post extends Api{
     public $gym ;
     public $market ;
     public $angles ;
+    public $price_type;
     protected static $table = "`posts`";
     protected static $columns= array(
     'user_id','post_id','name','tell','email','area','location','price','type','rooms','bedroom','bathroom','recaptionroom','time','details','pre_type','city','cadastral','verify',
-    'balacony','tree','ready','electricity','clothesroom','Swimming','camera','security','garage','park','gym','market','angles'
+    'balacony','tree','ready','electricity','clothesroom','Swimming','camera','security','garage','park','gym','market','angles','price_type'
 );
 }
 $post = new Post();
