@@ -61,7 +61,7 @@ $obj= User::get_one("`tell`='$tell'");
 		<?php }else{ ?>
         <a href="profile.php" class=" hidden lg:flex mr-3 text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
 			<?php if($obj->photo){ ?>
-             <img class="w-10 h-10 rounded-full" src="/Web-Home/assets/upload/<?php echo $obj->photo ?>"  alt="user photo"> 
+             <img class="w-10 h-10 rounded-full" src="/Web-Home/upload/<?php echo $obj->photo ?>"  alt="user photo"> 
 			 <?php }else{ ?>
             <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl  flex items-center justify-center text-[#188F8D]">
                 <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
@@ -83,7 +83,7 @@ $obj= User::get_one("`tell`='$tell'");
 				<?php }else{ ?>
 				<a href="profile.php" class=" flex mr-3 pl-2 pr-4 py-[3px] text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
 				<?php if($obj->photo){ ?>
-                    <img class="w-10 h-10 rounded-full" src="/Web-Home/assets/upload/<?php echo $obj->photo ?>" alt="user photo"> <span class="text-center mt-2 mx-4"><?php echo $obj->username ; ?></span> 
+                    <img class="w-10 h-10 rounded-full" src="/Web-Home/upload/<?php echo $obj->photo ?>" alt="user photo"> <span class="text-center mt-2 mx-4"><?php echo $obj->username ; ?></span> 
 					<?php }else{ ?>
                     <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl  flex items-center justify-center text-[#188F8D]">
                         <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">

@@ -5,7 +5,7 @@ function get_photo($id , $pro){ // this function used to get img profile other i
     if(!$photo){
         echo "house.jpg";
     }else{
-        echo $photo->photo ;
+        echo $photo->fileName ;
     }
     }
 

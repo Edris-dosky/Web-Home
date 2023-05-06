@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->user_id = $obj->user_id ;
         $post->name = $db->secure($_POST["name"]);
         $post->tell = $db->secure($_POST["tell"]);
-        $post->price_type = $db->secure($_POST["price_type"]);
+        $post->pre_type = $db->secure($_POST["pre_type"]);
         $post->price = $db->secure($_POST["price"]);
         $post->area = $db->secure($_POST["area"]);
         $post->type = $db->secure($_POST["type"]);
@@ -129,12 +129,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="w-6/12 lg:w-3/12 px-4">
             <div class="relative w-full mb-3">
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                جۆری پارە
+                جۆری خستنەرو
               </label>
-              <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['price_type'] ?? ""); ?>" class="pr-8  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                <option value="" disabled selected>:دۆلار/دینار</option>
-                <option value="IQD">دینار</option>
-                <option value="$">دۆلار</option>
+              <select name="pre_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="pr-8  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                <option value="" disabled selected>:کرێ/فرۆشتن</option>
+                <option value="کرێ">کرێ</option>
+                <option value="فرۆشتن">فرۆشتن</option>
              </select>
              
             </div>

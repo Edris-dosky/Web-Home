@@ -9,7 +9,7 @@ class Post extends Api{
     public $location ;
     public $city;
     public $price ;
-    public $price_type;
+    public $pre_type;
     public $type ;
     public $rooms ;
     public $bedroom ;
