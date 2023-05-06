@@ -11,7 +11,7 @@ in(0 ,"redirect.php" );
 $err = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["price_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"])||empty($_POST["recaption"])||empty($_POST["bathroom"])||empty($_POST["rooms"])||empty($_POST["bedroom"]))
+    if(empty($_POST["name"])||empty($_POST["tell"])||empty($_POST["pre_type"])||empty($_POST["area"])||empty($_POST["price"])||empty($_POST["type"])||empty($_POST["location"])||empty($_POST["city"]))
     {
         $err=true;
     }else{
@@ -99,13 +99,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="flex flex-row-reverse flex-wrap">
           <div class="w-6/12 lg:w-3/12 px-4">
             <div class="relative w-full mb-3">
-              <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+              <label for="type"  class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2">
                 موڵک
               </label>
-              <select name="type" required id="" value="<?php echo htmlspecialchars($_POST['type'] ?? ""); ?>" class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
+              <select name="type" required id="type" value="<?php echo htmlspecialchars($_POST['type'] ?? ""); ?>" class="pr-4 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
                 <option value="" disabled selected>:جۆری موڵکەکەت</option>
-                <option value="کرێ">خانوو بۆ کرێ</option>
-                <option value="فرۆشتن">خانوو بۆ فرۆشتن</option>
+                <option value="خانوو">خانوو</option>
+                <option value="شوقە">شوقە</option>
                 <option value="ئەرز">ئەرز</option>
             </select>
             </div>
@@ -126,25 +126,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <input type="number" name="price" required placeholder="دۆلار یان دینار" value="<?php echo htmlspecialchars($_POST['price'] ?? ""); ?>"  class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
-          <div class="w-6/12 lg:w-3/12 px-4">
+    
+
+          <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
             <div class="relative w-full mb-3">
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                جۆری پارە
+              </label>
+              <select name="pre_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                <option value="" disabled selected>:دۆلار/دینار</option>
+                <option value="$">دۆلار</option>
+                <option value="دینار">دینار</option>
+             </select>
+            </div>
+            <div class="relative w-full mb-3">
+            <label for="pre_type" class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 جۆری خستنەرو
               </label>
-              <select name="pre_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="pr-8  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+              <select name="pre_type" id="pre_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 <option value="" disabled selected>:کرێ/فرۆشتن</option>
                 <option value="کرێ">کرێ</option>
                 <option value="فرۆشتن">فرۆشتن</option>
              </select>
-             
-            </div>
+              </div>
           </div>
+
+
           <div class="w-6/12 lg:w-3/12 px-4">
             <div class="relative w-full mb-3">
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 شار
               </label>
-              <select name="city" required value="<?php echo htmlspecialchars($_POST['city'] ?? ""); ?>" class="pr-8 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
+              <select name="city" required value="<?php echo htmlspecialchars($_POST['city'] ?? ""); ?>" class="pr-4 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
                 <option value="" disabled selected>شار</option>
                 <option value="هەولێر">هەولێر</option>
                 <option value="سلێمانی">سلێمانی</option>
@@ -167,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <input type="text" name="location" placeholder="گەرەک/ناحیە" value="<?php echo htmlspecialchars($_POST['location'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
             </div>
           </div>
-          <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
+          <div id="rooms" class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
             <div class="relative w-full mb-3">
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ژمارەی زورەکان
@@ -181,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="number" name="recaption" value="<?php echo htmlspecialchars($_POST['recaption'] ?? ""); ?>" class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
               </div>
           </div>
-          <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
+          <div id="rooms2" class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
             <div class="relative w-full mb-3">
               <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 ژوری خەوتن
@@ -189,10 +202,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <input type="number" name="bedroom" value="<?php echo htmlspecialchars($_POST['bedroom'] ?? ""); ?>" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Postal Code">
             </div>
             <div class="relative w-full mb-3">
-                <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                <label for="bathroom" class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                   حەمام
                 </label>
-                <input type="number" name="bathroom" value="<?php echo htmlspecialchars($_POST['bathroom'] ?? ""); ?>" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
+                <input type="number" id="bathroom" name="bathroom" value="<?php echo htmlspecialchars($_POST['bathroom'] ?? ""); ?>" class=" text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
               </div>
           </div>
         </div>
@@ -227,3 +240,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </div>
 </section>
+</body>
+</html>
+<script>
+    
+        var type = document.getElementById("type");
+        if (type.value === "خانوو" ){
+        document.getElementById("rooms").classList.add("block")
+        document.getElementById("rooms").classList.remove("hidden")
+        document.getElementById("rooms2").classList.add("block")
+        document.getElementById("rooms2").classList.remove("hidden")
+        }else{
+        document.getElementById("rooms").classList.add("hidden")
+        document.getElementById("rooms").classList.remove("block")
+        document.getElementById("rooms2").classList.add("hidden")
+        document.getElementById("rooms2").classList.remove("block")
+        }
+    
+</script>

@@ -10,8 +10,8 @@ $all_data = Post::get_all(0);
                 <a href="" class="absolute z-20 top-20 left-24 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="./upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
              </div>
-            <span class="absolute top-40 left-2  text-white text-lg font-bold"><?php echo $row->price ?>$</span>
-            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->type;?> </span> 
+            <span class="absolute top-40 left-0 px-3  bg-slide text-white rounded-r-md text-lg font-bold"><?php echo $row->price ?>$</span>
+            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->pre_type;?> </span> 
             <span class="text-right text-md py-4 "><?php echo $row->city ." - ".$row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">
