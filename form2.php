@@ -9,16 +9,9 @@ $DataName = array('cadastral','balacony','tree','ready','electricity','clothesro
 $img_pro = $imgs = array();
 $err1 = $err2 = "";
 $PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
-if($PostData->type == "خانوو" ){
-    $type = 1;
-}elseif($PostData->type == "شوقە"){
-    $type = 2;
-}else{
-    $type = 3;
-    }
-
+$sucs = false ; 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    foreach($DataName as $name ){ 
+    foreach($DataName as $name ){  // send number 1 to all cullomn that user selected
         if(!empty($_POST["$name"])){
             $PostData->$name = 1 ;
         }
@@ -30,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $upload->profile = 'y';
         $upload->set_image($_FILES['proimg']);
         if($upload->save() === true){
+            $sucs = true ; 
         }else{
             $err1 =  $upload->save();
         }
@@ -56,11 +50,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $upload->set_image($file_ary["$i"]);
 
             if($upload->save() === true){
+                $sucs = true ; 
                 }else{
                     $err2 =  $upload->save();
+                   
                 }
         }
     }
+    if ($sucs===true){
+        
+        go("home.php");
+        
+}
 }
 ?>
     <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" class="h-screen container mx-auto font-sans text-gray-900 border-box relative">
