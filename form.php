@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 موڵک
               </label>
               <select name="type" required id="type" value="<?php echo htmlspecialchars($_POST['type'] ?? ""); ?>" class="pr-4 text-right border-0 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
-                <option value="" disabled selected>:جۆری موڵکەکەت</option>
+              <option value="" disabled selected>جۆری موڵکەکە</option>
                 <option value="خانوو">خانوو</option>
                 <option value="شوقە">شوقە</option>
                 <option value="ئەرز">ئەرز</option>
@@ -244,9 +244,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 <script>
-    
-        var type = document.getElementById("type");
-        if (type.value === "خانوو" ){
+    document.getElementById('type').addEventListener('change', function() {
+      if (this.value == "خانوو" || this.value == "شوقە"  ){
         document.getElementById("rooms").classList.add("block")
         document.getElementById("rooms").classList.remove("hidden")
         document.getElementById("rooms2").classList.add("block")
@@ -257,5 +256,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.getElementById("rooms2").classList.add("hidden")
         document.getElementById("rooms2").classList.remove("block")
         }
+})
     
 </script>
