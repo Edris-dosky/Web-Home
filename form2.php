@@ -13,8 +13,8 @@ if($PostData->type == "خانوو" ){
     $type = 1;
 }elseif($PostData->type == "شوقە"){
     $type = 2;
-}elseif($PostData->type == "ئەرز"){
-    $type = 2;
+}else{
+    $type = 3;
     }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  <?php echo $type==1?"خانوەکە":"ئەرزەکە" ;?></h2>
-                    <p class="text-xs text-gray-600"><?php if($type===1){echo "تکایە با وێنەکە دیوی دەرەوەی مولکەکە بێت";}elseif($type===2){echo "تکایە وێنەی سەر نەخشەی ئەرزەکە دابنێ";} ?> </p>
+                    <h2 class="text-2xl  mb-2">وێنەی پرۆفایلی  <?php echo $PostData->type."ەکە";?> </h2>
+                    <p class="text-xs text-gray-600"><?php echo ($PostData->type=="ئەرز") ? "تکایە وێنەی سەر نەخشەی ئەرزەکە دابنێ" : "تکایە وێنەی سەر نەخشەی ئەرزەکە دابنێ" ; ?> </p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
                     <input type="file" id="file-upload2" name="proimg" class="hidden">
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="flex  justify-center w-full  sm:max-w-lg">
             <div class="flex flex-col items-center justify-center w-full h-auto mt-8 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
                 <div class="mt-10 mb-10 text-center">
-                    <h2 class="text-2xl mb-2">چەند وێنەیەکی تری <?php echo $type?"خانوەکە":"ئەرزەکە" ;?></h2>
+                    <h2 class="text-2xl mb-2">چەند وێنەیەکی تری <?php echo $PostData->type."ەکە";?></h2>
                     <p class="text-xs text-gray-600">تکایە تا بکرێ با وێنەکان بە باری پانی گیرابن</p>
                 </div>
                 <div  class="relative w-4/5 h-32 max-w-xs mb-10 bg-blueGray-200  rounded-lg shadow-inner">
@@ -105,9 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     <div class="container mx-auto w-full sm:w-[895px] ">
         <div class=" w-full h-auto mt-8 pt-2 pb-5 bg-white sm:rounded-lg sm:shadow-xl">
-        <h2 class="text-2xl text-right m-4 mb-8">: تایبەتماندیەکانی <?php echo $type?"خانوەکە":"ئەرزەکە" ;?></h2>
+        <h2 class="text-2xl text-right m-4 mb-8">: تایبەتماندیەکانی <?php echo $PostData->type."ەکە";?></h2>
          <div class="flex flex-row-reverse flex-wrap items-center justify-center">
-        <?php if($type){ ?>
+        
             <div class="flex cursor-pointer " onclick="on('input2','mark2')" > 
                 <div id="mark2"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                     <div class="flex justify-center items-center m-4">
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <img src="/Web-Home/assets/img/cadastral.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
                 </div>
              </div>
-             <?php }?>
+             <?php if(!$PostData->type=="ئەرز"){?>
          <div class="flex cursor-pointer " onclick="on('input1','mark1')" > 
             <div id="mark1"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
@@ -188,6 +188,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
          </div>
 
+         <div class="flex cursor-pointer " onclick="on('input11','mark11')" > 
+            <div id="mark11"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
+                <div class="flex justify-center items-center my-4">
+                    <input type="checkbox"  id="input11" name="garage"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <label  class="block ml-2 text-sm font-semibold text-black">گەراجی ئۆتۆمبێل</label>
+                </div>
+                    <img src="/Web-Home/assets/img//parked-car-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+            </div>
+         </div>
+
+         <div class="flex cursor-pointer " onclick="on('input44','mark44')" > 
+            <div id="mark44"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
+                <div class="flex justify-center items-center m-4">
+                    <input type="checkbox"  id="input44" name="market"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                    <label  class="block ml-2 text-sm font-semibold text-black">مارکێتی نزیک</label>
+                </div>
+                    <img src="/Web-Home/assets/img//coffee-shop-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+            </div>
+         </div>
+
+         <?php } if(!$PostData->type=="شوقە"){?>
          <div class="flex cursor-pointer " onclick="on('input9','mark9')" > 
             <div id="mark9"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
@@ -198,15 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
          </div>
 
-         <div class="flex cursor-pointer " onclick="on('input11','mark11')" > 
-            <div id="mark11"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
-                <div class="flex justify-center items-center my-4">
-                    <input type="checkbox"  id="input11" name="garage"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
-                    <label  class="block ml-2 text-sm font-semibold text-black">گەراجی ئۆتۆمبێل</label>
-                </div>
-                    <img src="/Web-Home/assets/img//parked-car-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
-            </div>
-         </div>
+         
 
          <div class="flex cursor-pointer " onclick="on('input22','mark22')" > 
             <div id="mark22"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
@@ -228,15 +241,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
          </div>
 
-         <div class="flex cursor-pointer " onclick="on('input44','mark44')" > 
-            <div id="mark44"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
-                <div class="flex justify-center items-center m-4">
-                    <input type="checkbox"  id="input44" name="market"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
-                    <label  class="block ml-2 text-sm font-semibold text-black">مارکێتی نزیک</label>
-                </div>
-                    <img src="/Web-Home/assets/img//coffee-shop-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
-            </div>
-         </div>
+         <?php } ?>
          <div class="flex cursor-pointer " onclick="on('input45','mark45')" > 
             <div id="mark45"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
