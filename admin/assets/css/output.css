@@ -4255,6 +4255,10 @@ video {
     width: 66.666667%;
   }
 
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
   }
