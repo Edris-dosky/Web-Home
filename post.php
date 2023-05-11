@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Web-Home\admin\assets\css\output.css">
-    <title>Web Home</title>
-</head>
-<body class="font-display bg-zinc-100 w-full">
-    <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
+<?php
+include_once('includes/nav.php');
+$PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
+$photos = Upload::get_all("`post_id` = '$PostData->post_id'");
+$i=0;
+
+?>
     <div id="gallery" class="relative container mx-auto" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-             <!-- Item 1 -->
-            <div id="0" class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/Web-Home/upload/12.jpg" class="absolute block max-w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            <?php foreach($photos as $photo){  ?>
+            <div id="<?php echo $i; ?>" class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/Web-Home/upload/<?php echo $photo->fileName ; ?>" class="absolute block max-w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
             </div>
-          
+          <?php  $i++; } ?>
         </div>
         <!-- Slider controls -->
         <button type="button" id="Previous" onclick="Previous()" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -91,13 +87,15 @@
 <script>
         
         var i = 0
+        var counter = "<?php echo count($photos); ?>"
+        console.log(counter)
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")
         function next(){
         document.getElementById(i).classList.remove("block")
         document.getElementById(i).classList.add("hidden")
          i++
-         if(i>3){
+         if(i >= counter){
             i = 0 ;
          }
         document.getElementById(i).classList.remove("hidden")
@@ -109,8 +107,8 @@
         document.getElementById(i).classList.remove("block")
         document.getElementById(i).classList.add("hidden")
          i--
-         if(i<0){
-            i = 3 ;
+         if(i = 0){
+            i = 10 ;
          }
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")

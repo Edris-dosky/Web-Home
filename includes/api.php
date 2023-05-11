@@ -8,13 +8,6 @@ class Api{
             return static::query_proccess("SELECT * FROM ".static::$table." WHERE $con ");
         }
      }
-     public static function get_num_row($con){
-         global $db; 
-         $sql = ("SELECT * FROM ".static::$table." WHERE $con ");
-         $result = $db->query($sql);
-         return mysqli_num_rows($result);
-     }
- 
      public static function get_one($con){
          $single_data = static:: query_proccess("SELECT * FROM ".static::$table." WHERE $con");
          return !empty($single_data) ? array_shift($single_data) : false ;
