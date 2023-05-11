@@ -88,9 +88,9 @@ $i=0;
         
         var i = 0
         var counter = "<?php echo count($photos); ?>"
-        console.log(counter)
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")
+        
         function next(){
         document.getElementById(i).classList.remove("block")
         document.getElementById(i).classList.add("hidden")
@@ -100,18 +100,17 @@ $i=0;
          }
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")
-        console.log(i)
+
         }
 
         function Previous(){
         document.getElementById(i).classList.remove("block")
         document.getElementById(i).classList.add("hidden")
          i--
-         if(i = 0){
-            i = 10 ;
+         if(i < 0){
+            i = counter-1 ;
          }
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")
-        console.log(i)
         }
 </script>
