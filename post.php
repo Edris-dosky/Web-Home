@@ -53,19 +53,22 @@ $i=0;
         <div class="text-right px-4 w-full lg:w-1/2 ">
             <h2 class="text-xl md:text-2xl mb-4">: زانیاریەکان</h2>
             <div class="flex flex-row-reverse flex-wrap text-right  ">
-                <div class="lg:w-1/2 w-full  text-lg gap-2 my-2 "><span>ئایدی : </span><span>١١٣١٢٣٢١</span></div>
-                <div class="lg:w-1/2 w-full  text-lg gap-2 my-2  "><span>ژمارە مۆبایل : </span><span>07503732421</span></div>
-                <div class=" w-full  text-lg gap-2 my-2  "><span> : ئیمایل </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆر </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆری خستنەروو  </span><span>فرۆشتن</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: نرخ  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شار </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شوێن  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژورەکان  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری خەوتن  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری دانیشتن </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: توالێت  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: کاتی بڵاوکردنەوە  </span></div>
+                <div class="lg:w-1/2 w-full  text-lg gap-2 my-2 "><span><?php echo $PostData->post_id ; ?> : ئایدی </span></div>
+                <div class="lg:w-1/2 w-full  text-lg gap-2 my-2  "><span>ژمارە مۆبایل : </span><span><?php echo $PostData->tell ; ?></span></div>
+                <div class=" lg:w-1/2 w-full  text-lg gap-2 my-2  "><span><?php echo $PostData->email ; ?> : ئیمایل </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> جۆر <?php echo ": ".$PostData->type ; ?></span></div>
+
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> جۆری خستنەروو <?php echo ": ".$PostData->pre_type ; ?> </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> <?php echo $PostData->price_type.$PostData->price ; ?></span><span> : نرخ </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> شار <?php echo ": ".$PostData->city ; ?></span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> شوێن  <?php echo ": ".$PostData->location ; ?></span></div>
+                <?php if(!$PostData->type=="ئەرز"){ ?>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> ژورەکان : </span><span><?php echo $PostData->rooms ; ?></span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری خەوتن : </span><span><?php echo $PostData->bedroom ; ?></span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری دانیشتن : </span><span><?php echo $PostData->recaptionroom ; ?></span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> توالێت : </span><span><?php echo $PostData->bathroom ; ?></span></div>
+                <?php }?>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> کاتی بڵاوکردنەوە : </span><span><?php echo $PostData->time ; ?></span></div>
             </div>
         </div>
         
