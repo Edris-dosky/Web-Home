@@ -55,7 +55,7 @@ $i=0;
             <div class="flex flex-row-reverse flex-wrap text-right  ">
                 <div class="lg:w-1/2 w-full  text-lg gap-2 my-2 "><span>ئایدی : </span><span>١١٣١٢٣٢١</span></div>
                 <div class="lg:w-1/2 w-full  text-lg gap-2 my-2  "><span>ژمارە مۆبایل : </span><span>07503732421</span></div>
-                <div class=" w-full  text-lg gap-2 my-2  "><span>edrisgmailcommmmmmmm : ئیمایل </span></div>
+                <div class=" w-full  text-lg gap-2 my-2  "><span> : ئیمایل </span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆر </span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆری خستنەروو  </span><span>فرۆشتن</span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: نرخ  </span></div>
@@ -90,7 +90,7 @@ $i=0;
         var counter = "<?php echo count($photos); ?>"
         document.getElementById(i).classList.remove("hidden")
         document.getElementById(i).classList.add("block")
-        
+
         function next(){
         document.getElementById(i).classList.remove("block")
         document.getElementById(i).classList.add("hidden")
