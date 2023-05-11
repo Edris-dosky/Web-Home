@@ -63,20 +63,21 @@
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆر </span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: جۆری خستنەروو  </span><span>فرۆشتن</span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span>: نرخ  </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شار </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شوێن  </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژورەکان  </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری خەوتن  </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری دانیشتن </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span>: توالێت  </span><span>١١٣١٢٣٢١</span></div>
-                <div class="w-1/2  text-lg gap-2 my-2 "><span>: کاتی بڵاوکردنەوە  </span><span>١١٣١٢٣٢١</span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شار </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: شوێن  </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژورەکان  </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری خەوتن  </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: ژووری دانیشتن </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: توالێت  </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span>: کاتی بڵاوکردنەوە  </span></div>
             </div>
         </div>
         
         
     </div>
-    <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
+    
     <div class="container mx-auto flex flex-wrap flex-row-reverse mt-8 ">
+        <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-2/3 lg:w-8/12 px-4">
         <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl relative ">کۆمێنتکردن <img src="/Web-Home/assets/img/comment-svgrepo-com.svg" class="absolute top-3 left-16 lg:left-[420px] md:left-36" width="30px"></button>
         </div>
