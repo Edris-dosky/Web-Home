@@ -1,16 +1,15 @@
 <?php
 include_once('includes/nav.php');
-$PostData = Post::get_one("`user_id` = '$obj->user_id' ORDER BY `post_id` DESC"); // SELECT last record becouse this user posting currently
-$photos = Upload::get_all("`post_id` = '$PostData->post_id'");
+$post_id = $_GET['post_id'];
+$PostData = Post::get_one("`post_id` = '$post_id' "); 
+$photos = Upload::get_all("`post_id` = '$post_id'");
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
-'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
-'garage'=>'گەراج','park'=>'پارک','gym'=>'هۆڵی لەشجوانت','market'=>'مارکێتی نزیک','angles'=>'روکن');
+                'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
+                'garage'=>'گەراج','park'=>'پارک','gym'=>'هۆڵی لەشجوانت','market'=>'مارکێتی نزیک','angles'=>'روکن');
 
 $key_prop = array_keys($prop);
-foreach($key_prop as $pro){
-    echo $PostData->$pro == 1 ? $prop[$pro] : "" ;
-}
+
 ?>
     <div id="gallery" class="relative container mx-auto" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
