@@ -6,7 +6,11 @@ $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
 'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
 'garage'=>'گەراج','park'=>'پارک','gym'=>'هۆڵی لەشجوانت','market'=>'مارکێتی نزیک','angles'=>'روکن');
-print_r(array_keys($prop));
+
+$key_prop = array_keys($prop);
+foreach($key_prop as $pro){
+    echo $PostData->$pro == 1 ? $prop[$pro] : "" ;
+}
 ?>
     <div id="gallery" class="relative container mx-auto" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -38,16 +42,17 @@ print_r(array_keys($prop));
                 <h2 class="text-2xl text-right mx-4 mb-6 ">: تایبەتماندیەکانی </h2>
                  <div class="flex flex-row-reverse flex-wrap items-center justify-center">
 
-                    <div class="flex cursor-pointer " > 
+               <?php  foreach($key_prop as $pro){ if($PostData->$pro == 1){?>
+                    <div class="flex  " > 
                         <div id="mark2"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                             <div class="flex justify-center items-center m-4">
-                                <input type="checkbox"  id="input2" name="cadastral"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
-                                <label  class="block ml-2 text-sm font-semibold text-black">تاپۆکراو</label>
+                                <input type="checkbox"  id="input2"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
+                                <label  class="block ml-2 text-sm font-semibold text-black"><?php echo  $prop[$pro];?></label>
                             </div>
-                                <img src="/Web-Home/assets/img/cadastral.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                                <img src="/Web-Home/assets/img/<?php echo  $pro.'.svg' ;?>" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
                         </div>
                      </div>
-
+                        <?php } }?>
                      </div>
                      </div>
                     </div>

@@ -48,7 +48,7 @@
       @apply bg-transparent border-[1px] border-zinc-500 border-solid outline-none h-16 w-full text-xl pr-3 text-right rounded-[6px] focus:border-[#188F8D] focus:border-2 col-span-6;
     }
     .bg-slide{
-       background-color: rgba(0, 0, 0, 0.6);
+       background-color: rgba(0, 0, 0, 0.5);
     }
     .hasImage:hover section {
       background-color: rgba(5, 5, 5, 0.4);
