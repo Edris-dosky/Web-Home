@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
                     <p class=" mb-6 text-center text-orange-500"> <?php echo $error['result']; ?> </p>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-[#188F8D] focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">دروستکردن</button>
+                            <button class="block w-full max-w-xs mx-auto bg-indigo-500 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">دروستکردن</button>
                         </div>
                     </div>
                 </div>
