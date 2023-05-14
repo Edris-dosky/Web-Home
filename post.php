@@ -1,8 +1,13 @@
 <?php
 include_once('includes/nav.php');
+
+if($_GET['post_id']){
 $post_id = $_GET['post_id'];
 $PostData = Post::get_one("`post_id` = '$post_id' "); 
 $photos = Upload::get_all("`post_id` = '$post_id'");
+}else{
+    go("home.php");
+}
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
                 'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
