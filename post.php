@@ -8,6 +8,14 @@ $photos = Upload::get_all("WHERE `post_id` = '$post_id'");
 }else{
     go("home.php");
 }
+$excute = FavPost::get_one("`user_id` = '$obj->user_id' AND `post_id` = '$post_id' "); 
+
+if(isset($_GET['save'])){
+    $favPost->user_id = $obj->user_id ;
+    $favPost->post_id = $post_id ;
+    if(!$excute)
+    $favPost->create();
+}
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
                 'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
@@ -90,10 +98,10 @@ $key_prop = array_keys($prop);
     <div class="container mx-auto flex flex-wrap flex-row-reverse mt-8 ">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-2/3 lg:w-8/12 px-4">
-        <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl relative ">کۆمێنتکردن <img src="/Web-Home/assets/img/comment-svgrepo-com.svg" class="absolute top-3 left-16 lg:left-[420px] md:left-36" width="30px"></button>
+        <a  href="" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
         </div>
         <div class="w-1/3 lg:w-4/12 px-4">
-        <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl relative ">زاخیرەکردن<img src="/Web-Home/assets/img/heart-02-svgrepo-com.svg" class="absolute top-3 left-16 lg:left-[420px] md:left-36" width="30px"></button>
+        <a href="post.php?post_id=<?php echo $post_id ?>&save" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">زاخیرەکردن</a>
         </div>
     </div>
 </body>
