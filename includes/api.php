@@ -2,12 +2,11 @@
 class Api{
 
     public static function get_all($con){
-        if($con === 0){
-            return static::query_proccess("SELECT * FROM ".static::$table." ");
-        }else{
-            return static::query_proccess("SELECT * FROM ".static::$table." WHERE $con ");
-        }
+        
+            return static::query_proccess("SELECT * FROM ".static::$table." $con ");
+        
      }
+ 
      public static function get_one($con){
          $single_data = static:: query_proccess("SELECT * FROM ".static::$table." WHERE $con");
          return !empty($single_data) ? array_shift($single_data) : false ;

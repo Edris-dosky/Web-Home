@@ -4,7 +4,7 @@ include_once('includes/nav.php');
 if($_GET['post_id']){
 $post_id = $_GET['post_id'];
 $PostData = Post::get_one("`post_id` = '$post_id' "); 
-$photos = Upload::get_all("`post_id` = '$post_id'");
+$photos = Upload::get_all("WHERE `post_id` = '$post_id'");
 }else{
     go("home.php");
 }

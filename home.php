@@ -1,6 +1,6 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Post::get_all(0);
+$all_data = Post::get_all("");
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">

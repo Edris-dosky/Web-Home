@@ -1,6 +1,6 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Post::get_all("`user_id` = '$obj->user_id'");
+$all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
 in(0 ,"redirect.php" );
 ?>
 

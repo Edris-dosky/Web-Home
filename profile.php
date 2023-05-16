@@ -2,7 +2,7 @@
 require_once('includes/nav.php');
 function get_row($col){
   global $obj;
-  $result = Post::get_all("'$obj->user_id' = `user_id` AND '$col' = `type`");
+  $result = Post::get_all("WHERE '$obj->user_id' = `user_id` AND '$col' = `type`");
   echo count($result);
 }
 
