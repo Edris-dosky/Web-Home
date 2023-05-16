@@ -58,9 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     if ($sucs===true){
-        
+        $PostData::update();
         go("home.php");
-        
 }
 }
 ?>
@@ -118,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <img src="/Web-Home/assets/img/cadastral.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
                 </div>
              </div>
-             <?php if(!$PostData->type=="ئەرز"){?>
+             <?php if($PostData->type !="ئەرز"){?>
          <div class="flex cursor-pointer " onclick="on('input1','mark1')" > 
             <div id="mark1"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center m-4">
@@ -135,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input3" name="tree"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">سەوزای</label>
                 </div>
-                    <img src="/Web-Home/assets/img/trees_1.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/tree.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -145,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input4" name="ready"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">راخراو</label>
                 </div>
-                    <img src="/Web-Home/assets/img/living-room-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/ready.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
          
@@ -155,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input5" name="electricity"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کارەبای بەردەوام</label>
                 </div>
-                    <img src="/Web-Home/assets/img/electricity-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/electricity.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -165,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input6" name="clothesroom"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">ژوری جلگۆرین</label>
                 </div>
-                    <img src="/Web-Home/assets/img/wardrobe-mirror-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/clothesroom.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -175,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input7" name="swimming"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">مەلەوانگە</label>
                 </div>
-                    <img src="/Web-Home/assets/img/swimming-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/swimming.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -185,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input8" name="camera"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کامێرای چاودێری</label>
                 </div>
-                    <img src="/Web-Home/assets/img/security-protection-camera-cctv-video-crime-cyber-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/camera.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -195,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input11" name="garage"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">گەراجی ئۆتۆمبێل</label>
                 </div>
-                    <img src="/Web-Home/assets/img//parked-car-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/garage.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -205,18 +204,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input44" name="market"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">مارکێتی نزیک</label>
                 </div>
-                    <img src="/Web-Home/assets/img//coffee-shop-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/market.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
-         <?php } if(!$PostData->type=="شوقە"){?>
+         <?php } if($PostData->type=="شوقە"){?>
          <div class="flex cursor-pointer " onclick="on('input9','mark9')" > 
             <div id="mark9"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                 <div class="flex justify-center items-center my-4">
                     <input type="checkbox"  id="input9" name="security"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">کارمەندی سیکورتی</label>
                 </div>
-                    <img src="/Web-Home/assets/img//security-guard-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/security.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -228,7 +227,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input22" name="park"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">پارک</label>
                 </div>
-                    <img src="/Web-Home/assets/img//park-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/park.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -238,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input33" name="gym"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">هۆڵی لەشجوانی</label>
                 </div>
-                    <img src="/Web-Home/assets/img/dumbell-gym-healthy-life-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/gym.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
 
@@ -249,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input45" name="angles"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">روکن</label>
                 </div>
-                    <img src="/Web-Home/assets/img/road-highway-svgrepo-com.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/angles.svg" class="mx-auto h-14 w-14 mb-2 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
         </div>
