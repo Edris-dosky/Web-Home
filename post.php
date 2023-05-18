@@ -13,8 +13,10 @@ $excute = FavPost::get_one("`user_id` = '$obj->user_id' AND `post_id` = '$post_i
 if(isset($_GET['save'])){
     $favPost->user_id = $obj->user_id ;
     $favPost->post_id = $post_id ;
-    if(!$excute)
+    if(!$excute){
     $favPost->create();
+    go("post.php?post_id=$post_id");
+    }
 }
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
@@ -100,9 +102,17 @@ $key_prop = array_keys($prop);
         <div class="w-2/3 lg:w-8/12 px-4">
         <a  href="" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
         </div>
+        <?php if(!$excute){ ?>
         <div class="w-1/3 lg:w-4/12 px-4">
         <a href="post.php?post_id=<?php echo $post_id ?>&save" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">زاخیرەکردن</a>
         </div>
+        <?php }else{ ?>
+            <div class="w-1/3 lg:w-4/12 px-4">
+            <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">لابردن لە لیستی دڵخواز</a>
+            </div>
+            <?php } ?>
+
+
     </div>
 </body>
 </html>
