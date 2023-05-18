@@ -12,7 +12,7 @@ $all_data = Post::get_all("");
              </div>
             <span class="absolute top-40 left-0 px-2  bg-slide text-white rounded-tr-md text-lg "><?php echo $row->price.$row->price_type; ?></span>
             <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->pre_type;?> </span> 
-            <span class="text-right text-md py-4 "><?php echo $row->city ." - ".$row->location ?>  <img src="assets/img/location-pin-svgrepo-com.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
+            <span class="text-right text-md py-4 "><?php echo $row->city ." - ".$row->location ?>  <img src="assets/img/location.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">
                     <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
@@ -22,9 +22,9 @@ $all_data = Post::get_all("");
                   <?php if ($row->type == "ئەرز"){ ?>
                     <span class="col-span-6 h-full w-full p-2 relative"><img src="assets/img/road-highway-svgrepo-com.svg" class="h-4 w-4 inline-block absolute right-1 top-2"> <span class="absolute top-2 right-1 text-right"><?php echo $row->angles==1 ?"روکنە" : "اسسسسس"; ?></span> </span>
                 <?php }else{?>
-                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom-svgrepo-com.svg" class="h-4 w-4 inline-block absolute top-3"> <span class="absolute top-2 right-4"><?php echo $row->bathroom ?></span> </span>
-                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom-hotel-svgrepo-com.svg" class="h-4 w-4 inline-block"> <span class="absolute top-2 right-4"><?php echo $row->bedroom ?></span></span>
-                <span class="col-span-2 h-full p-1 relative"><img src="assets/img/living-room-svgrepo-com.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3"><?php echo $row->recaptionroom ?></span></span>
+                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom.svg" class="h-4 w-4 inline-block absolute top-3"> <span class="absolute top-2 right-4"><?php echo $row->bathroom ?></span> </span>
+                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom.svg" class="h-4 w-4 inline-block"> <span class="absolute top-2 right-4"><?php echo $row->bedroom ?></span></span>
+                <span class="col-span-2 h-full p-1 relative"><img src="assets/img/ready.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3"><?php echo $row->recaptionroom ?></span></span>
                 <?php }?>
             </div>
         </div>

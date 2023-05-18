@@ -62,10 +62,9 @@ class Api{
         return $execute ? true : false ;
     }
     
-    public function delete(){
+    public function delete($con){
         global $db ;
-        $post_id = $db->secure($this->post_id);
-        $execute = $db->query("DELETE FROM ".static::$table." WHERE `post_id` = $post_id");
+        $execute = $db->query("DELETE FROM ".static::$table." WHERE $con");
         return $execute ? true : false ;
     }
 

@@ -18,6 +18,10 @@ if(isset($_GET['save'])){
     go("post.php?post_id=$post_id");
     }
 }
+if(isset($_GET['delete'])){
+    $favPost->delete("`user_id` = '$obj->user_id' AND `post_id`  = '$post_id'");
+    go("post.php?post_id=$post_id");
+}
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
                 'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
@@ -108,7 +112,7 @@ $key_prop = array_keys($prop);
         </div>
         <?php }else{ ?>
             <div class="w-1/3 lg:w-4/12 px-4">
-            <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">لابردن لە لیستی دڵخواز</a>
+            <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="w-full p-2 rounded-md bg-red-700 hover:bg-red-800 text-white text-center  text-xl  ">لابردن لە لیستی دڵخواز</a>
             </div>
             <?php } ?>
 
