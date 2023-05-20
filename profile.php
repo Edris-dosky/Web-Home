@@ -11,16 +11,20 @@ function get_row($col){
     <div class=" container mx-auto p-16">
         <div class="p-8 bg-white shadow mt-24">
           <div class="grid grid-cols-1 md:grid-cols-3">
-            <div class="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
+            <div class="grid grid-cols-4 text-center order-last md:order-first mt-20 md:mt-0">
               <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("خانوو") ?></p>
-                <p class="text-gray-400">خانوو بۆ فرۆشتن</p>
+                <p class="text-gray-400">خانوو</p>
               </div>
               <div>
                    <p class="font-bold text-gray-700 text-xl"><?php get_row("شوقە") ?></p>
-                <p class="text-gray-400">خانوو بۆکرێ</p>
+                <p class="text-gray-400">شوقە </p>
               </div>
               <div>
+                <p class="font-bold text-gray-700 text-xl"><?php get_row("ڤێلا") ?></p>
+             <p class="text-gray-400">ڤێلا</p>
+           </div>
+           <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("ئەرز") ?></p>
              <p class="text-gray-400">ئەرز</p>
            </div>
