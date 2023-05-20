@@ -799,6 +799,10 @@ video {
   left: 1rem;
 }
 
+.left-40 {
+  left: 10rem;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -1343,6 +1347,10 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[600px\] {
+  width: 600px;
 }
 
 .w-\[700px\] {
@@ -4172,6 +4180,10 @@ video {
 
   .lg\:w-6\/12 {
     width: 50%;
+  }
+
+  .lg\:w-64 {
+    width: 16rem;
   }
 
   .lg\:w-8\/12 {

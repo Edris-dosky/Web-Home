@@ -17,7 +17,7 @@ $obj= User::get_one("`tell`='$tell'");
 </head>
 <body class="font-display bg-zinc-100 w-full">
 	<nav class="relative px-4 py-4 flex justify-between items-center drop-shadow-md bg-white">
-		<a class="text-3xl font-bold leading-none" href="#">
+		<a class="text-3xl font-bold leading-none" href="home.php">
             <div class="group font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
 		</a>
 		<div class="lg:hidden">
