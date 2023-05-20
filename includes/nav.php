@@ -47,13 +47,13 @@ $obj= User::get_one("`tell`='$tell'");
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="myPost.php">موڵکەکانم</a></li>
+			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="Posts.php">موڵکەکانم</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="">دەربارەی ئێمە</a></li>
+			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="UserProfile.php?ID=1">دەربارەی ئێمە</a></li>
 		</ul>
 		<?php if(!$session->get_logged_in()){?>
 		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="login.php">چونەژوەوە</a>
@@ -111,7 +111,7 @@ $obj= User::get_one("`tell`='$tell'");
 						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="favPost.php">دڵخوازەکانم</a>
 					</li>
 					<li class="mb-1">
-						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="myPost.php">موڵکەکانم</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="Posts.php">موڵکەکانم</a>
 					</li>
 					<li class="mb-1">
 						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">دەربارەی ئێمە</a>
