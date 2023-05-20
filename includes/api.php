@@ -2,9 +2,7 @@
 class Api{
 
     public static function get_all($con){
-        
             return static::query_proccess("SELECT * FROM ".static::$table." $con ");
-        
      }
  
      public static function get_one($con){
