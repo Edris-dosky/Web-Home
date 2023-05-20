@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->type = $db->secure($_POST["type"]);
         $post->location = $db->secure($_POST["location"]);
         $post->city = $db->secure($_POST["city"]);
-        $post->price_type = $db->secure($_POST["price_type"]);
         $post->recaptionroom = $db->secure($_POST["recaption"]);
         $post->bathroom = $db->secure($_POST["bathroom"]);
         $post->bedroom = $db->secure($_POST["bedroom"]);
@@ -107,6 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <option value="" disabled selected>جۆری موڵکەکە</option>
                 <option value="خانوو">خانوو</option>
                 <option value="شوقە">شوقە</option>
+                <option value="ڤێلا">ڤێلا</option>
+                <option value="مەزرەعە">مەزرەعە</option>
                 <option value="ئەرز">ئەرز</option>
             </select>
             </div>
@@ -124,22 +125,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label class=" text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 نرخ
               </label>
-              <input type="number" name="price" required placeholder="دۆلار یان دینار" value="<?php echo htmlspecialchars($_POST['price'] ?? ""); ?>"  class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="price" required placeholder="دۆلار" value="<?php echo htmlspecialchars($_POST['price'] ?? ""); ?>"  class="text-right border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
-    
-
-          <div class="w-6/12 lg:w-3/12 px-4 flex flex-row-reverse gap-3 ">
-            <div class="relative w-full mb-3">
-              <label class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                جۆری پارە
-              </label>
-              <select name="price_type" required  value="<?php echo htmlspecialchars($_POST['pre_type'] ?? ""); ?>" class="  text-right border-0  py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                <option value="" disabled selected>:دۆلار/دینار</option>
-                <option value="$">دۆلار</option>
-                <option value="IQD">دینار</option>
-             </select>
-            </div>
+          <div class="w-6/12 lg:w-3/12 px-4  ">
             <div class="relative w-full mb-3">
             <label for="pre_type" class="text-right block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 جۆری خستنەرو

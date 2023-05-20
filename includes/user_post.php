@@ -10,7 +10,6 @@ class Post extends Api{
     public $city;
     public $price ;
     public $pre_type;
-    public $price_type;
     public $type ;
     public $rooms ;
     public $bedroom ;
@@ -37,7 +36,7 @@ class Post extends Api{
     protected static $table = "`posts`";
     protected static $columns= array(
     'user_id','post_id','name','tell','email','area','location','price','type','rooms','bedroom','bathroom','recaptionroom','time','details','pre_type','city','cadastral','verify',
-    'balacony','tree','ready','electricity','clothesroom','Swimming','camera','security','garage','park','gym','market','angles','price_type'
+    'balacony','tree','ready','electricity','clothesroom','Swimming','camera','security','garage','park','gym','market','angles',
 );
 }
 $post = new Post();
