@@ -3,7 +3,6 @@ include_once('includes/nav.php');
 if($_GET['PostId']){
     $post_id = $_GET['post_id'];
     $PostData = Post::get_all("`user_id` = '$user_id' "); 
-    $photos = Upload::get_all("WHERE `post_id` = '$post_id'");
     }
 ?>
 

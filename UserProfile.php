@@ -72,9 +72,6 @@ if($_GET['ID']){
         
           <div class="mt-12 flex flex-col justify-center">
             <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
-            <button class="text-indigo-500 py-2 px-4  font-medium mt-4">
-              .... بینینی زیاتر
-            </button>
             
           </div>
           <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">چونەدەرەوە</a>
