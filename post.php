@@ -8,7 +8,13 @@ $photos = Upload::get_all("WHERE `post_id` = '$post_id'");
 }else{
     go("home.php");
 }
+
+$log = false;
+
+if($session->get_logged_in()){
 $excute = FavPost::get_one("`user_id` = '$obj->user_id' AND `post_id` = '$post_id' "); 
+$log = true ;
+}
 
 if(isset($_GET['save'])){
     $favPost->user_id = $obj->user_id ;
@@ -85,7 +91,7 @@ $key_prop = array_keys($prop);
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> جۆر <?php echo ": ".$PostData->type ; ?></span></div>
 
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> جۆری خستنەروو <?php echo ": ".$PostData->pre_type ; ?> </span></div>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span> <?php echo $PostData->price_type.$PostData->price ; ?></span><span> : نرخ </span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> <?php echo $PostData->price ; ?></span><span> : نرخ </span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> شار <?php echo ": ".$PostData->city ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> شوێن  <?php echo ": ".$PostData->location ; ?></span></div>
                 <?php if(!$PostData->type=="ئەرز"){ ?>
@@ -100,7 +106,7 @@ $key_prop = array_keys($prop);
         
         
     </div>
-    
+    <?php if($log===true){ ?>
     <div class="container mx-auto flex flex-wrap flex-row-reverse mt-8 ">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-2/3 lg:w-8/12 px-4">
@@ -118,6 +124,7 @@ $key_prop = array_keys($prop);
 
 
     </div>
+    <?php } ?>
 </body>
 </html>
 

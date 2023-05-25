@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->time = date("Y-m-d");
         if ($post->create()===true){
             go("form2.php");
-
         }else{
             echo "سەرکەوتوو نەبوو";
         }
