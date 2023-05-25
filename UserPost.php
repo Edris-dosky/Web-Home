@@ -1,7 +1,10 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
-in(0 ,"redirect.php" );
+if($_GET['PostId']){
+    $post_id = $_GET['post_id'];
+    $PostData = Post::get_all("`user_id` = '$user_id' "); 
+    $photos = Upload::get_all("WHERE `post_id` = '$post_id'");
+    }
 ?>
 
 <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
