@@ -7,4 +7,5 @@ require_once('fav_post.php');
 require_once('session.php');
 require_once('upload.php');
 require_once('function.php');
+require_once('footer.php');
 ?>

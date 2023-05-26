@@ -2,8 +2,9 @@
 include_once('includes/nav.php');
 $all_data = Post::get_all("");
 ?>
+<div id="search" class="hidden">
 <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-    <div class="flex flex-row-reverse flex-wrap container mx-auto">
+    <div class=" flex flex-row-reverse flex-wrap container mx-auto">
      
         <div class="w-6/12 lg:w-2/12 px-4">
           <div class="relative w-full mb-3">
@@ -40,11 +41,9 @@ $all_data = Post::get_all("");
           <div class="w-full lg:w-4/12 px-4">
             <button  type="submit" class="w-full p-1 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">گەران</button>
             </div>
-
-
     </div>
     <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-
+    </div>
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col m-4 lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
@@ -72,5 +71,6 @@ $all_data = Post::get_all("");
         </div>
         <?php } ?>
     </div>
+    <button id="sr" onclick="search()">search</button>
 </body>
 </html>
