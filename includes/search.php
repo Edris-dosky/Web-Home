@@ -1,6 +1,24 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $search = true ; 
+    $type = $pre_type = $min = $max = $city = "";
+if(!empty($_POST["type"])){
+    $type = " type = ".$db->secure($_POST["type"]);
+}
+if(!empty($_POST["pre_type"])){
+    $type = " pre_type = ".$db->secure($_POST["pre_type"]);
+}
+if(!empty($_POST["min"])){
+    $min = " price = ".$db->secure($_POST["min"]);
+}
+if(!empty($_POST["max"])){
+    $max = " price = ".$db->secure($_POST["max"]);
+}
+if(!empty($_POST["city"])){
+    $city = " city = ".$db->secure($_POST["city"]);
+}
+echo $type . $pre_type . $min . $max . $city;
+$all_data = Post::get_all("where $type AND $pre_type AND $min AND $max AND $city ");
 }
 
 
@@ -35,12 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="price" required placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="min" required placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="price" required placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="max" required placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
