@@ -1,24 +1,29 @@
 <?php
+$search = false ; 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $search = true ; 
     $type = $pre_type = $min = $max = $city = "";
 if(!empty($_POST["type"])){
-    $type = " type = ".$db->secure($_POST["type"]);
+    $type = " `type` = '".$db->secure($_POST["type"])."' AND";
+    $search = true ; 
 }
 if(!empty($_POST["pre_type"])){
-    $type = " pre_type = ".$db->secure($_POST["pre_type"]);
+    $pre_type = " `pre_type` = '".$db->secure($_POST["pre_type"])."' AND";
+    $search = true ; 
 }
 if(!empty($_POST["min"])){
-    $min = " price = ".$db->secure($_POST["min"]);
+    $min = " `price` = '".$db->secure($_POST["min"])."' AND";
+    $search = true ; 
 }
 if(!empty($_POST["max"])){
-    $max = " price = ".$db->secure($_POST["max"]);
+    $max = " `price` = '".$db->secure($_POST["max"])."' AND";
+    $search = true ; 
 }
 if(!empty($_POST["city"])){
-    $city = " city = ".$db->secure($_POST["city"]);
+    $city = " `city` = '".$db->secure($_POST["city"])."' ";
+    $search = true ; 
 }
-echo $type . $pre_type . $min . $max . $city;
-$all_data = Post::get_all("where $type AND $pre_type AND $min AND $max AND $city ");
+$syntax = $type . $pre_type . $city;
+$all_data = Post::get_all("WHERE $syntax");
 }
 
 
@@ -31,7 +36,7 @@ $all_data = Post::get_all("where $type AND $pre_type AND $min AND $max AND $city
      
         <div class="w-6/12 lg:w-2/12 px-4">
           <div class="relative w-full mb-3">
-            <select name="type" required id="type" value="" class="pr-4 text-right border-0 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
+            <select name="type"  id="type" value="" class="pr-4 text-right border-0 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
             <option value="" disabled selected>جۆری موڵکەکە</option>
               <option value="خانوو">خانوو</option>
               <option value="شوقە">شوقە</option>
@@ -43,7 +48,7 @@ $all_data = Post::get_all("where $type AND $pre_type AND $min AND $max AND $city
         </div>
         <div class="w-6/12 lg:w-2/12 px-4  ">
           <div class="relative w-full mb-3">
-            <select name="pre_type" id="pre_type" required  value="" class="text-right border-0  py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+            <select name="pre_type" id="pre_type"   value="" class="text-right border-0  py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
               <option value="" disabled selected>:کرێ/کرین</option>
               <option value="کرێ">کرێ</option>
               <option value="فرۆشتن">کرین</option>
@@ -53,17 +58,17 @@ $all_data = Post::get_all("where $type AND $pre_type AND $min AND $max AND $city
        
         <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="min" required placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="min"  placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="max" required placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="max"  placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <select name="city" required value="" class="pr-4 text-right border-0 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
+              <select name="city"  value="" class="pr-4 text-right border-0 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"">
                 <option value="" disabled selected>شار</option>
                 <option value="هەولێر">هەولێر</option>
                 <option value="سلێمانی">سلێمانی</option>
