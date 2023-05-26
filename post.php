@@ -107,14 +107,15 @@ $key_prop = array_keys($prop);
         
     </div>
     <?php if($log===true){ ?>
-    <div class="container mx-auto flex flex-wrap flex-row-reverse mt-8 ">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-        <div class="w-2/3 lg:w-8/12 px-4">
-        <a  href="" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
+    <div class="container mx-auto flex flex-row-reverse mt-4  ">
+     
+        <div class="w-2/3 lg:w-6/12 px-4">
+        <a  href="" class="w-full block py-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
         </div>
         <?php if(!$excute){ ?>
-        <div class="w-1/3 lg:w-4/12 px-4">
-        <a href="post.php?post_id=<?php echo $post_id ?>&save" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">زاخیرەکردن</a>
+        <div class="w-1/3 lg:w-6/12 px-4">
+        <a href="post.php?post_id=<?php echo $post_id ?>&save" class="w-full block py-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">زاخیرەکردن</a>
         </div>
         <?php }else{ ?>
             <div class="w-1/3 lg:w-4/12 px-4">
