@@ -1,49 +1,9 @@
 <?php
 include_once('includes/nav.php');
+include_once('includes/search.php');
 $all_data = Post::get_all("");
 ?>
-<div id="search" class="hidden">
-<hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-    <div class=" flex flex-row-reverse flex-wrap container mx-auto">
-     
-        <div class="w-6/12 lg:w-2/12 px-4">
-          <div class="relative w-full mb-3">
-            <select name="type" required id="type" value="" class="pr-4 text-right border-0 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  ">
-            <option value="" disabled selected>جۆری موڵکەکە</option>
-              <option value="خانوو">خانوو</option>
-              <option value="شوقە">شوقە</option>
-              <option value="ڤێلا">ڤێلا</option>
-              <option value="مەزرەعە">مەزرەعە</option>
-              <option value="ئەرز">ئەرز</option>
-          </select>
-          </div>
-        </div>
-        <div class="w-6/12 lg:w-2/12 px-4  ">
-          <div class="relative w-full mb-3">
-            <select name="pre_type" id="pre_type" required  value="" class="text-right border-0  py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-              <option value="" disabled selected>:کرێ/کرین</option>
-              <option value="کرێ">کرێ</option>
-              <option value="فرۆشتن">کرین</option>
-           </select>
-            </div>
-        </div>
-        <div class="w-6/12 lg:w-2/12 px-4">
-            <div class="relative w-full mb-3">
-              <input type="number" name="price" required placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
-            </div>
-          </div>
-          <div class="w-6/12 lg:w-2/12 px-4">
-            <div class="relative w-full mb-3">
-              <input type="number" name="price" required placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
-            </div>
-          </div>
 
-          <div class="w-full lg:w-4/12 px-4">
-            <button  type="submit" class="w-full p-1 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">گەران</button>
-            </div>
-    </div>
-    <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-    </div>
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col m-4 lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
