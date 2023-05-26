@@ -72,5 +72,6 @@ $all_data = Post::get_all("");
         <?php } ?>
     </div>
     <button id="sr" onclick="search()">search</button>
+    
 </body>
 </html>

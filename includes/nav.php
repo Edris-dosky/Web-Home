@@ -17,9 +17,11 @@ $obj= User::get_one("`tell`='$tell'");
 </head>
 <body class="font-display bg-zinc-100 w-full">
 	<nav class="relative px-4 py-4 flex justify-between items-center drop-shadow-md bg-white">
-		<a class="text-3xl font-bold leading-none" href="home.php">
-            <div class="group font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
-		</a>
+		<div class="text-3xl font-bold leading-none cursor-pointer" onclick="search()">
+            <div class="group inline font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
+			<svg aria-hidden="true" class="inline w-6 h-6 text-orange-500 animate-spin " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+		</div>
+	
 		<div class="lg:hidden">
 			<button class="navbar-burger flex items-center text-blue-600 p-3">
 				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
