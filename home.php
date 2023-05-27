@@ -1,7 +1,6 @@
 <?php
 include_once('includes/nav.php');
-$oneUser = false ;
-$favPost= false ;
+$oneUser = $favPost = false ;
 include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");

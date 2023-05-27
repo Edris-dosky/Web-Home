@@ -68,12 +68,12 @@ if($search == true){
        
         <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="min"  placeholder="نرخی دەسپێک" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="min"  placeholder=" نرخی دەسپێک بە دۆلار" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
             <div class="relative w-full mb-3">
-              <input type="number" name="max"  placeholder="زۆرترین نرخ" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
+              <input type="number" name="max"  placeholder=" زۆرترین نرخ بە دۆلار" value=""  class="text-right border-0 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="United States">
             </div>
           </div>
           <div class="w-6/12 lg:w-2/12 px-4">
