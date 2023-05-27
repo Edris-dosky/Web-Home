@@ -4,7 +4,6 @@ include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
 }
-
 ?>
 
     <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
@@ -34,7 +33,6 @@ $all_data = Post::get_all("");
         </div>
         <?php } ?>
     </div>
-    <button id="sr" onclick="search()">search</button>
     
 </body>
 </html>

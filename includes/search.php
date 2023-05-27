@@ -19,11 +19,14 @@ if(!empty($_POST["max"])){
     $search = true ; 
 }
 if(!empty($_POST["city"])){
-    $city = " `city` = '".$db->secure($_POST["city"])."' ";
+    $city = " `city` = '".$db->secure($_POST["city"])."' AND";
     $search = true ; 
 }
-$syntax = $type . $pre_type . $city;
+$string = $type . $pre_type . $city;
+$syntax = substr($string,0,-3);
+if($search = true){
 $all_data = Post::get_all("WHERE $syntax");
+}
 }
 
 
