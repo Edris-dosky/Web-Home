@@ -11,18 +11,18 @@ if(!empty($_POST["pre_type"])){
     $search = true ; 
 }
 if(!empty($_POST["min"])){
-    $min = " `price` = '".$db->secure($_POST["min"])."' AND";
+    $min = " `price` > '".$db->secure($_POST["min"])."' AND";
     $search = true ; 
 }
 if(!empty($_POST["max"])){
-    $max = " `price` = '".$db->secure($_POST["max"])."' AND";
+    $max = " `price` < '".$db->secure($_POST["max"])."' AND";
     $search = true ; 
 }
 if(!empty($_POST["city"])){
     $city = " `city` = '".$db->secure($_POST["city"])."' AND";
     $search = true ; 
 }
-$string = $type . $pre_type . $city;
+$string = $type . $min . $max . $pre_type . $city;
 $syntax = substr($string,0,-3);
 if($search = true){
 $all_data = Post::get_all("WHERE $syntax");
