@@ -1,7 +1,8 @@
 <?php
 $search = false ; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $type = $pre_type = $min = $max = $city = "";
+    $type = $pre_type = $min = $max = $city ="";
 if(!empty($_POST["type"])){
     $type = " `type` = '".$db->secure($_POST["type"])."' AND";
     $search = true ; 
@@ -24,8 +25,14 @@ if(!empty($_POST["city"])){
 }
 $string = $type . $min . $max . $pre_type . $city;
 $syntax = substr($string,0,-3);
-if($search = true){
-$all_data = Post::get_all("WHERE $syntax");
+if($search == true){
+  if($oneUser == true){
+    $all_data = Post::get_all("WHERE `user_id` = '$obj->user_id' AND $syntax");
+  }elseif($favPost==true){
+    $all_data = Post::get_all("INNER JOIN fav_posts ON posts.post_id = fav_posts.post_id WHERE fav_posts.user_id = '$obj->user_id' AND $syntax");
+  }else{
+    $all_data = Post::get_all("WHERE $syntax");
+  }
 }
 }
 

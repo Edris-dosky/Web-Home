@@ -1,7 +1,13 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Post::get_all("INNER JOIN fav_posts ON posts.post_id = fav_posts.post_id WHERE fav_posts.user_id = '$obj->user_id' ");
 in(0 ,"redirect.php" );
+$oneUser= false;
+$favPost= true ;
+include_once('includes/search.php');
+if($search == false){
+$all_data = Post::get_all("INNER JOIN fav_posts ON posts.post_id = fav_posts.post_id WHERE fav_posts.user_id = '$obj->user_id' ");
+}
+
 ?>
 
 <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">

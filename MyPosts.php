@@ -1,7 +1,12 @@
 <?php
 include_once('includes/nav.php');
-$all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
 in(0 ,"redirect.php" );
+$oneUser = true ;
+$favPost= false ;
+include_once('includes/search.php');
+if($search == false){
+$all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
+}
 ?>
 
 <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
