@@ -30,7 +30,7 @@ if(isset($_GET['delete'])){
 }
 $i=0;
 $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree'=>'سەوزای','ready'=>'راخراو',
-                'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','Swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
+                'electricity'=>'کارەبای بەردەوام','clothesroom'=>'ژوری جلگۆرین','swimming'=>'مەلەوانگە','camera'=>'کامێرای چاودێری','security'=>'سکرێرتی',
                 'garage'=>'گەراج','park'=>'پارک','gym'=>'هۆڵی لەشجوانت','market'=>'مارکێتی نزیک','angles'=>'روکن');
 
 $key_prop = array_keys($prop);
@@ -68,9 +68,8 @@ $key_prop = array_keys($prop);
 
                <?php  foreach($key_prop as $pro){ if($PostData->$pro == 1){?>
                     <div class="flex  " > 
-                        <div id="mark2"  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
+                        <div  class="relative bg-blueGray-200 m-2 w-32 h-32 max-w-xs rounded-lg shadow-inner ">
                             <div class="flex justify-center items-center m-4">
-                                <input type="checkbox"  id="input2"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                                 <label  class="block ml-2 text-sm font-semibold text-black"><?php echo  $prop[$pro];?></label>
                             </div>
                                 <img src="/Web-Home/assets/img/<?php echo  $pro.'.svg' ;?>" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
@@ -100,7 +99,7 @@ $key_prop = array_keys($prop);
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری دانیشتن : </span><span><?php echo $PostData->recaptionroom ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> توالێت : </span><span><?php echo $PostData->bathroom ; ?></span></div>
                 <?php }?>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span> کاتی بڵاوکردنەوە : </span><span><?php echo $PostData->time ; ?></span></div>
+                <div class="w-1/2  text-lg gap-2 my-2  "><span> کاتی بڵاوکردنەوە : </span><span><?php echo $PostData->date ; ?></span></div>
             </div>
         </div>
         

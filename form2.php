@@ -4,7 +4,7 @@ in(0 ,"redirect.php" );
 ?>
 
 <?php 
-$DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','Swimming','camera','security',
+$DataName = array('cadastral','balacony','tree','ready','electricity','clothesroom','swimming','camera','security',
 'garage','park','gym','market','angles'); // this array used get property name and input name becouse both have a same name
 $img_pro = $imgs = array();
 $err1 = $err2 = "";
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="checkbox"  id="input1" name="balacony"  value="1" class=" hidden w-5 h-5 bg-transparent outline-none border-none rounded-md focus:ring-transparent">
                     <label  class="block ml-2 text-sm font-semibold text-black">باڵەکۆن</label>
                 </div>
-                    <img src="/Web-Home/assets/img/balcony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
+                    <img src="/Web-Home/assets/img/balacony.svg" class="mx-auto h-12 w-12 text-black" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"></img>     
             </div>
          </div>
         

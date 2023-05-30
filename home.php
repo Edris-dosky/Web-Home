@@ -5,6 +5,8 @@ include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
 }
+
+echo time();
 ?>
 
     <div class=" lg:container flex flex-wrap justify-center gap-5 items-start h-full mx-auto">

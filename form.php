@@ -31,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $post->email = $db->secure($_POST["email"]);
         $post->details = $db->secure($_POST["details"]);
         $post->cadastral = $db->secure($_POST["cadastral"]);
-        $post->time = date("Y-m-d");
+        $post->date = date("Y-m-d");
+        $post->time = time();
         if ($post->create()===true){
             go("form2.php");
         }else{

@@ -15,6 +15,7 @@ class Post extends Api{
     public $bedroom ;
     public $bathroom ;
     public $recaptionroom ;
+    public $date;
     public $time ;
     public $details;
     public $cadastral;
@@ -24,7 +25,7 @@ class Post extends Api{
     public $ready ;
     public $electricity ;
     public $clothesroom ;
-    public $Swimming ;
+    public $swimming ;
     public $camera ;
     public $security ;
     public $garage ;
@@ -35,8 +36,9 @@ class Post extends Api{
     
     protected static $table = "`posts`";
     protected static $columns= array(
-    'user_id','post_id','name','tell','email','area','location','price','type','rooms','bedroom','bathroom','recaptionroom','time','details','pre_type','city','cadastral','verify',
-    'balacony','tree','ready','electricity','clothesroom','Swimming','camera','security','garage','park','gym','market','angles',
+    'user_id','post_id','name','tell','email','area','location','price','type','rooms','bedroom','bathroom','recaptionroom',
+    'time','date','details','pre_type','city','cadastral','verify','balacony','tree','ready','electricity','clothesroom',
+    'swimming','camera','security','garage','park','gym','market','angles',
 );
 }
 $post = new Post();
