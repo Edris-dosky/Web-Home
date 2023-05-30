@@ -5,6 +5,7 @@ if($_GET['post_id']){
 $post_id = $_GET['post_id'];
 $PostData = Post::get_one("`post_id` = '$post_id' "); 
 $photos = Upload::get_all("WHERE `post_id` = '$post_id'");
+$ownerPost = user::get_one("`user_id` = '$PostData->user_id'");
 }else{
     go("home.php");
 }
@@ -112,16 +113,13 @@ $key_prop = array_keys($prop);
         <div class="w-2/3 lg:w-6/12 px-4">
         <a  href="" class="w-full block py-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
         </div>
-        <?php if(!$excute){ ?>
-        <div class="w-1/3 lg:w-6/12 px-4">
-        <a href="post.php?post_id=<?php echo $post_id ?>&save" class="w-full block py-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl  ">زاخیرەکردن</a>
-        </div>
-        <?php }else{ ?>
-            <div class="w-1/3 lg:w-4/12 px-4">
-            <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="w-full p-2 rounded-md bg-red-700 hover:bg-red-800 text-white text-center  text-xl  ">لابردن لە لیستی دڵخواز</a>
-            </div>
-            <?php } ?>
-
+        <div class="">
+            <?php if(!$excute){ ?>
+            <a href="post.php?post_id=<?php echo $post_id ?>&save" class=""><img src="assets\img\nfav.svg" width="40px" alt=""></a>
+            <?php }else{ ?>  
+                <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
+                <?php } ?>
+         </div>
 
     </div>
     <?php } ?>

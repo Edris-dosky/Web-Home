@@ -5,11 +5,9 @@ include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
 }
-
-echo time();
 ?>
 
-    <div class=" lg:container flex flex-wrap justify-center gap-5 items-start h-full mx-auto">
+    <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group ">

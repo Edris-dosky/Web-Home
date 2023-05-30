@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
             $user->tell = $db->secure($_POST["tell"]);
             $user->email = $db->secure($_POST["email"]);
             $user->password = hash('gost' , $db->secure($_POST["pass1"]));
+            $user->photo = "user.svg";
             $scan = User::verify_singup($user->tell);
             if($scan === false){
                 $user->create();
