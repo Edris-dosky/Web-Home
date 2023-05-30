@@ -36,7 +36,7 @@ $prop = array('cadastral'=>'تاپۆکراو','balacony'=>'باڵەکۆن','tree
 $key_prop = array_keys($prop);
 
 ?>
-    <div id="gallery" class="relative container mx-auto" data-carousel="slide">
+    <div id="gallery" class="relative container mx-auto mt-4" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <?php foreach($photos as $photo){  ?>
             <div id="<?php echo $i; ?>" class="hidden duration-700 ease-in-out" data-carousel-item>
