@@ -5,6 +5,19 @@ include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
 }
+
+if(isset($_GET['save'])){
+    $favPost->user_id = $obj->user_id ;
+    $favPost->post_id = $post_id ;
+    if(!$excute){
+    $favPost->create();
+    go("post.php?post_id=$post_id");
+    }
+}
+if(isset($_GET['delete'])){
+    $favPost->delete("`user_id` = '$obj->user_id' AND `post_id`  = '$post_id'");
+    go("post.php?post_id=$post_id");
+}
 ?>
 
     <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">

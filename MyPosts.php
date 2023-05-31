@@ -7,7 +7,10 @@ if($search == false){
 $all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
 }
 ?>
-
+<?php 
+if(empty($all_data)){
+    echo "nothngggggggggggggggg";
+} ?>
 <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
