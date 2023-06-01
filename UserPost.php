@@ -1,8 +1,8 @@
 <?php
 include_once('includes/nav.php');
-if($_GET['PostId']){
-    $post_id = $_GET['post_id'];
-    $PostData = Post::get_all("`user_id` = '$user_id' "); 
+if($_GET['ID']){
+    $user_id = $_GET['ID'];
+    $all_data = Post::get_all("WHERE `user_id` = '$user_id' "); 
     }
 ?>
 

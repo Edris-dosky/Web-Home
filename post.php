@@ -107,20 +107,24 @@ $key_prop = array_keys($prop);
         
     </div>
     <?php if($log===true){ ?>
-        <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-    <div class="container mx-auto flex flex-row-reverse mt-4  ">
-     
-        <div class="w-2/3 lg:w-6/12 px-4">
-        <a  href="" class="w-full block py-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">کۆمێنتکردن </a>
-        </div>
-        <div class="">
+        <hr class="w-full container mx-auto my-4 border-b-1 border-blueGray-300">
+    <div class="container mx-auto flex flex-row-reverse mt-4 justify-between">
+     <div class="">
+         <a  href="" class="flex h-10 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">     کۆمێنت
+            </a>
             <?php if(!$excute){ ?>
             <a href="post.php?post_id=<?php echo $post_id ?>&save" class=""><img src="assets\img\nfav.svg" width="40px" alt=""></a>
             <?php }else{ ?>  
                 <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
                 <?php } ?>
          </div>
-
+         <a href="UserProfile.php?id=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
+            <img class="w-20 h-full rounded-lg object-cover" src="./upload/edris.jpg"  > 
+            <div class="flex flex-col ml-2 h-full justify-evenly">
+                <span class="text-lg  ">بەڵێن کەمال</span>
+                <span class="text-blueGray-700">07504749501</span>
+            </div>
+        </a> 
     </div>
     <?php } ?>
 </body>

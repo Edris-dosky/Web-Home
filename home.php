@@ -5,26 +5,13 @@ include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
 }
-
-if(isset($_GET['save'])){
-    $favPost->user_id = $obj->user_id ;
-    $favPost->post_id = $post_id ;
-    if(!$excute){
-    $favPost->create();
-    go("post.php?post_id=$post_id");
-    }
-}
-if(isset($_GET['delete'])){
-    $favPost->delete("`user_id` = '$obj->user_id' AND `post_id`  = '$post_id'");
-    go("post.php?post_id=$post_id");
-}
 ?>
 
     <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
-            <div class="w-full h-48 overflow-hidden relative group ">
-                <a href="post.php?post_id=<?php echo $row->post_id; ?>" class="absolute z-20 transform -translate-x-1/2  top-20 left-1/2 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
+            <div class="w-full h-48 overflow-hidden relative group "> 
+            <a href="post.php?post_id=<?php echo $row->post_id; ?>" class="absolute z-20 transform -translate-x-1/2  top-20 left-1/2 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="./upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
              </div>
             <span class="absolute top-40 left-0 px-2  bg-slide text-white rounded-tr-md text-lg "><?php echo $row->price."$"; ?></span>

@@ -7,9 +7,10 @@ function get_row($col){
   echo count($result);
 }
 
-if($_GET['ID']){
-  $userid = $_GET['ID'] ;
+if($_GET['id']){
+  $userid = $_GET['id'] ;
   $UserData = User::get_one("`user_id` = '$userid' "); 
+  echo $UserData->user_id;
 }else{
   go("home.php");
 }
@@ -43,7 +44,7 @@ if($_GET['ID']){
             </div>
         
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
-        <a href=""
+        <a href="UserPost.php?ID=<?php echo $UserData->user_id ?>"
           class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
         >
           موڵکەکانی
@@ -57,7 +58,7 @@ if($_GET['ID']){
           </div>
         
           <div class="mt-20 text-center border-b pb-12">
-            <h1 class="text-4xl font-medium text-gray-700"><?php echo $obj->username; ?> <span class="font-light text-gray-500"></span></h1>
+            <h1 class="text-4xl font-medium text-gray-700"><?php echo $UserData->username; ?> <span class="font-light text-gray-500"></span></h1>
             <p class="font-light text-gray-600 mt-3">iraq - erbil</p>
         
             <p class="mt-8 text-gray-500"><?php echo $UserData->tell; ?></p>
@@ -66,10 +67,7 @@ if($_GET['ID']){
         
           <div class="mt-12 flex flex-col justify-center">
             <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
-            
-          </div>
-          <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">چونەدەرەوە</a>
-        </div>
+  
         </div>
        
 </body>
