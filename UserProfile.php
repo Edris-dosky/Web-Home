@@ -1,25 +1,25 @@
 <?php
 require_once('includes/nav.php');
 
-function get_row($col){
-  global $userid ;
-  $result = Post::get_all("WHERE '$userid' = `user_id` AND '$col' = `type`");
-  echo count($result);
-}
+
 
 if($_GET['id']){
   $userid = $_GET['id'] ;
   $UserData = User::get_one("`user_id` = '$userid' "); 
-  echo $UserData->user_id;
 }else{
   go("home.php");
+}
+function get_row($col){
+  global $userid ;
+  $result = Post::get_all("WHERE `user_id` = '$userid' AND `type` = '$col'");
+  echo count($result);
 }
 ?>
 <body class="font-display bg-zinc-100 w-full">
     <div class=" container mx-auto p-16">
         <div class="p-8 bg-white shadow mt-24">
           <div class="grid grid-cols-1 md:grid-cols-3">
-            <div class="grid grid-cols-4 text-center order-last md:order-first mt-20 md:mt-0">
+            <div class="grid grid-cols-٥ text-center order-last md:order-first mt-20 md:mt-0">
               <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("خانوو") ?></p>
                 <p class="text-gray-400">خانوو</p>
@@ -31,6 +31,10 @@ if($_GET['id']){
               <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("ڤێلا") ?></p>
              <p class="text-gray-400">ڤێلا</p>
+           </div>
+           <div>
+                <p class="font-bold text-gray-700 text-xl"><?php get_row("مەزرەعە") ?></p>
+             <p class="text-gray-400">مەزرەعە</p>
            </div>
            <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("ئەرز") ?></p>
