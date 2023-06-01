@@ -30,6 +30,8 @@ if($search == true){
     $all_data = Post::get_all("WHERE `user_id` = '$obj->user_id' AND $syntax");
   }elseif($page =="/Web-Home/favPost.php"){
     $all_data = Post::get_all("INNER JOIN fav_posts ON posts.post_id = fav_posts.post_id WHERE fav_posts.user_id = '$obj->user_id' AND $syntax");
+  }elseif($page =="/Web-Home/UserPost.php"){
+    $all_data = Post::get_all("WHERE user_id = '$user_id' AND $syntax");
   }elseif($page =="/Web-Home/home.php"){
     $all_data = Post::get_all("WHERE $syntax");
   }

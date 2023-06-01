@@ -1,9 +1,14 @@
 <?php
 include_once('includes/nav.php');
-if($_GET['ID']){
     $user_id = $_GET['ID'];
-    $all_data = Post::get_all("WHERE `user_id` = '$user_id' "); 
+    $page = $_SERVER['PHP_SELF'];
+    include_once('includes/search.php');
+    if($search == false){
+        $all_data = Post::get_all("WHERE `user_id` = '$user_id' "); 
     }
+
+    echo $_SERVER['PHP_SELF'];
+    
 ?>
 
 <div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
