@@ -12,7 +12,7 @@ function get_row($col){
     <div class=" container mx-auto p-16">
         <div class="p-8 bg-white shadow mt-24">
           <div class="grid grid-cols-1 md:grid-cols-3">
-            <div class="grid grid-cols-4 text-center order-last md:order-first mt-20 md:mt-0">
+            <div class="grid grid-cols-5 text-center order-last md:order-first mt-20 md:mt-0">
               <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("خانوو") ?></p>
                 <p class="text-gray-400">خانوو</p>
@@ -26,19 +26,17 @@ function get_row($col){
              <p class="text-gray-400">ڤێلا</p>
            </div>
            <div>
+                <p class="font-bold text-gray-700 text-xl"><?php get_row("مەزرەعە") ?></p>
+             <p class="text-gray-400">مەزرەعە</p>
+           </div>
+           <div>
                 <p class="font-bold text-gray-700 text-xl"><?php get_row("ئەرز") ?></p>
              <p class="text-gray-400">ئەرز</p>
            </div>
             </div>
             <div class="relative">
               <div class="w-52 h-52 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 -top-4 -mt-24 flex items-center justify-center text-[#188F8D]">
-              <?php if($obj->photo){ ?>
              <img class="w-full h-full rounded-full object-cover" src="./upload/<?php echo $obj->photo ?>"  alt="user photo"> 
-		      	 <?php }else{ ?>
-              <svg xmlns="http://www.w3.org/2000/sv" class="h-24 w-24" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                 </svg>
-                 <?php } ?>
               </div>
             </div>
         
