@@ -8,7 +8,12 @@ $all_data = Post::get_all("WHERE `user_id` = '$obj->user_id'");
 }
 ?>
 <?php 
-
+if(empty($all_data)){?>
+<div class="w-full h-full flex flex-col justify-center items-center">
+    <p class="text-4xl text-red-500">!!! هیچ نەدۆزراوە</p>
+    <img src="assets/img/nfind.png" width="500px" height="500px" alt="">
+    </div>
+<?php }else{ ?> 
 <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
         <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
