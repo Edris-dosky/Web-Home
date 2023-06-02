@@ -12,15 +12,21 @@ include_once('includes/nav.php');
     
 ?>
 
-<div class=" lg:container flex flex-wrap justify-around items-center h-full mx-auto">
+<?php if(empty($all_data)){?>
+<div class="w-full h-full flex flex-col justify-center items-center">
+    <p class="text-4xl text-red-500">!!! هیچ نەدۆزراوە</p>
+    <img src="assets/img/nfind.png" width="500px" height="500px" alt="">
+    </div>
+<?php }else{ ?> 
+    <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
     <?php foreach($all_data as $row){ ?>
-        <div class="flex flex-col m-4 w-[600px] lg:w-64 h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
-            <div class="w-full h-48 overflow-hidden relative group ">
-                <a href="post.php?post_id=<?php echo $row->post_id; ?>" class="absolute z-20 top-20 left-40 lg:left:24 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
+        <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
+            <div class="w-full h-48 overflow-hidden relative group "> 
+            <a href="post.php?post_id=<?php echo $row->post_id; ?>" class="absolute z-20 transform -translate-x-1/2  top-20 left-1/2 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="./upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
              </div>
-            <span class="absolute top-40 left-0 px-2  bg-slide text-white rounded-tr-md text-lg z-20"><?php echo $row->price."$"; ?></span>
-            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md z-20"><?php echo $row->pre_type;?> </span> 
+            <span class="absolute top-40 left-0 px-2  bg-slide text-white rounded-tr-md text-lg "><?php echo $row->price."$"; ?></span>
+            <span class="absolute top-40 right-0 px-3  text-white text-lg bg-slide rounded-l-md"><?php echo $row->pre_type;?> </span> 
             <span class="text-right text-md py-4 "><?php echo $row->city ." - ".$row->location ?>  <img src="assets/img/location.svg" class="h-5 w-5 mr-2 inline-block" alt=""></span>
             <div class="grid grid-cols-9 w-full border-t-[2px] border-solid divide-x">
                 <span class="col-span-3  m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block">
@@ -39,5 +45,6 @@ include_once('includes/nav.php');
         </div>
         <?php } ?>
     </div>
+    <?php } ?>
 </body>
 </html>
