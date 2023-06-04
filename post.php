@@ -64,7 +64,6 @@ $key_prop = array_keys($prop);
         <div class="w-full lg:w-1/2">
             <div class="container mx-auto w-full ">
                 <div class=" w-full h-auto   pb-5">
-                <h2 class="text-2xl text-right mx-4 mb-6 ">: تایبەتماندیەکانی </h2>
                  <div class="flex flex-row-reverse flex-wrap items-center justify-center">
 
                <?php  foreach($key_prop as $pro){ if($PostData->$pro == 1){?>
@@ -83,7 +82,6 @@ $key_prop = array_keys($prop);
         </div>
         <hr class="lg:hidden container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="text-right px-4 w-full lg:w-1/2 ">
-            <h2 class="text-xl md:text-2xl mb-4">: زانیاریەکان</h2>
             <div class="flex flex-row-reverse flex-wrap text-right  ">
                 <div class="lg:w-1/2 w-full  text-lg gap-2 my-2 "><span><?php echo $PostData->post_id ; ?> : ئایدی </span></div>
                 <div class="lg:w-1/2 w-full  text-lg gap-2 my-2  "><span>ژمارە مۆبایل : </span><span><?php echo $PostData->tell ; ?></span></div>
@@ -106,9 +104,10 @@ $key_prop = array_keys($prop);
         
         
     </div>
-    <?php if($log===true){ ?>
+    
         <hr class="w-full container mx-auto my-4 border-b-1 border-blueGray-300">
     <div class="container mx-auto flex flex-row-reverse mt-4 justify-between">
+    <?php if($log===true){ ?>
      <div class="">
          <a  href="" class="flex h-10 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">     کۆمێنت
             </a>
@@ -118,15 +117,16 @@ $key_prop = array_keys($prop);
                 <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
                 <?php } ?>
          </div>
+         <?php } ?>
          <a href="UserProfile.php?id=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
-            <img class="w-20 h-full rounded-lg object-cover" src="./upload/edris.jpg"  > 
+            <img class="w-20 h-full rounded-lg object-cover" src="./upload/<?php echo $ownerPost->photo ?>"  > 
             <div class="flex flex-col ml-2 h-full justify-evenly">
-                <span class="text-lg  ">بەڵێن کەمال</span>
-                <span class="text-blueGray-700">07504749501</span>
+                <span class="text-lg  "><?php echo $ownerPost->username ?></span>
+                <span class="text-blueGray-700"><?php echo $ownerPost->tell ?></span>
             </div>
         </a> 
     </div>
-    <?php } ?>
+    
 </body>
 </html>
 
