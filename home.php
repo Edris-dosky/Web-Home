@@ -1,6 +1,5 @@
 <?php
 include_once('includes/nav.php');
-$page = $_SERVER['PHP_SELF'];
 include_once('includes/search.php');
 if($search == false){
 $all_data = Post::get_all("");
