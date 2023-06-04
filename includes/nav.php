@@ -53,7 +53,7 @@ $obj= User::get_one("`tell`='$tell'");
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="UserPost.php?ID=<?php echo $obj->user_id?>">موڵکەکانم</a></li>
+			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="UserPost.php?ID=<?php echo !empty($obj->user_id) ? $obj->user_id : "login" ?>">موڵکەکانم</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -65,7 +65,7 @@ $obj= User::get_one("`tell`='$tell'");
 		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="login.php">چونەژوەوە</a>
 		<a class="hidden lg:inline-block py-2 px-6 bg-[#188F8D] hover:bg-green-600 text-sm text-white font-bold rounded-xl transition duration-200" href="singup.php">دروستکردنی هەژمار</a>
 		<?php }else{ ?>
-        <a href="profile.php" class=" hidden lg:flex mr-3 text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
+        <a href="UserProfile.php?ID=<?php echo $obj->user_id ; ?>" class=" hidden lg:flex mr-3 text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
              <img class="w-10 h-10 rounded-full" src="/Web-Home/upload/<?php echo $obj->photo ?>"  alt="user photo">  
           </a>
 		  <?php }?>
@@ -79,16 +79,8 @@ $obj= User::get_one("`tell`='$tell'");
            			 <div class="group font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</div>
 				</a>
 				<?php }else{ ?>
-				<a href="profile.php" class=" flex mr-3 pl-2 pr-4 py-[3px] text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
-				<?php if($obj->photo){ ?>
-                    <img class="w-10 h-10 rounded-full" src="/Web-Home/upload/<?php echo $obj->photo ?>" alt="user photo"> <span class="text-center mt-2 mx-4"><?php echo $obj->username ; ?></span> 
-					<?php }else{ ?>
-                    <div class="w-12 h-12 bg-indigo-100 mx-auto rounded-full shadow-2xl  flex items-center justify-center text-[#188F8D]">
-                        <svg xmlns="http://www.w3.org/2000/sv" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                        </svg>
-                        </div><span class="text-center mt-3 mx-3"><?php echo $obj->username ; ?></span> 
-						<?php } ?>
+				<a href="UserProfile.php?ID=<?php echo $obj->user_id ; ?>" class=" flex mr-3 pl-2 pr-4 py-[3px] text-sm bg-indigo-100 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >
+                    <img class="w-10 h-10 rounded-full" src="/Web-Home/upload/<?php echo $obj->photo ?>" alt="user photo"> <span class="text-center mt-2 mx-4"><?php echo $obj->username ; ?></span> 				
                   </a>
 				  <?php } ?>
 				<button class="navbar-close">
@@ -109,7 +101,7 @@ $obj= User::get_one("`tell`='$tell'");
 						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="favPost.php">دڵخوازەکانم</a>
 					</li>
 					<li class="mb-1">
-						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="MyPosts.php">موڵکەکانم</a>
+						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="UserPost.php?ID=<?php echo !empty($obj->user_id) ? $obj->user_id : "login" ?>">موڵکەکانم</a>
 					</li>
 					<li class="mb-1">
 						<a class="text-right block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-[#188F8D] rounded" href="#">دەربارەی ئێمە</a>
