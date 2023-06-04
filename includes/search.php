@@ -26,9 +26,7 @@ if(!empty($_POST["city"])){
 $string = $type . $min . $max . $pre_type . $city;
 $syntax = substr($string,0,-3);
 if($search == true){
-  if($page =="/Web-Home/MyPosts.php"){
-    $all_data = Post::get_all("WHERE `user_id` = '$obj->user_id' AND $syntax");
-  }elseif($page =="/Web-Home/favPost.php"){
+  if($page =="/Web-Home/favPost.php"){
     $all_data = Post::get_all("INNER JOIN fav_posts ON posts.post_id = fav_posts.post_id WHERE fav_posts.user_id = '$obj->user_id' AND $syntax");
   }elseif($page =="/Web-Home/UserPost.php"){
     $user_id = $_SESSION['ID'];

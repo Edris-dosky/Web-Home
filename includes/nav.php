@@ -20,7 +20,7 @@ $obj= User::get_one("`tell`='$tell'");
 	<nav class="relative px-4 py-4 flex justify-between items-center drop-shadow-md bg-white">	
 		<div class="text-3xl font-bold leading-none " >
             <a href="home.php" class="group cursor-pointer inline font-black text-2xl text-[#188F8D] font-serif font tracking-wider"><span class="text-orange-500 text-4xl rot">W</span>ebHome</a>
-			<?php if($page == "/Web-Home/home.php"||$page=="/Web-Home/favPost.php"||$page=="/Web-Home/MyPosts.php"||$page=="/Web-Home/UserProfile.php"){ ?>
+			<?php if($page == "/Web-Home/home.php"||$page=="/Web-Home/favPost.php"||$page=="/Web-Home/UserPost.php"){ ?>
 			<svg aria-hidden="true" onclick="search()" id="svg_search" class="cursor-pointer inline mr-4 w-6 h-6 text-orange-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
 			<input type="checkbox" class="hidden" id="check_search">
 			<?php } ?>
@@ -53,7 +53,7 @@ $obj= User::get_one("`tell`='$tell'");
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="MyPosts.php">موڵکەکانم</a></li>
+			<li><a class="text-lg text-gray-500 hover:text-[#188F8D] hover:font-bold " href="UserPost.php?ID=<?php echo $obj->user_id?>">موڵکەکانم</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />

@@ -62,7 +62,7 @@ function get_row($col){
           </div>
         
           <div class="mt-20 text-center border-b pb-12">
-            <h1 class="text-4xl font-medium text-gray-700"><?php echo $UserData->username; ?> <span class="font-light text-gray-500"></span></h1>
+            <h1 class="text-3xl font-medium text-gray-700"><?php echo $UserData->username; ?> </h1>
             <p class="font-light text-gray-600 mt-3">iraq - erbil</p>
         
             <p class="mt-8 text-gray-500"><?php echo $UserData->tell; ?></p>
@@ -71,7 +71,6 @@ function get_row($col){
         
           <div class="mt-12 flex flex-col justify-center">
             <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
-  
         </div>
        
 </body>
