@@ -3,7 +3,7 @@
 use Random\Engine\Secure;
 
 include_once('includes/nav.php');
-in(0 ,"redirect.php" );
+in(0 ,"login.php" );
 ?>
 
 
