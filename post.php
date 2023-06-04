@@ -118,7 +118,7 @@ $key_prop = array_keys($prop);
                 <?php } ?>
          </div>
          <?php } ?>
-         <a href="UserProfile.php?id=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
+         <a href="UserProfile.php?ID=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
             <img class="w-20 h-full rounded-lg object-cover" src="./upload/<?php echo $ownerPost->photo ?>"  > 
             <div class="flex flex-col ml-2 h-full justify-evenly">
                 <span class="text-lg  "><?php echo $ownerPost->username ?></span>

@@ -3,8 +3,8 @@ require_once('includes/nav.php');
 
 
 
-if($_GET['ID']){
-  $userid = $_GET['ID'] ;
+if(!empty($db->secure($_GET['ID']))){
+  $userid = $db->secure($_GET['ID']) ;
   $UserData = User::get_one("`user_id` = '$userid' "); 
 }else{
   go("home.php");
