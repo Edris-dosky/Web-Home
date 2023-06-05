@@ -106,25 +106,24 @@ $key_prop = array_keys($prop);
     </div>
     
         <hr class="w-full container mx-auto my-4 border-b-1 border-blueGray-300">
-    <div class="container mx-auto flex flex-row-reverse mt-4 justify-between">
-    <?php if($log===true){ ?>
-     <div class="">
-         <a  href="" class="flex h-10 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl  ">     کۆمێنت
-            </a>
-            <?php if(!$excute){ ?>
-            <a href="post.php?post_id=<?php echo $post_id ?>&save" class=""><img src="assets\img\nfav.svg" width="40px" alt=""></a>
-            <?php }else{ ?>  
-                <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
-                <?php } ?>
-         </div>
-         <?php } ?>
-         <a href="UserProfile.php?ID=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
+        <div class="flex justify-between items-center container mx-auto mb-4">
+        <a href="UserProfile.php?ID=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
             <img class="w-20 h-full rounded-lg object-cover" src="./upload/<?php echo $ownerPost->photo ?>"  > 
             <div class="flex flex-col ml-2 h-full justify-evenly">
                 <span class="text-lg  "><?php echo $ownerPost->username ?></span>
                 <span class="text-blueGray-700"><?php echo $ownerPost->tell ?></span>
             </div>
         </a> 
+
+    <?php if($log===true){ ?>
+            <?php if(!$excute){ ?>
+            <a href="post.php?post_id=<?php echo $post_id ?>&save" class=""><img src="assets\img\nfav.svg" width="40px" alt=""></a>
+            <?php }else{ ?>  
+                <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
+                <?php } ?>
+         <?php } ?>
+         
+        </div>
     </div>
     
 </body>

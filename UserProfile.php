@@ -5,6 +5,11 @@ require_once('includes/nav.php');
 
 if(!empty($db->secure($_GET['ID']))){
   $userid = $db->secure($_GET['ID']) ;
+  if (!empty($obj->user_id)&&$userid == $obj->user_id){
+    $owner = true ;
+  }else{
+    $owner =false;
+  }
   $UserData = User::get_one("`user_id` = '$userid' "); 
 }else{
   go("home.php");
@@ -49,15 +54,20 @@ function get_row($col){
         
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
         <a href="UserPost.php?ID=<?php echo $UserData->user_id ?>"
-          class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
-        >
-          موڵکەکانی
+          class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+        موڵکەکان
         </a>
+        <?php if($owner == false){ ?>
             <a href=""
-          class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
-        >
+          class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
           نامەناردن
         </a>
+        <?php }else{ ?>
+          <a href=""
+          class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
+          دەسکاریکردن
+        </a>
+        <?php } ?>
             </div>
           </div>
         
@@ -72,7 +82,9 @@ function get_row($col){
           <div class="mt-12 flex flex-col justify-center">
             <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
           </div>
+          <?php if($owner == true){ ?>
               <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">چونەدەرەوە</a>
+              <?php } ?>
             </div>
           </div>
        

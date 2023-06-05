@@ -4,9 +4,9 @@
     <img src="assets/img/nfind.png" width="500px" height="500px" alt="">
     </div>
 <?php }else{ ?> 
-    <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto">
+    <div class=" lg:container flex flex-wrap justify-center gap-3 items-start h-full mx-auto mt-4">
     <?php foreach($all_data as $row){ ?>
-        <div class="flex flex-col lg:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
+        <div class="flex flex-col md:w-64 w-full h-72 border-[1px] border-solid border-zinc-200 rounded-lg bg-white relative overflow-hidden  ">
             <div class="w-full h-48 overflow-hidden relative group "> 
             <a href="post.php?post_id=<?php echo $row->post_id; ?>" class="absolute z-20 transform -translate-x-1/2  top-20 left-1/2 bg-[#188F8D] rounded-md px-4 py-1 text-white opacity-0  group-hover:opacity-100 transition-all duration-300 hover:scale-110">زیاتر</a>
             <img class=" w-full h-48 z-10 object-cover group-hover:blur-sm group-hover:brightness-75 transition-all duration-200" src="./upload/<?php get_photo($row->post_id , 'y'); ?>" alt="">
@@ -21,10 +21,10 @@
                     <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
                   </svg> <?php echo $row->area ?> m<sup>2</sup> </span>
                   <?php if ($row->type == "ئەرز"){ ?>
-                    <span class="col-span-6 h-full w-full p-2 relative"><img src="assets/img/road-highway-svgrepo-com.svg" class="h-4 w-4 inline-block absolute right-1 top-2"> <span class="absolute top-2 right-1 text-right"><?php echo $row->angles==1 ?"روکنە" : "اسسسسس"; ?></span> </span>
+                    <span class="col-span-6 h-full w-full p-2 relative"><img src="assets/img/road-highway-svgrepo-com.svg" class="h-4 w-4 inline-block absolute right-1 top-2"> <span class="absolute  right-1 text-right">پارچە زەوی</span> </span>
                 <?php }else{?>
-                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom.svg" class="h-4 w-4 inline-block absolute top-3"> <span class="absolute top-2 right-4"><?php echo $row->bathroom ?></span> </span>
-                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom.svg" class="h-4 w-4 inline-block"> <span class="absolute top-2 right-4"><?php echo $row->bedroom ?></span></span>
+                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom.svg" class="h-4 w-4  inline-block absolute top-3"> <span class="absolute top-2 right-4"><?php echo $row->bathroom ?></span> </span>
+                <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom.svg" class="h-4 w-4 mt-1 inline-block"> <span class="absolute top-2 right-4"><?php echo $row->bedroom ?></span></span>
                 <span class="col-span-2 h-full p-1 relative"><img src="assets/img/ready.svg" class="h-6 w-6 inline-block"> <span class="absolute top-2 right-3"><?php echo $row->recaptionroom ?></span></span>
                 <?php }?>
             </div>
