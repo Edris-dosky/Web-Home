@@ -218,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="flex flex-wrap flex-row-reverse ">
             <div class="w-1/2 lg:w-8/12 px-4">
-            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">ناردن</button>
+            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">قۆناخی دواتر</button>
             </div>
             <div class="w-1/2 lg:w-4/12 px-4">
             <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl ">سرینەوە</button>
@@ -234,16 +234,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>
 <script>
     document.getElementById('type').addEventListener('change', function() {
-      if (this.value == "خانوو" || this.value == "شوقە"  ){
-        document.getElementById("rooms").classList.add("block")
-        document.getElementById("rooms").classList.remove("hidden")
-        document.getElementById("rooms2").classList.add("block")
-        document.getElementById("rooms2").classList.remove("hidden")
-        }else{
+      if (this.value == "ئەرز"  ){
         document.getElementById("rooms").classList.add("hidden")
         document.getElementById("rooms").classList.remove("block")
         document.getElementById("rooms2").classList.add("hidden")
         document.getElementById("rooms2").classList.remove("block")
+        }else{
+        document.getElementById("rooms").classList.add("block")
+        document.getElementById("rooms").classList.remove("hidden")
+        document.getElementById("rooms2").classList.add("block")
+        document.getElementById("rooms2").classList.remove("hidden")
         }
 })
     
