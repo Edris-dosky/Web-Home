@@ -98,7 +98,7 @@ $key_prop = array_keys($prop);
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری دانیشتن : </span><span><?php echo $PostData->recaptionroom ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> توالێت : </span><span><?php echo $PostData->bathroom ; ?></span></div>
                 <?php }?>
-                <div class="w-1/2  text-lg gap-2 my-2  "><span> کاتی بڵاوکردنەوە : </span><span><?php echo $PostData->date ; ?></span></div>
+                <div class="lg:w-1/2 w-full  text-lg gap-2 my-2  "><span> کاتی بڵاوکردنەوە : </span><span><?php echo $PostData->date ; ?></span></div>
             </div>
         </div>
         
