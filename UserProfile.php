@@ -84,9 +84,7 @@ function get_row($col){ //this function created to print numbrt of one type row
           <div class="mt-12 flex flex-col justify-center">
             <p class="text-gray-600 text-center font-light mb-6 lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
           </div>
-          <?php if($owner == true){ ?>
-              <a href="?logout" class="text-white ml-6 p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"><img src="assets/img/loggout.svg" class="w-6 h-6 inline-block">چونەدەرەوە</a>
-              <?php } ?>
+         
             </div>
           </div>
        
