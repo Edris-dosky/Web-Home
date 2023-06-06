@@ -55,6 +55,7 @@ function get_row($col){
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
         <a href="UserPost.php?ID=<?php echo $UserData->user_id ?>"
           class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+          <img src="assets/img/save.svg" class="w-6 h-6 inline-block" >
         موڵکەکان
         </a>
         <?php if($owner == false){ ?>
@@ -65,6 +66,7 @@ function get_row($col){
         <?php }else{ ?>
           <a href=""
           class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
+          <img src="assets/img/edit.svg" class="w-6 h-6 inline-block">
           دەسکاریکردن
         </a>
         <?php } ?>
@@ -83,7 +85,7 @@ function get_row($col){
             <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
           </div>
           <?php if($owner == true){ ?>
-              <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">چونەدەرەوە</a>
+              <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"><img src="assets/img/loggout.svg" class="w-6 h-6 inline-block">چونەدەرەوە</a>
               <?php } ?>
             </div>
           </div>

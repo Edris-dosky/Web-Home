@@ -115,7 +115,7 @@ $obj= User::get_one("`tell`='$tell'");
 					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="singup.php">دروستکردنی هەژمار</a>
 				</div>
 				<?php }else{ ?> 
-					<a href="?logout" class="block px-4 py-3 mb-3  text-xs text-center font-semibold leading-none bg-red-500 hover:bg-red-600 rounded-xl">چونەدەرەوە</a>
+					<a href="?logout" class="block px-4 py-3 mb-3 text-white text-s text-center font-semibold leading-none bg-red-500 hover:bg-red-600 rounded-xl"><img src="assets/img/loggout.svg" class="w-6 h-6 inline-block">  چونەدەرەوە</a>
 					<?php } ?>
 				<p class="my-4 text-xs text-center text-gray-400">
 					<span>Copyright © <?php echo date('Y'); ?></span>
