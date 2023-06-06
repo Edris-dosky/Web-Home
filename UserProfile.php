@@ -14,15 +14,15 @@ if(!empty($db->secure($_GET['ID']))){
 }else{
   go("home.php");
 }
-function get_row($col){
+function get_row($col){ //this function created to print numbrt of one type row
   global $userid ;
   $result = Post::get_all("WHERE `user_id` = '$userid' AND `type` = '$col'");
   echo count($result);
 }
 ?>
 <body class="font-display bg-zinc-100 w-full">
-    <div class=" container mx-auto p-16">
-        <div class="p-8 bg-white shadow mt-24">
+    <div class=" container mx-auto p-12">
+        <div class="p-4 bg-white shadow mt-24">
           <div class="grid grid-cols-1 md:grid-cols-3">
             <div class="grid grid-cols-5 text-center order-last md:order-first mt-20 md:mt-0">
               <div>
@@ -54,19 +54,19 @@ function get_row($col){
         
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
         <a href="UserPost.php?ID=<?php echo $UserData->user_id ?>"
-          class="text-white py-3 px-4 uppercase rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-          <img src="assets/img/save.svg" class="w-6 h-6 inline-block" >
+          class="text-white py-3 px-4 md:text-base text-xs rounded bg-[#188F8D] hover:bg-green-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+          <img src="assets/img/save.svg" class="md:w-6 md:h-6 w-4 h-4 inline-block" >
         موڵکەکان
         </a>
         <?php if($owner == false){ ?>
             <a href=""
-          class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
+          class="text-white pt-3 px-4 uppercase rounded md:text-base text-xs bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
           نامەناردن
         </a>
         <?php }else{ ?>
           <a href=""
-          class="text-white pt-3 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
-          <img src="assets/img/edit.svg" class="w-6 h-6 inline-block">
+          class="text-white pt-3 px-4 uppercase rounded md:text-base text-xs bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
+          <img src="assets/img/edit.svg" class="md:w-6 md:h-6 w-4 h-4 inline-block">
           دەسکاریکردن
         </a>
         <?php } ?>
@@ -82,10 +82,10 @@ function get_row($col){
           </div>
         
           <div class="mt-12 flex flex-col justify-center">
-            <p class="text-gray-600 text-center font-light lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
+            <p class="text-gray-600 text-center font-light mb-6 lg:px-16">هەر هەژمارێک خۆی بەرپرسیارە لەوەی دایدەنێ، وە دەتوانێ هەرچەند بیەوێ خانوو و ئەرزی خۆی دابنێ و دانان بێ بەرامبەرە </p>
           </div>
           <?php if($owner == true){ ?>
-              <a href="?logout" class="text-white p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"><img src="assets/img/loggout.svg" class="w-6 h-6 inline-block">چونەدەرەوە</a>
+              <a href="?logout" class="text-white ml-6 p-3 px-4 uppercase rounded bg-red-400 hover:bg-red-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"><img src="assets/img/loggout.svg" class="w-6 h-6 inline-block">چونەدەرەوە</a>
               <?php } ?>
             </div>
           </div>
