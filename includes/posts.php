@@ -21,7 +21,7 @@
                     <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
                   </svg> <?php echo $row->area ?> m<sup>2</sup> </span>
                   <?php if ($row->type == "ئەرز"){ ?>
-                    <span class="col-span-6 h-full w-full p-2 relative"><img src="assets/img/road-highway-svgrepo-com.svg" class="h-4 w-4 inline-block absolute right-1 top-2"> <span class="absolute  right-1 text-right">پارچە زەوی</span> </span>
+                    <span class="col-span-6 h-full w-full p-2 relative"><img src="assets/img/road-highway-svgrepo-com.svg" class="h-4 w-4 inline-block absolute right-1 top-2"> <span class="absolute  right-1 bottom-2 text-right">پارچە زەوی</span> </span>
                 <?php }else{?>
                 <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bathroom.svg" class="h-4 w-4  inline-block absolute top-3"> <span class="absolute top-2 right-4"><?php echo $row->bathroom ?></span> </span>
                 <span class="col-span-2 h-full p-2 relative"><img src="assets/img/bedroom.svg" class="h-4 w-4 mt-1 inline-block"> <span class="absolute top-2 right-4"><?php echo $row->bedroom ?></span></span>
