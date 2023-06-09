@@ -106,7 +106,9 @@ $key_prop = array_keys($prop);
     </div>
     
         <hr class="w-full container mx-auto my-4 border-b-1 border-blueGray-300">
-        <div class="flex justify-between items-center container mx-auto mb-4">
+
+        <div class="flex w-full container mx-auto divide-x-0 lg:divide-x">
+        <div class="flex justify-between items-center container mx-auto  lg:w-1/3 w-full">
         <a href="UserProfile.php?ID=<?php echo $PostData->user_id?>" class=" w-72 h-20 bg-indigo-100 mx-auto rounded-lg shadow-2xl flex items-center hover:-translate-y-0.5 transition-all">
             <img class="w-20 h-full rounded-lg object-cover" src="./upload/<?php echo $ownerPost->photo ?>"  > 
             <div class="flex flex-col ml-2 h-full justify-evenly">
@@ -114,17 +116,20 @@ $key_prop = array_keys($prop);
                 <span class="text-blueGray-700"><?php echo $ownerPost->tell ?></span>
             </div>
         </a> 
-
-    <?php if($log===true){ ?>
+        <?php if($log===true){ ?>
             <?php if(!$excute){ ?>
             <a href="post.php?post_id=<?php echo $post_id ?>&save" class=""><img src="assets\img\nfav.svg" width="40px" alt=""></a>
             <?php }else{ ?>  
                 <a href="post.php?post_id=<?php echo $post_id ?>&delete" class="text-red-500"><img src="assets\img\favo.svg" width="40px" alt=""></a>
                 <?php } ?>
-         <?php } ?>
-         
+         <?php } ?> 
         </div>
-    </div>
+
+        <div class="lg:w-2/3 w-full text-right">
+                <p>بەڵێ خانوەکی تا بڵێێ باشە وە معاملەی هەیە بۆ خۆمان دروستمان کرد گەرەکێکی تا بڵێ ئارامە</p>
+             </div>
+        </div>
+        <hr class="w-full container mx-auto my-2 border-b-1 border-blueGray-300">
     
 </body>
 </html>
