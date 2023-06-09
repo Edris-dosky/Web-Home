@@ -126,7 +126,7 @@ $key_prop = array_keys($prop);
         </div>
 
         <div class="lg:w-2/3 w-full text-right">
-                <p>بەڵێ خانوەکی تا بڵێێ باشە وە معاملەی هەیە بۆ خۆمان دروستمان کرد گەرەکێکی تا بڵێ ئارامە</p>
+                <p><?php echo $PostData->details ?></p>
              </div>
         </div>
         <hr class="w-full container mx-auto my-2 border-b-1 border-blueGray-300">
