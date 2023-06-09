@@ -92,7 +92,7 @@ $key_prop = array_keys($prop);
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> <?php echo $PostData->price ; ?></span><span> : نرخ </span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> شار <?php echo ": ".$PostData->city ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> شوێن  <?php echo ": ".$PostData->location ; ?></span></div>
-                <?php if(!$PostData->type=="ئەرز"){ ?>
+                <?php if($PostData->type!="ئەرز"){ ?>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> ژورەکان : </span><span><?php echo $PostData->rooms ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری خەوتن : </span><span><?php echo $PostData->bedroom ; ?></span></div>
                 <div class="w-1/2  text-lg gap-2 my-2  "><span> ژووری دانیشتن : </span><span><?php echo $PostData->recaptionroom ; ?></span></div>
