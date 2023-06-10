@@ -9,13 +9,25 @@
     <title>Web Home</title>
 </head>
 <body class="font-display bg-zinc-100 w-full">
-    <div class=" container mx-auto py-10 px-24">
-        <div class="p-4 bg-white shadow mt-24">
-    <div class="relative">
+    <div class=" container mx-auto py-10 px-72">
+        <div class="p-4 bg-white shadow mt-24 rounded-lg">   
+      <form action="">
+        <div class="relative">   
         <div class="w-52 h-52 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 -top-4 -mt-24 flex items-center justify-center text-[#188F8D]">
-       <img class="w-full h-full rounded-full object-cover" src="./upload/edris.jpg"  alt="user photo"> 
-        </div>
-      </div>
+            <img class="w-full h-full rounded-full object-cover z-10"  src="./upload/edris.jpg"  alt="user photo"> 
+            <input type="file" id="file" name="" class="hidden">
+             <label for="file" class="z-20 absolute cursor-pointer bg-slate-200 rounded-full p-4 top-36 right-0 shadow-lg">
+           <img src="assets/img/update.svg" class="w-8 h-8 z-20">
+             </label>
+             </div>
+            </div>
+            <div class=" w-full flex flex-col justify-center items-center gap-4 pt-32">
+        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+</div>
+</form>
+
       </div>
     </div>
 </body>
