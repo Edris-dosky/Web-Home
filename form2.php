@@ -273,7 +273,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     function on($input ,$mark){
         var input = document.getElementById($input);
         if (input.checked == false){
-
         document.getElementById($mark).classList.add("bg-[#49d850db]")
         input.checked = true;
         }else{

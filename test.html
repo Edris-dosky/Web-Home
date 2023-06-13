@@ -28,12 +28,12 @@
                 <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
                 <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="شوێن">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-        <div class="w-2/3 text-right ">
-        <label for="uppass" class="cursor-pointer">گۆرینی وشەی نهێنی</label>
-        <input type="checkbox" name="uppass" id="uppass" class="cursor-pointer">
-    </div>
-        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
-        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" دوبارەکردنەوەی وشەی نهێنی">
+        <div class="w-2/3 text-right " >
+        <label for="uppass"  class="cursor-pointer">گۆرینی وشەی نهێنی</label>
+        <input type="checkbox"  onclick="dd()" name="uppass" id="uppass" class="cursor-pointer">
+        </div>
+        <input type="text" name="username" id="pass1"  value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
+        <input type="text" name="username" id="pass2"  value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" دوبارەکردنەوەی وشەی نهێنی">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-full flex ">
           <div class="w-1/2 lg:w-4/12 px-4">
@@ -54,3 +54,16 @@
 </body>
 </html>
 
+<script>
+function pass(){
+  var input = document.getElementById('uppass');
+  if (input.checked == false){
+        document.getElementById("pass1").createAttribute("disabled")
+        document.getElementById("pass2").createAttribute("disabled")
+        }else{
+        document.getElementById("pass1").removeAttribute("disabled")
+        document.getElementById("pass2").removeAttribute("disabled")
+
+        }
+}
+</script>
