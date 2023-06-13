@@ -23,15 +23,31 @@
             </div>
             
             <div class=" w-full flex flex-col justify-center items-center gap-4 pt-32">
-                <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
-                <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
-                <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
+                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
+                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
+                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="شوێن">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
-        <div class="w-2/3 text-right cursor-pointer">
-        <input type="checkbox" name="uppass" class="cursor-pointer">
-        <label for="uppass">گۆرینی وشەی نهێنی</label>
+        <div class="w-2/3 text-right ">
+        <label for="uppass" class="cursor-pointer">گۆرینی وشەی نهێنی</label>
+        <input type="checkbox" name="uppass" id="uppass" class="cursor-pointer">
     </div>
         <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
+        <input type="text" name="username" value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" دوبارەکردنەوەی وشەی نهێنی">
+        <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
+        <div class="w-full flex ">
+          <div class="w-1/2 lg:w-4/12 px-4">
+          <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl ">
+            <img src="assets/img/x.svg" class="md:w-8 md:h-8 w-6 h-6 mx-1 inline-block">سرینەوە
+          </button>
+      
+          </div>
+          <div class="w-1/2 lg:w-8/12 px-4">
+            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">
+              <img src="assets/img/check.svg" class="md:w-8 md:h-8 w-6 h-6 mx-1 inline-block">گۆرین
+            </button>
+            </div>
+      </div>
 </div>
 </form>
 
