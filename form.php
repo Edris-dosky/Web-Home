@@ -218,10 +218,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="flex flex-wrap flex-row-reverse ">
             <div class="w-1/2 lg:w-8/12 px-4">
-            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">قۆناخی دواتر</button>
+            <button  type="submit" class="w-full p-2 rounded-md bg-[#188F8D] hover:bg-[#106564] text-white text-center  text-xl ">
+            <img src="assets/img/check.svg" class="md:w-8 md:h-8 w-6 h-6 mx-1 inline-block">
+              قۆناخی دواتر
+            </button>
             </div>
             <div class="w-1/2 lg:w-4/12 px-4">
-            <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl ">سرینەوە</button>
+            <button type="reset" class="w-full p-2 rounded-md bg-gray-700 hover:bg-gray-800 text-white text-center  text-xl ">
+            <img src="assets/img/x.svg" class="md:w-8 md:h-8 w-6 h-6 mx-1 inline-block">سرینەوە</button>
             </div>
         </div>
       </form>
