@@ -1,10 +1,11 @@
 <?php
 require_once('includes/nav.php');
+in(0 ,"login.php" );
 ?>
 <?php $obj->photo?>
 <div class=" container mx-auto py-10 lg:w-[70rem] w-[30rem]">
         <div class="p-4 bg-white shadow mt-24 rounded-lg">   
-      <form action="">
+      <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" >
       <div class="relative">   
         <div class="w-52 h-52 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 -top-4 -mt-24 flex items-center justify-center text-[#188F8D]">
             <img class="w-full h-full rounded-full object-cover z-10" id="img"  src="./upload/<?php echo $obj->photo?>"  alt="user photo"> 
@@ -15,7 +16,7 @@ require_once('includes/nav.php');
              </div>
             </div>
             
-            <div class=" w-full flex flex-col justify-center items-center gap-4 pt-32">
+            <div class="w-full flex flex-col justify-center items-center gap-4 pt-32">
                 <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
                 <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
                 <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
