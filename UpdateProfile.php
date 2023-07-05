@@ -1,15 +1,16 @@
 <?php
 require_once('includes/nav.php');
 ?>
+<?php $obj->photo?>
 <div class=" container mx-auto py-10 lg:w-[70rem] w-[30rem]">
         <div class="p-4 bg-white shadow mt-24 rounded-lg">   
       <form action="">
-        <div class="relative">   
+      <div class="relative">   
         <div class="w-52 h-52 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 -top-4 -mt-24 flex items-center justify-center text-[#188F8D]">
-            <img class="w-full h-full rounded-full object-cover z-10"  src="./upload/edris.jpg"  alt="user photo"> 
+            <img class="w-full h-full rounded-full object-cover z-10" id="img"  src="./upload/<?php echo $obj->photo?>"  alt="user photo"> 
             <input type="file" id="file" name="" onchange="previewFile()" class="hidden">
              <label for="file" class="z-20 absolute cursor-pointer bg-slate-200 rounded-full p-4 top-36 right-0 shadow-lg">
-           <img src="assets/img/update.svg" id="img" alt="Image preview..." class="w-8 h-8 z-20">
+           <img src="assets/img/update.svg"  class="w-8 h-8 z-20">
              </label>
              </div>
             </div>
@@ -64,7 +65,7 @@ function pass(){
         }
         
         function previewFile() {
-          var preview = document.querySelector('img');
+          var preview = document.getElementById('img');
           var file    = document.querySelector('input[type=file]').files[0];
           var reader  = new FileReader();
 
