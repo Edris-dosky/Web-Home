@@ -64,7 +64,7 @@ function get_row($col){ //this function created to print numbrt of one type row
           نامەناردن
         </a>
         <?php }else{ ?>
-          <a href=""
+          <a href="UpdateProfile.php"
           class="text-white pt-3 px-4 uppercase rounded md:text-base text-xs bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" >
           <img src="assets/img/edit.svg" class="md:w-6 md:h-6 w-4 h-4 inline-block">
           دەسکاریکردن
