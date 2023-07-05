@@ -9,7 +9,7 @@ in(0 ,"login.php" );
       <div class="relative">   
         <div class="w-52 h-52 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 -top-4 -mt-24 flex items-center justify-center text-[#188F8D]">
             <img class="w-full h-full rounded-full object-cover z-10" id="img"  src="./upload/<?php echo $obj->photo?>"  alt="user photo"> 
-            <input type="file" id="file" name="" onchange="previewFile()" class="hidden">
+            <input type="file" id="file" name="img" onchange="previewFile()" class="hidden">
              <label for="file" class="z-20 absolute cursor-pointer bg-slate-200 rounded-full p-4 top-36 right-0 shadow-lg">
            <img src="assets/img/update.svg"  class="w-8 h-8 z-20">
              </label>
@@ -17,17 +17,17 @@ in(0 ,"login.php" );
             </div>
             
             <div class="w-full flex flex-col justify-center items-center gap-4 pt-32">
-                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
-                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
-                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
-                <input type="text" name="username" required value="" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="شوێن">
+                <input type="text" name="username" required value="<?php echo $_POST['username'] ?? $obj->username; ?>" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ناو">
+                <input type="tell" name="tell" required value="<?php echo $_POST['tell'] ?? $obj->tell; ?>" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ژمارە مۆبایل">
+                <input type="email" name="email" required value="<?php echo $_POST['email'] ?? $obj->email; ?>" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="ئیمایل">
+                <input type="place" name="place" required value="<?php echo $_POST['place'] ?? $obj->place; ?>" class=" text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="شوێن">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-2/3 text-right " >
         <label for="uppass"  class="cursor-pointer">گۆرینی وشەی نهێنی</label>
         <input type="checkbox"  onclick="pass()" name="uppass" id="uppass" class="cursor-pointer">
         </div>
-        <input type="text" name="username" id="pass1"  value="" class="hidden text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
-        <input type="text" name="username" id="pass2"  value="" class="hidden text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" دوبارەکردنەوەی وشەی نهێنی">
+        <input type="password" name="pass1" id="pass1"  value="" class="hidden text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder="وشەی نهێنی">
+        <input type="password" name="pass2" id="pass2"  value="" class="hidden text-right w-2/3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#188F8D]" placeholder=" دوبارەکردنەوەی وشەی نهێنی">
         <hr class="container mx-auto my-4 border-b-1 border-blueGray-300">
         <div class="w-full flex ">
           <div class="w-1/2 lg:w-4/12 px-4">
