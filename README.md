@@ -6,6 +6,6 @@ Webhome is a website for buying and selling (house, land, apartment, villa) in K
 
 *full responsive
 
-*used (HTML, PHP OOP, JS, tailwind)
+*used (HTML, PHP OOP, JS, Tailwindcss)
  
 *Work continues on it ...
