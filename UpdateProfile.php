@@ -2,7 +2,28 @@
 require_once('includes/nav.php');
 in(0 ,"login.php" );
 ?>
-<?php $obj->photo?>
+<?php 
+$error = ['result' => ''];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if(empty($_POST['username'])||empty($_POST['tell'])||empty($_POST['email'])||empty($_POST['place'])){
+    exit ("please enter the fill");
+  }else{
+    $obj->username = $db->secure($_POST['username']);
+    $obj->tell = $db->secure($_POST['tell']);
+    $obj->email = $db->secure($_POST['email']);
+    $obj->place = $db->secure($_POST['place']);
+    $scan = User::verify_singup($user->tell);
+    if($scan === false){
+        $user->update();
+        go("home.php");  
+    }else{
+        $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
+    }
+  }
+
+}
+
+?>
 <div class=" container mx-auto py-10 lg:w-[70rem] w-[20rem]">
         <div class="p-4 bg-white shadow mt-24 rounded-lg">   
       <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" >
