@@ -3,7 +3,7 @@ require_once('includes/nav.php');
 in(0 ,"login.php" );
 ?>
 <?php $obj->photo?>
-<div class=" container mx-auto py-10 lg:w-[70rem] w-[30rem]">
+<div class=" container mx-auto py-10 lg:w-[70rem] w-[20rem]">
         <div class="p-4 bg-white shadow mt-24 rounded-lg">   
       <form action="<?php echo $db->secure($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data" >
       <div class="relative">   

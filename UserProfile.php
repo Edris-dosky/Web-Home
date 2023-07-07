@@ -75,7 +75,7 @@ function get_row($col){ //this function created to print numbrt of one type row
         
           <div class="mt-20 text-center border-b pb-12">
             <h1 class="text-3xl font-medium text-gray-700"><?php echo $UserData->username; ?> </h1>
-            <p class="font-light text-gray-600 mt-3">iraq - erbil</p>
+            <p class="font-light text-gray-600 mt-3"><?php echo $UserData->place; ?></p>
         
             <p class="mt-8 text-gray-500"><?php echo $UserData->tell; ?></p>
             <p class="mt-2 text-gray-500"><?php echo $UserData->email; ?></p>

@@ -7,10 +7,11 @@ class User extends Api{
     public $username;
     public $tell;
     public $email;
+    public $place;
     public $password;
     public $photo ;
     protected static $table = "`users`";
-    protected static $columns =  array('user_id','username','tell','email','password','photo');
+    protected static $columns =  array('user_id','username','tell','email','place','password','photo');
 
     public static function verify($tell , $password){ // verify to login users
         $password = hash('gost' , $password);
