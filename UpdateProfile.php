@@ -12,18 +12,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit ("please enter the fill");
   }else{
     $obj->username = $db->secure($_POST['username']);
-    $obj->tell = $db->secure($_POST['tell']);
+    
     $obj->email = $db->secure($_POST['email']);
     $obj->place = $db->secure($_POST['place']);
-    $scan = User::verify_singup($user->tell);
+    if($obj->tell != $_POST['tell'] ){
+      $obj->tell = $db->secure($_POST['tell']);
+      $scan = User::verify_singup($user->tell);
+    }else{
+      $scan = false;
+    }
     if($scan === false){
-        $user->update($);
+        $obj->update("`user_id` = '$obj->user_id'");
         go("home.php");  
     }else{
         $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
     }
   }
-  if($_FILES['proimg']){
+  if($_FILES['img']){
     $upload->profile = 'y';
     $upload->set_image($_FILES['img']);
     if($upload->save() === true){
@@ -87,7 +92,7 @@ if(!empty($_POST['pass1'])&&!empty($_POST['pass2'])&&$_POST['uppass']===1){
             </div>
             
       </div>
-      <div class=""><p class="text-red"><?php echo $error['result']; echo strlen("eeee"); ?></p></div>
+      <div class=""><p class="text-red-500"><?php echo $error['result']; ?></p></div>
 </div>
 </form>
       </div>
