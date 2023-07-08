@@ -1,4 +1,7 @@
 <?php
+
+use Random\Engine\Secure;
+
 require_once('includes/nav.php');
 in(0 ,"login.php" );
 ?>
@@ -20,7 +23,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
     }
   }
-
+  if($_FILES['proimg']){
+    $upload->profile = 'y';
+    $upload->set_image($_FILES['img']);
+    if($upload->save() === true){
+        $sucs = true ; 
+    }else{
+        $error['result'] =  $upload->save();
+    }
+}
+if(!empty($_POST['pass1'])&&!empty($_POST['pass2'])&&$_POST['uppass']===1){
+  $pass1=$db->secure($_POST['pass1']);
+  $pass2=$db->secure($_POST['pass2']);
+  if($pass1 === $pass2){
+    if($pass1>7){
+      $obj->password = hash('gost' , $pass1);
+    }else{
+      $error['result'] ="وشەی نهێنی کورتە";
+    }
+  }else{
+    $error['result'] ="وشەی نهێنی هاوشێوە نینە";
+  }
+}
 }
 
 ?>
@@ -61,7 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <img src="assets/img/check.svg" class="md:w-8 md:h-8 w-6 h-6 mx-1 inline-block">گۆرین
             </button>
             </div>
+            
       </div>
+      <div class=""><p class="text-red"><?php echo $error['result']; echo strlen("eeee"); ?></p></div>
 </div>
 </form>
       </div>
