@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $obj->place = $db->secure($_POST['place']);
     $scan = User::verify_singup($user->tell);
     if($scan === false){
-        $user->update();
+        $user->update($);
         go("home.php");  
     }else{
         $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";

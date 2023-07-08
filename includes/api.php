@@ -48,14 +48,14 @@ class Api{
         return $execute ? true : false ;
     }
 
-    public function update($property){
+    public function update($con){
         global $db ;
         $array = array();
         $pro = $this->properties();
         foreach ($pro as $key => $value) {
             $array[] = "`{$key}` = {$value}";
         }
-        $execute = $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE `id` = '$property' ");
+        $execute = $db->query("UPDATE ".static::$table." SET ".implode(",",$array)." WHERE $con ");
         return $execute ? true : false ;
     }
     
