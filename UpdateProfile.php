@@ -21,22 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
       $scan = false;
     }
-    if($scan === false){
-        $obj->update("`user_id` = '$obj->user_id'");
-        go("home.php");  
-    }else{
-        $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
-    }
   }
+  
   if($_FILES['img']){
     $upload->profile = 'y';
     $upload->set_image($_FILES['img']);
+    $obj->photo = $upload->fileName ;
     if($upload->save() === true){
         $sucs = true ; 
     }else{
         $error['result'] =  $upload->save();
     }
 }
+
 if(!empty($_POST['pass1'])&&!empty($_POST['pass2'])&&$_POST['uppass']===1){
   $pass1=$db->secure($_POST['pass1']);
   $pass2=$db->secure($_POST['pass2']);
@@ -49,6 +46,13 @@ if(!empty($_POST['pass1'])&&!empty($_POST['pass2'])&&$_POST['uppass']===1){
   }else{
     $error['result'] ="وشەی نهێنی هاوشێوە نینە";
   }
+}
+
+if($scan === false){
+  $obj->update("`user_id` = '$obj->user_id'");
+  go("home.php");  
+}else{
+  $error['result']="ئەم ژمارە مۆبایلە بەکارهاتوە";
 }
 }
 
